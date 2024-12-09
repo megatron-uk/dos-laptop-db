@@ -518,6 +518,27 @@
    }
 },
 {
+   "model": "laptops.mouse",
+   "pk": 1,
+   "fields": {
+      "name": "Trackpoint / Nub"
+   }
+},
+{
+   "model": "laptops.mouse",
+   "pk": 2,
+   "fields": {
+      "name": "Trackpad"
+   }
+},
+{
+   "model": "laptops.mouse",
+   "pk": 3,
+   "fields": {
+      "name": "Trackball"
+   }
+},
+{
    "model": "laptops.ramtype",
    "pk": 1,
    "fields": {
@@ -571,6 +592,125 @@
    "pk": 8,
    "fields": {
       "name": "SIMM (30pin)"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 1,
+   "fields": {
+      "name": "ATI CIF"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 2,
+   "fields": {
+      "name": "S3D"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 3,
+   "fields": {
+      "name": "Glide"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 4,
+   "fields": {
+      "name": "CGL"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 5,
+   "fields": {
+      "name": "Matrox"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 6,
+   "fields": {
+      "name": "Speedy3D"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 7,
+   "fields": {
+      "name": "NV1"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 8,
+   "fields": {
+      "name": "PowerSGL"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 9,
+   "fields": {
+      "name": "S3 MeTal"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 10,
+   "fields": {
+      "name": "OpenGL"
+   }
+},
+{
+   "model": "laptops.videoaccel3dtypes",
+   "pk": 11,
+   "fields": {
+      "name": "Direct3D"
+   }
+},
+{
+   "model": "laptops.videoscalinghw",
+   "pk": 1,
+   "fields": {
+      "name": "No H/W LCD Scaling"
+   }
+},
+{
+   "model": "laptops.videoscalinghw",
+   "pk": 2,
+   "fields": {
+      "name": "Basic H/W LCD Scaling"
+   }
+},
+{
+   "model": "laptops.videoscalinghw",
+   "pk": 3,
+   "fields": {
+      "name": "Advanced H/W LCD Scaling"
+   }
+},
+{
+   "model": "laptops.videoscalingsw",
+   "pk": 1,
+   "fields": {
+      "name": "No S/W LCD Scaling Tool"
+   }
+},
+{
+   "model": "laptops.videoscalingsw",
+   "pk": 2,
+   "fields": {
+      "name": "Basic S/W LCD Scaling Tool"
+   }
+},
+{
+   "model": "laptops.videoscalingsw",
+   "pk": 3,
+   "fields": {
+      "name": "Advanced S/W LCD Scaling Tool"
    }
 }
 ]

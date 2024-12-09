@@ -74,7 +74,7 @@ class Audio(models.Model):
 	""" A soundcard """
 	
 	manufacturer = models.CharField(max_length = 255, unique = False, blank = False)
-	model = models.CharField(max_length = 255, unique = True, blank = False)
+	model = models.CharField(max_length = 255, unique = False, blank = False)
 	bus = models.ForeignKey(Bus, on_delete=models.PROTECT)
 	digi_sb = models.ForeignKey(AudioDigiSB, on_delete=models.PROTECT)
 	digi_other = models.ForeignKey(AudioDigiOther, on_delete=models.PROTECT)
@@ -87,6 +87,12 @@ class Audio(models.Model):
 		return f"{self.manufacturer} {self.model}" 
 	
 	class Meta:
+		constraints = [
+			models.UniqueConstraint(
+				fields=["manufacturer", "model"],
+				name="unique_audio_type"
+			)
+		]
 		verbose_name_plural = "Audio Cards"
 
 class Chipset(models.Model):
@@ -133,6 +139,12 @@ class LCD(models.Model):
 		return f'{self.res_x}x{self.yes_y}, {self.screen_size}" ({self.screen_type.name})' 
 	
 	class Meta:
+		constraints = [
+			models.UniqueConstraint(			# A card can only have 'opengl' once.
+				fields=["res_x", "res_y", "screen_size", "screen_type"],
+				name="unique_lcd_type"
+			)
+		]
 		verbose_name_plural = "LCD Screen Models"
 
 class Mouse(models.Model):
@@ -232,16 +244,13 @@ class Laptop(models.Model):
 	model = models.CharField(max_length = 255, unique = False, blank = False)
 	submodel = models.CharField(max_length = 255, unique = False, blank = False)
 	chipset = models.ForeignKey(Chipset, on_delete=models.PROTECT)
-	cpu = models.ForeignKey(CPUClass, on_delete=models.PROTECT)
+	cpu = models.ForeignKey(CPUClass, on_delete=models.PROTECT)			# UP TO this class, could be less (e.g. Pentium MMX and Pentium II)
 	cpumin = models.IntegerField(default=0, blank=False)
 	cpumax = models.IntegerField(default=0, blank=False)
 	ram = models.ForeignKey(RamType, on_delete=models.PROTECT)
 	ramslots = models.IntegerField(default=0, blank=False)
 	rammin = models.IntegerField(default=0, blank=False)
 	rammax = models.IntegerField(default=0, blank=False)
-	lcd = models.ForeignKey(LCD, on_delete=models.PROTECT)
-	video = models.ForeignKey(Video, on_delete=models.PROTECT)
-	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
 	audio_out = models.BooleanField(default = False)
 	line_in = models.BooleanField(default = False)
 	mic_in = models.BooleanField(default = False)
@@ -254,11 +263,28 @@ class Laptop(models.Model):
 	class Meta:
 		constraints = [
 			models.UniqueConstraint(	
-				fields=["manufacturer", "model", "submodel", "lcd"],
+				fields=["manufacturer", "model", "submodel"],
 				name="unique_laptop"
 			)
 		]
 		verbose_name_plural = "Laptops"
+
+class LaptopVideo(models.Model):
+	
+	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	video = models.ForeignKey(Video, on_delete=models.PROTECT)
+	
+	def __str__(self):
+		return f"{self.laptop} - {self.video})"
+	
+	class Meta:
+		constraints = [
+			models.UniqueConstraint(	
+				fields=["laptop", "video"],
+				name="unique_laptop_video"
+			)
+		]
+		verbose_name_plural = "Laptop Video Options"
 
 class LaptopAudio(models.Model):
 	
@@ -275,4 +301,21 @@ class LaptopAudio(models.Model):
 				name="unique_laptop_audio"
 			)
 		]
-		verbose_name_plural = "Laptop Audio"
+		verbose_name_plural = "Laptop Audio Options"
+		
+class LaptopLCD(models.Model):
+	
+	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	lcd = models.ForeignKey(LCD, on_delete=models.PROTECT)
+	
+	def __str__(self):
+		return f"{self.laptop} - {self.audio})"
+	
+	class Meta:
+		constraints = [
+			models.UniqueConstraint(	
+				fields=["laptop", "lcd"],
+				name="unique_laptop_lcd"
+			)
+		]
+		verbose_name_plural = "Laptop LCD Options"
