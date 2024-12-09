@@ -1,0 +1,1 @@
+cd dldb && scripts/build_db ; cd - 

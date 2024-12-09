@@ -160,3 +160,30 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# Vim etc swap files
+.py~
+
+# Vim temp files
+*~
+
+# Don't track sqlite databases
+*.sqlite
+*.sqlite2
+*.sqlite3
+*.sqlite3-
+
+# Don't track Django migration statements
+dldb/laptops/migrations/*.py
+
+# Don't track Django static file root
+dldb/static
+dldb/uploads
+
+# Don't track these initial db files
+# Has usernames and password - exclude it
+dldb/fixtures/initial_auth.json
+
+# Don't add django debug server ssl keys
+dldb/cert.crt
+dldb/cert.key

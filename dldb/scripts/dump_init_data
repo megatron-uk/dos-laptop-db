@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./manage.py dumpdata laptops --indent 3 > fixtures/initial_laptops.json

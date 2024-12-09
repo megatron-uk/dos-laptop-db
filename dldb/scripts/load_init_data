@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+if [ -s "fixtures/initial_auth.json" ]
+then
+	echo "Loading initial Django auth table entries..."
+	./manage.py loaddata fixtures/initial_auth.json
+	echo ""
+fi
+
+# Load default database entries for the laptop db
+if [ -s "fixtures/initial_laptop.json" ]
+then
+	echo "Loading initial Laptop database table entries..."
+	./manage.py loaddata fixtures/initial_laptop.json
+	echo ""
+fi
+
+echo "All initial data loaded"

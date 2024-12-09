@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#####################################################
+#
+# This script builds or synchronises the internal
+# django database (settings.DATABASES) to reflect
+# the current state of any models.py changes and
+# any pre-staged data which should be entered in them.
+#
+# By default this therefore rebuilds 'db.sqlite3' if
+# the local sqlite driver is defined and the file is
+# either missing or out of date compared to the model
+# structure.
+#
+#####################################################
+
+./manage.py makemigrations laptops
+./manage.py migrate

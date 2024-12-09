@@ -1,0 +1,107 @@
+[
+{
+   "model": "laptops.audiofm",
+   "pk": 1,
+   "fields": {
+      "name": "None"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 2,
+   "fields": {
+      "name": "OPL2 (Emulated)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 3,
+   "fields": {
+      "name": "OPL3 (Emulated)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 4,
+   "fields": {
+      "name": "OPL3 (Creative/CQM)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 5,
+   "fields": {
+      "name": "ESFM"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 6,
+   "fields": {
+      "name": "OPL2 (Yamaha)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 7,
+   "fields": {
+      "name": "OPL3 (Yamaha)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 8,
+   "fields": {
+      "name": "OPL4 (Yamaha)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 9,
+   "fields": {
+      "name": "OPL2 (Clone)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 10,
+   "fields": {
+      "name": "OPL3 (Clone)"
+   }
+},
+{
+   "model": "laptops.bus",
+   "pk": 1,
+   "fields": {
+      "name": "ISA"
+   }
+},
+{
+   "model": "laptops.bus",
+   "pk": 2,
+   "fields": {
+      "name": "VLB"
+   }
+},
+{
+   "model": "laptops.bus",
+   "pk": 3,
+   "fields": {
+      "name": "PCI"
+   }
+},
+{
+   "model": "laptops.bus",
+   "pk": 4,
+   "fields": {
+      "name": "PCIe"
+   }
+},
+{
+   "model": "laptops.bus",
+   "pk": 5,
+   "fields": {
+      "name": "MCA"
+   }
+}
+]

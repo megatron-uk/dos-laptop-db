@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#####################################
+#
+# Build a local Django database from
+# absolute scratch, including schema,
+# and all static/initial data.
+#
+#####################################
+
+source common
+
+echo ""
+echo "DOS Laptop Database - Intial Database Builder"
+echo "=========================================="
+echo "This will REMOVE all content of the application database."
+echo ""
+echo "Are you sure you want to build the database from scratch?"
+echo ""
+echo "y/n ?"
+read c
+if [ "$c" = "y" ]
+then
+	rm -v "db.sqlite3"
+else
+	exit 0
+fi
+echo ""
+
+# Create the database tables from the django model definitions
+scripts/sync_db
+echo ""
+
+# Inject a basic superuser/admin account (NOT FOR USE IN PRODUCTION!)
+scripts/create_superuser
+echo ""
+
+# Inject any pre-defined database content. This should have been generated with 'manage.py dumpdata --indent 3 app_name > initial_app_name.json' beforehand
+scripts/load_init_data
+echo ""

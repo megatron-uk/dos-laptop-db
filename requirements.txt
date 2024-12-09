@@ -1,0 +1,19 @@
+# Base web framework
+Django>=5.1.2
+django_extensions
+
+# builtin
+#sqlite3
+
+# Database connectivity
+PyMySQL
+
+# SSL for dev server https support
+pyOpenSSL
+Werkzeug
+
+# Wordcloud generator for project visualisation
+Wordcloud
+
+# Image manipulation
+Pillow>=11.0

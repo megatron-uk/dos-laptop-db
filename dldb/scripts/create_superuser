@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#####################################################
+#
+# This script injects a Django admin user into
+# the internal django database. DO NOT use in production!
+#
+#####################################################
+
+export DJANGO_SUPERUSER_PASSWORD="password"
+./manage.py createsuperuser --noinput --username admin --email "user@localhost"
