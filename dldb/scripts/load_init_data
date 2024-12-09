@@ -9,10 +9,10 @@ then
 fi
 
 # Load default database entries for the laptop db
-if [ -s "fixtures/initial_laptop.json" ]
+if [ -s "fixtures/initial_laptops.json" ]
 then
 	echo "Loading initial Laptop database table entries..."
-	./manage.py loaddata fixtures/initial_laptop.json
+	./manage.py loaddata fixtures/initial_laptops.json
 	echo ""
 fi
 

@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class AudioDriver(models.Model):
 	""" No driver, one time init, loadable driver, tsr, etc """
 
@@ -12,9 +10,9 @@ class AudioDriver(models.Model):
 	
 	class Meta:
 		verbose_name_plural = "Audio Driver"
-	
-class AudioFM(models.Model):
-	""" OPL2, ESFM, Emulated OPL3 etc """
+
+class AudioDigiOther(models.Model):
+	""" WSS etc"""
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
 	
@@ -22,7 +20,7 @@ class AudioFM(models.Model):
 		return f"{self.name}" 
 	
 	class Meta:
-		verbose_name_plural = "Audio FM Support"
+		verbose_name_plural = "Audio Digi Other Support"
 
 class AudioDigiSB(models.Model):
 	""" SB, SB Pro, SB 16 """
@@ -35,8 +33,8 @@ class AudioDigiSB(models.Model):
 	class Meta:
 		verbose_name_plural = "Audio Digi SB Support"
 	
-class AudioDigiOther(models.Model):
-	""" WSS etc"""
+class AudioFM(models.Model):
+	""" OPL2, ESFM, Emulated OPL3 etc """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
 	
@@ -44,7 +42,7 @@ class AudioDigiOther(models.Model):
 		return f"{self.name}" 
 	
 	class Meta:
-		verbose_name_plural = "Audio Digi Other Support"
+		verbose_name_plural = "Audio FM Support"
 	
 class AudioMIDI(models.Model):
 	""" MPU401 etc """
@@ -70,40 +68,8 @@ class Bus(models.Model):
 	
 	class Meta:
 		verbose_name_plural = "Bus Interface"
-	
-class VideoScalingHW(models.Model):
-	""" No scaling in hw, bilinear, etc """
-	
-	name = models.CharField(max_length = 255, unique = True, blank = False)
-	
-	def __str__(self):
-		return f"{self.name}" 
-	
-	class Meta:
-		verbose_name_plural = "Video Scaling (HW)"
-	
-class VideoScalingSW(models.Model):
-	""" No scaling software, driver, TSE """
-	
-	name = models.CharField(max_length = 255, unique = True, blank = False)
-	
-	def __str__(self):
-		return f"{self.name}" 
-	
-	class Meta:
-		verbose_name_plural = "Video Scaling (SW)"
-	
-class VideoAccel3DTypes(models.Model):
-	""" OpenGL, S3D, Glige, Direct3D """
-	
-	name = models.CharField(max_length = 255, unique = True, blank = False)
-	
-	def __str__(self):
-		return f"{self.name}" 
-	
-	class Meta:
-		verbose_name_plural = "Video 3D Accleration Types"
-	
+
+# Create your models here.
 class Audio(models.Model):
 	""" A soundcard """
 	
@@ -122,7 +88,108 @@ class Audio(models.Model):
 	
 	class Meta:
 		verbose_name_plural = "Audio Cards"
+
+class Chipset(models.Model):
+	""" Intel 440BX """
 	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+
+	def __str__(self):
+		return f"{self.name}" 
+	
+	class Meta:
+		verbose_name_plural = "Chipsets"
+
+class CPUClass(models.Model):
+	""" Intel Pentium """
+	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+
+	def __str__(self):
+		return f"{self.name}" 
+	
+	class Meta:
+		verbose_name_plural = "CPU Types"
+
+class LCDType(models.Model):
+	""" TFT, DSTN """
+	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+
+	def __str__(self):
+		return f"{self.name}" 
+	
+	class Meta:
+		verbose_name_plural = "LCD Types"
+
+class LCD(models.Model):
+	
+	res_x = models.IntegerField(blank = False)
+	res_y = models.IntegerField(blank = False)
+	screen_size = models.FloatField(blank = False)
+	screen_type = models.ForeignKey(LCDType, on_delete=models.PROTECT)
+	
+	def __str__(self):
+		return f'{self.res_x}x{self.yes_y}, {self.screen_size}" ({self.screen_type.name})' 
+	
+	class Meta:
+		verbose_name_plural = "LCD Screen Models"
+
+class Mouse(models.Model):
+	""" Trackpad, Trackpoint, Trackball, None, etc """
+	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+	
+	def __str__(self):
+		return f"{self.name}" 
+	
+	class Meta:
+		verbose_name_plural = "Mouse/Pointer Types"
+
+class RamType(models.Model):
+	""" PC66, PC100 """
+	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+
+	def __str__(self):
+		return f"{self.name} RAM" 
+	
+	class Meta:
+		verbose_name_plural = "RAM Types"
+
+class VideoAccel3DTypes(models.Model):
+	""" OpenGL, S3D, Glige, Direct3D """
+	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+	
+	def __str__(self):
+		return f"{self.name}" 
+	
+	class Meta:
+		verbose_name_plural = "Video 3D Accleration Types"
+
+class VideoScalingHW(models.Model):
+	""" No scaling in hw, bilinear, etc """
+	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+	
+	def __str__(self):
+		return f"{self.name}" 
+	
+	class Meta:
+		verbose_name_plural = "Video Scaling (HW)"
+
+class VideoScalingSW(models.Model):
+	""" No scaling software, driver, TSE """
+	
+	name = models.CharField(max_length = 255, unique = True, blank = False)
+	
+	def __str__(self):
+		return f"{self.name}" 
+	
+	class Meta:
+		verbose_name_plural = "Video Scaling (HW)"
+
 class Video(models.Model):
 	""" A videocard """
 	
@@ -157,3 +224,55 @@ class VideoAccel(models.Model):
 		
 	def __str__(self):
 		return f"{self.video.manufacturer} {self.video.model} ({self.video.ram} MB) - {self.accel3d.name}"
+
+class Laptop(models.Model):
+	"""IBM Thinkpad 385ED """
+	
+	manufacturer = models.CharField(max_length = 255, unique = False, blank = False)
+	model = models.CharField(max_length = 255, unique = False, blank = False)
+	submodel = models.CharField(max_length = 255, unique = False, blank = False)
+	chipset = models.ForeignKey(Chipset, on_delete=models.PROTECT)
+	cpu = models.ForeignKey(CPUClass, on_delete=models.PROTECT)
+	cpumin = models.IntegerField(default=0, blank=False)
+	cpumax = models.IntegerField(default=0, blank=False)
+	ram = models.ForeignKey(RamType, on_delete=models.PROTECT)
+	ramslots = models.IntegerField(default=0, blank=False)
+	rammin = models.IntegerField(default=0, blank=False)
+	rammax = models.IntegerField(default=0, blank=False)
+	lcd = models.ForeignKey(LCD, on_delete=models.PROTECT)
+	video = models.ForeignKey(Video, on_delete=models.PROTECT)
+	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
+	audio_out = models.BooleanField(default = False)
+	line_in = models.BooleanField(default = False)
+	mic_in = models.BooleanField(default = False)
+	pcmcia = models.IntegerField(default = 0, blank=False)
+	mouse = models.ForeignKey(Mouse, on_delete=models.PROTECT)
+	
+	def __str__(self):
+		return f"{self.manufacturer} {self.model} {self.submodel} ({self.lcd}))"
+	
+	class Meta:
+		constraints = [
+			models.UniqueConstraint(	
+				fields=["manufacturer", "model", "submodel", "lcd"],
+				name="unique_laptop"
+			)
+		]
+		verbose_name_plural = "Laptops"
+
+class LaptopAudio(models.Model):
+	
+	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
+	
+	def __str__(self):
+		return f"{self.laptop} - {self.audio})"
+	
+	class Meta:
+		constraints = [
+			models.UniqueConstraint(	
+				fields=["laptop", "audio"],
+				name="unique_laptop_audio"
+			)
+		]
+		verbose_name_plural = "Laptop Audio"
