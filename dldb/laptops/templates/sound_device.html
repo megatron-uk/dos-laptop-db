@@ -42,7 +42,7 @@
 		<div class="row">
 			<h5>Notes</h5>
 			{% if audio.notes %}
-				<p>{{audio.notes|safe}}</p>
+				<p>{{audio.notes|linebreaks}}</p>
 				{% if request.user %}
 					<a href="{% url 'admin:laptops_audio_change' audio.pk %}">Edit notes</a>
 				{% endif %}

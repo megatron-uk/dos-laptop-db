@@ -12,7 +12,7 @@ def home(request):
 	afm = AudioFM.objects.all()
 	amidi = AudioMIDI.objects.all()
 	aman = AudioManufacturer.objects.all()
-	audio = Audio.objects.all().order_by('manufacturer', 'model')
+	audio = Audio.objects.all().order_by('manufacturer__manufacturer', 'model')
 	
 	data = {
 		'adriver' : adriver,

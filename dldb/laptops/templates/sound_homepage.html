@@ -3,6 +3,7 @@
 
 	<div class="container">
 		<div class="row">
+			<h5>Audio Devices</h5>
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
@@ -27,6 +28,11 @@
 				{% endfor %}
 				</tbody>
 			</table>
+			{% if request.user %}
+			<a href="{% url 'admin:laptops_audio_add' %}">Add new device</a>
+			{% else %}
+			<a href="">You must login to add new devices</a>
+			{% endif %}
 		</div>
 	</div>
 
