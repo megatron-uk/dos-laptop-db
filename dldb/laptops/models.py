@@ -375,7 +375,7 @@ class AudioRecording(models.Model):
 	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
 	title = models.CharField(max_length = 255, unique = False, blank = False)
 	notes = models.TextField(blank = False)
-	recording = models.ImageField(upload_to="uploads/audio/")
+	recording = models.FileField(upload_to="uploads/audio/")
 	
 	def __str__(self):
 		return f"Audio Recording: {self.audio} - {self.title}"
@@ -383,7 +383,7 @@ class AudioRecording(models.Model):
 class AudioImage(models.Model):
 	""" Audio chipset/card images """
 
-	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
 	title = models.CharField(max_length = 255, unique = False, blank = False)
 	notes = models.TextField(blank = False)
 	image = models.ImageField(upload_to="uploads/images/audio/")

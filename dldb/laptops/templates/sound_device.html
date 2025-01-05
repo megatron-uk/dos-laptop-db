@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block content1 %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="{% url 'sound_home' %}">Audio &amp; Sound</a></li>
+					<li class="breadcrumb-item active">{{audio.manufacturer.manufacturer}}</li>
+					<li class="breadcrumb-item">{{audio.model}}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h5>Audio Device Details</h5>
+			<div class="col">
+				<table class="table table-bordered table-hover">
+					<tr><th>Manufacturer</th><td>{{audio.manufacturer.manufacturer}}</td></tr>
+					<tr><th>Model</th><td>{{audio.model}}</td></tr>
+					<tr><th>Bus Type</th><td>{{audio.bus.name}}</td></tr>
+				</table>
+				{% if request.user %}
+				<a href="{% url 'admin:laptops_audio_change' audio.pk %}">Edit this device</a>
+				{% else %}
+				<a href="">You must login to edit this device</a>
+				{% endif %}
+			</div>
+			
+			<div class="col">
+				<table class="table table-bordered table-hover">
+					<tr><th>Soundblaster Support</th><td>{{audio.digi_sb}}</td></tr>
+					<tr><th>Other Digital Support</th><td>{{audio.digi_other}}</td></tr>
+					<tr><th>FM Support</th><td>{{audio.fm}}</td></tr>
+					<tr><th>MIDI Support</th><td>{{audio.midi}}</td></tr>
+					<tr><th>DOS Driver Type</th><td>{{audio.driver}}</td></tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<h5>Notes</h5>
+			{% if audio.notes %}
+				<p>{{audio.notes|safe}}</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_audio_change' audio.pk %}">Edit notes</a>
+				{% endif %}
+			{% else %}
+				<p>There are no notes stored for this device.</p>
+			{% endif %}
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<h5>Audio Device Images</h5>
+			{% if device_images %}
+				<div class="row">
+				{% for i in device_images %}
+					<div class="col-2">
+						<img height="200" src="{{i.image.url}}" class="rounded img-thumbnail">
+						{% if request.user %}
+						<a href="{% url 'admin:laptops_audioimage_change' i.pk %}">Edit</a>
+						{% endif %}
+						<a href="{{i.image.url}}">View</a>
+					</div>
+				{% endfor %}
+				</div>
+			{% else %}
+				<p>There are no images stored for this device.</p>
+			{% endif %}
+			{% if request.user %}
+				<a href="{% url 'admin:laptops_audioimage_add'%}?audio={{audio.pk}}">Add images</a>
+			{% endif %}
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row gap-audio">
+			<h5>Audio Device Examples</h5>
+			{% if device_examples %}
+				{% for e in device_examples %}
+					<div class="col-4">
+					<h6>{{e.title}}</h6>
+					<span class="calamansi" 
+						{% load static %}
+						data-skin="{% static 'player/' %}" data-source="{{e.recording.url}}">
+						Play Song
+					</span>
+					<p>{{e.notes}}</p>
+					{% if request.user %}
+						<a href="{% url 'admin:laptops_audiorecording_change' e.pk %}">Edit</a>
+					{% endif %}
+					</div>
+				{% endfor %}
+			{% else %}
+				<p>There are no audio examples stored for this device.</p>
+			{% endif %}
+			{% if request.user %}
+				<a href="{% url 'admin:laptops_audiorecording_add'%}?audio={{audio.pk}}">Add examples</a>
+			{% endif %}
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<h5>Laptops with this device</h5>
+			{% if laptops %}
+				<table class="table table-bordered table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Manufacturer</th>
+							<th>Model</th>
+							<th>Sub-Model</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for l in laptops %}
+							<tr>
+								<td>{{l.manufacturer.manufacturer}}</td>
+								<td>{{l.model}}</td>
+								<td>{{l.submodel}}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+			<p>There are no laptops in the database which use this device.</p>
+			{% endif %}
+		</div>
+	</div>
+
+	{% load static %}
+	<script src="{% static 'js/calamansi.min.js' %}"></script>
+	<script>
+		Calamansi.autoload();
+	</script>
+	
+{% endblock %}
