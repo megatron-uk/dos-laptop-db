@@ -3,140 +3,154 @@
    "model": "laptops.audiodriver",
    "pk": 1,
    "fields": {
-      "name": "Not Required"
+      "name": "Not required"
    }
 },
 {
    "model": "laptops.audiodriver",
    "pk": 2,
    "fields": {
-      "name": "DOS Initialisation Only"
+      "name": "Initialisation only"
    }
 },
 {
    "model": "laptops.audiodriver",
    "pk": 3,
    "fields": {
-      "name": "DOS Driver"
+      "name": "Driver"
    }
 },
 {
    "model": "laptops.audiodriver",
    "pk": 4,
    "fields": {
-      "name": "DOS TSR"
-   }
-},
-{
-   "model": "laptops.audiodriver",
-   "pk": 5,
-   "fields": {
-      "name": "No DOS Support"
+      "name": "TSR"
    }
 },
 {
    "model": "laptops.audiodigiother",
    "pk": 1,
    "fields": {
-      "name": "WSS (16-bit)"
+      "name": "WSS"
+   }
+},
+{
+   "model": "laptops.audiodigiother",
+   "pk": 2,
+   "fields": {
+      "name": "DirectSound"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 1,
    "fields": {
-      "name": "SB 1.0 / 1.5 / 2.0 (Mono, 8-bit)"
+      "name": "SB 1.0/2.0 (8bit mono)"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 2,
    "fields": {
-      "name": "SB Pro (Stereo, 8-bit)"
+      "name": "SB Pro 1.0/2.0 (8bit stereo)"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 3,
    "fields": {
-      "name": "SB16 (Stereo, 16-bit)"
+      "name": "SB 16 (16bit stereo)"
+   }
+},
+{
+   "model": "laptops.audiodigisb",
+   "pk": 4,
+   "fields": {
+      "name": "AWE32/64"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 1,
    "fields": {
-      "name": "OPL2 (Yamaha)"
+      "name": "OPL2 (real, single, mono)"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 2,
    "fields": {
-      "name": "OPL3 (Yamaha)"
+      "name": "OPL2 (real, dual, stereo)"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 3,
    "fields": {
-      "name": "OPL3 (Creative/CQM)"
+      "name": "OPL3 (real, stereo)"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 4,
    "fields": {
-      "name": "OPL2 (Emulated)"
+      "name": "OPL4"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 5,
    "fields": {
-      "name": "OPL3 (Emulated)"
+      "name": "ESFM"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 6,
    "fields": {
-      "name": "ESS ESFM"
+      "name": "OPL2 (emulated)"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 7,
    "fields": {
-      "name": "OPL4 (Yamaha)"
-   }
-},
-{
-   "model": "laptops.audiomidi",
-   "pk": 1,
-   "fields": {
-      "name": "MIDI (GM only)"
-   }
-},
-{
-   "model": "laptops.audiomidi",
-   "pk": 2,
-   "fields": {
-      "name": "MIDI (GM + GS)"
+      "name": "OPL3 (emulated)"
    }
 },
 {
    "model": "laptops.audiomidi",
    "pk": 3,
    "fields": {
-      "name": "MIDI (GM + XG)"
+      "name": "MIDI (non-GM/GS)"
    }
 },
 {
    "model": "laptops.audiomidi",
    "pk": 4,
    "fields": {
-      "name": "MIDI (Non-GM)"
+      "name": "GM"
+   }
+},
+{
+   "model": "laptops.audiomidi",
+   "pk": 5,
+   "fields": {
+      "name": "GS"
+   }
+},
+{
+   "model": "laptops.audiomidi",
+   "pk": 6,
+   "fields": {
+      "name": "XG"
+   }
+},
+{
+   "model": "laptops.audiomidi",
+   "pk": 7,
+   "fields": {
+      "name": "None"
    }
 },
 {
@@ -150,350 +164,240 @@
    "model": "laptops.bus",
    "pk": 2,
    "fields": {
-      "name": "VLB"
+      "name": "VESA VLB"
    }
 },
 {
    "model": "laptops.bus",
    "pk": 3,
-   "fields": {
-      "name": "MCA"
-   }
-},
-{
-   "model": "laptops.bus",
-   "pk": 4,
    "fields": {
       "name": "PCI"
    }
 },
 {
    "model": "laptops.bus",
-   "pk": 5,
+   "pk": 4,
    "fields": {
       "name": "PCIe"
    }
 },
 {
-   "model": "laptops.chipset",
-   "pk": 1,
-   "fields": {
-      "name": "Intel 420TX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 2,
-   "fields": {
-      "name": "Intel 420ZX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 3,
-   "fields": {
-      "name": "Intel 420EX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 4,
-   "fields": {
-      "name": "Intel 430LX"
-   }
-},
-{
-   "model": "laptops.chipset",
+   "model": "laptops.bus",
    "pk": 5,
    "fields": {
-      "name": "Intel 430NX"
+      "name": "AGP"
    }
 },
 {
-   "model": "laptops.chipset",
+   "model": "laptops.bus",
    "pk": 6,
    "fields": {
-      "name": "Intel 430FX"
+      "name": "Other"
    }
 },
 {
-   "model": "laptops.chipset",
-   "pk": 7,
+   "model": "laptops.audiomanufacturer",
+   "pk": 1,
    "fields": {
-      "name": "Intel 430MX"
+      "manufacturer": "ESS"
    }
 },
 {
-   "model": "laptops.chipset",
-   "pk": 8,
+   "model": "laptops.audiomanufacturer",
+   "pk": 2,
    "fields": {
-      "name": "Intel 430HX"
+      "manufacturer": "Yamaha"
    }
 },
 {
-   "model": "laptops.chipset",
-   "pk": 9,
+   "model": "laptops.audiomanufacturer",
+   "pk": 3,
    "fields": {
-      "name": "Intel 430VX"
+      "manufacturer": "Creative Labs"
+   }
+},
+{
+   "model": "laptops.audiomanufacturer",
+   "pk": 4,
+   "fields": {
+      "manufacturer": "Neomagic"
+   }
+},
+{
+   "model": "laptops.audiomanufacturer",
+   "pk": 5,
+   "fields": {
+      "manufacturer": "IBM"
+   }
+},
+{
+   "model": "laptops.audiomanufacturer",
+   "pk": 6,
+   "fields": {
+      "manufacturer": "Crystal Semiconductor"
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 1,
+   "fields": {
+      "manufacturer": 1,
+      "model": "1946 Solo-1E",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 2,
+   "fields": {
+      "manufacturer": 1,
+      "model": "1938 Solo-1",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
    }
 },
 {
    "model": "laptops.chipset",
-   "pk": 10,
+   "pk": 1,
    "fields": {
       "name": "Intel 430TX"
    }
 },
 {
    "model": "laptops.chipset",
-   "pk": 11,
-   "fields": {
-      "name": "Intel 450KX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 12,
-   "fields": {
-      "name": "Intel 450GX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 13,
-   "fields": {
-      "name": "Intel 440FX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 14,
-   "fields": {
-      "name": "Intel 440LX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 15,
-   "fields": {
-      "name": "Intel 440EX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 16,
+   "pk": 2,
    "fields": {
       "name": "Intel 440BX"
    }
 },
 {
    "model": "laptops.chipset",
-   "pk": 17,
-   "fields": {
-      "name": "Intel 440GX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 18,
-   "fields": {
-      "name": "Intel 450NX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 19,
+   "pk": 3,
    "fields": {
       "name": "Intel 440ZX"
    }
 },
 {
    "model": "laptops.chipset",
-   "pk": 20,
+   "pk": 4,
    "fields": {
       "name": "Intel 440MX"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 21,
-   "fields": {
-      "name": "Intel 810"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 22,
-   "fields": {
-      "name": "Intel 810E"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 23,
-   "fields": {
-      "name": "Intel 815"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 24,
-   "fields": {
-      "name": "Intel 815E"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 25,
-   "fields": {
-      "name": "Intel 815G"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 26,
-   "fields": {
-      "name": "Intel 815EG"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 27,
-   "fields": {
-      "name": "Intel 815P"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 28,
-   "fields": {
-      "name": "Intel 815EP"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 29,
-   "fields": {
-      "name": "Intel 820"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 30,
-   "fields": {
-      "name": "Intel 820E"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 31,
-   "fields": {
-      "name": "Intel 840"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 32,
-   "fields": {
-      "name": "Intel 815EM"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 33,
-   "fields": {
-      "name": "Intel 830M"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 34,
-   "fields": {
-      "name": "Intel 830MP"
-   }
-},
-{
-   "model": "laptops.chipset",
-   "pk": 35,
-   "fields": {
-      "name": "Intel 830MG"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 1,
    "fields": {
-      "name": "Intel Pentium"
+      "name": "286"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 2,
    "fields": {
-      "name": "Intel Pentium MMX"
+      "name": "386SX (inc deriviatives)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 3,
    "fields": {
-      "name": "Intel Pentium II"
+      "name": "386DX (inc deriviatives"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 4,
    "fields": {
-      "name": "Intel Pentium III"
+      "name": "486SX"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 5,
    "fields": {
-      "name": "Intel Celeron"
+      "name": "486DX"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 6,
    "fields": {
-      "name": "486 (SX / DX)"
+      "name": "486DX2"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 7,
    "fields": {
-      "name": "486 (DX-2)"
+      "name": "486DX4"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 8,
    "fields": {
-      "name": "486 (DX-4)"
+      "name": "Intel Pentium"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 9,
    "fields": {
-      "name": "386"
+      "name": "Intel Pentium MMX"
+   }
+},
+{
+   "model": "laptops.cpuclass",
+   "pk": 10,
+   "fields": {
+      "name": "Intel Pentium II"
+   }
+},
+{
+   "model": "laptops.cpuclass",
+   "pk": 11,
+   "fields": {
+      "name": "Intel Pentium III"
+   }
+},
+{
+   "model": "laptops.cpuclass",
+   "pk": 12,
+   "fields": {
+      "name": "Intel Pentium 4"
+   }
+},
+{
+   "model": "laptops.cpuclass",
+   "pk": 13,
+   "fields": {
+      "name": "Intel Celeron"
    }
 },
 {
    "model": "laptops.lcdtype",
    "pk": 1,
    "fields": {
-      "name": "DSTN"
+      "name": "TFT (active matrix)"
    }
 },
 {
    "model": "laptops.lcdtype",
    "pk": 2,
    "fields": {
-      "name": "FRSTN"
+      "name": "DSTN"
    }
 },
 {
@@ -504,94 +408,59 @@
    }
 },
 {
-   "model": "laptops.lcdtype",
-   "pk": 4,
-   "fields": {
-      "name": "TFT"
-   }
-},
-{
-   "model": "laptops.lcdtype",
-   "pk": 5,
-   "fields": {
-      "name": "IPS"
-   }
-},
-{
    "model": "laptops.mouse",
    "pk": 1,
    "fields": {
-      "name": "Trackpoint / Nub"
+      "name": "None"
    }
 },
 {
    "model": "laptops.mouse",
    "pk": 2,
+   "fields": {
+      "name": "Trackball"
+   }
+},
+{
+   "model": "laptops.mouse",
+   "pk": 3,
    "fields": {
       "name": "Trackpad"
    }
 },
 {
    "model": "laptops.mouse",
-   "pk": 3,
+   "pk": 4,
    "fields": {
-      "name": "Trackball"
+      "name": "Trackpoint"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 1,
    "fields": {
-      "name": "PC66 SO-DIMM"
+      "name": "EDO SO-DIMM"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 2,
    "fields": {
-      "name": "PC100 SO-DIMM"
+      "name": "PC66 SO-DIMM"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 3,
    "fields": {
-      "name": "PC133 SO-DIMM"
+      "name": "PC100 SO-DIMM"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 4,
    "fields": {
-      "name": "EDO SO-DIMM"
-   }
-},
-{
-   "model": "laptops.ramtype",
-   "pk": 5,
-   "fields": {
-      "name": "FPM SO-DIMM"
-   }
-},
-{
-   "model": "laptops.ramtype",
-   "pk": 6,
-   "fields": {
-      "name": "FPM SIMM (72pin)"
-   }
-},
-{
-   "model": "laptops.ramtype",
-   "pk": 7,
-   "fields": {
-      "name": "EDO SIMM (72pin)"
-   }
-},
-{
-   "model": "laptops.ramtype",
-   "pk": 8,
-   "fields": {
-      "name": "SIMM (30pin)"
+      "name": "PC133 SO-DIMM"
    }
 },
 {
@@ -605,28 +474,28 @@
    "model": "laptops.videoaccel3dtypes",
    "pk": 2,
    "fields": {
-      "name": "S3D"
+      "name": "Glide"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 3,
    "fields": {
-      "name": "Glide"
+      "name": "SGL"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 4,
    "fields": {
-      "name": "CGL"
+      "name": "S3D"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 5,
    "fields": {
-      "name": "Matrox"
+      "name": "MeTaL"
    }
 },
 {
@@ -640,33 +509,26 @@
    "model": "laptops.videoaccel3dtypes",
    "pk": 7,
    "fields": {
-      "name": "NV1"
+      "name": "MSI"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 8,
    "fields": {
-      "name": "PowerSGL"
+      "name": "NV1"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 9,
    "fields": {
-      "name": "S3 MeTal"
-   }
-},
-{
-   "model": "laptops.videoaccel3dtypes",
-   "pk": 10,
-   "fields": {
       "name": "OpenGL"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
-   "pk": 11,
+   "pk": 10,
    "fields": {
       "name": "Direct3D"
    }
@@ -675,42 +537,154 @@
    "model": "laptops.videoscalinghw",
    "pk": 1,
    "fields": {
-      "name": "No H/W LCD Scaling"
+      "name": "None"
    }
 },
 {
    "model": "laptops.videoscalinghw",
    "pk": 2,
    "fields": {
-      "name": "Basic H/W LCD Scaling"
+      "name": "Basic Support"
    }
 },
 {
    "model": "laptops.videoscalinghw",
    "pk": 3,
    "fields": {
-      "name": "Advanced H/W LCD Scaling"
+      "name": "Good Quality"
+   }
+},
+{
+   "model": "laptops.videoscalinghw",
+   "pk": 4,
+   "fields": {
+      "name": "Great Quality"
    }
 },
 {
    "model": "laptops.videoscalingsw",
    "pk": 1,
    "fields": {
-      "name": "No S/W LCD Scaling Tool"
+      "name": "None"
    }
 },
 {
    "model": "laptops.videoscalingsw",
    "pk": 2,
    "fields": {
-      "name": "Basic S/W LCD Scaling Tool"
+      "name": "Basic Support"
    }
 },
 {
    "model": "laptops.videoscalingsw",
    "pk": 3,
    "fields": {
-      "name": "Advanced S/W LCD Scaling Tool"
+      "name": "Good Quality"
+   }
+},
+{
+   "model": "laptops.videoscalingsw",
+   "pk": 4,
+   "fields": {
+      "name": "Great Quality"
+   }
+},
+{
+   "model": "laptops.videomanufacturer",
+   "pk": 1,
+   "fields": {
+      "manufacturer": "ATI"
+   }
+},
+{
+   "model": "laptops.videomanufacturer",
+   "pk": 2,
+   "fields": {
+      "manufacturer": "Cirrus Logic"
+   }
+},
+{
+   "model": "laptops.videomanufacturer",
+   "pk": 3,
+   "fields": {
+      "manufacturer": "Headland"
+   }
+},
+{
+   "model": "laptops.videomanufacturer",
+   "pk": 4,
+   "fields": {
+      "manufacturer": "Matrox"
+   }
+},
+{
+   "model": "laptops.videomanufacturer",
+   "pk": 5,
+   "fields": {
+      "manufacturer": "Neomagic"
+   }
+},
+{
+   "model": "laptops.videomanufacturer",
+   "pk": 6,
+   "fields": {
+      "manufacturer": "Nvidia"
+   }
+},
+{
+   "model": "laptops.videomanufacturer",
+   "pk": 7,
+   "fields": {
+      "manufacturer": "S3"
+   }
+},
+{
+   "model": "laptops.laptopmanufacturer",
+   "pk": 1,
+   "fields": {
+      "manufacturer": "IBM"
+   }
+},
+{
+   "model": "laptops.laptopmanufacturer",
+   "pk": 2,
+   "fields": {
+      "manufacturer": "Toshiba"
+   }
+},
+{
+   "model": "laptops.laptopmanufacturer",
+   "pk": 3,
+   "fields": {
+      "manufacturer": "Dell"
+   }
+},
+{
+   "model": "laptops.laptopmanufacturer",
+   "pk": 4,
+   "fields": {
+      "manufacturer": "Sony"
+   }
+},
+{
+   "model": "laptops.laptopmanufacturer",
+   "pk": 5,
+   "fields": {
+      "manufacturer": "HP"
+   }
+},
+{
+   "model": "laptops.laptopmanufacturer",
+   "pk": 6,
+   "fields": {
+      "manufacturer": "Acer"
+   }
+},
+{
+   "model": "laptops.laptopmanufacturer",
+   "pk": 7,
+   "fields": {
+      "manufacturer": "Fujitsu Siemens"
    }
 }
 ]

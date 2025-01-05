@@ -8,8 +8,6 @@
 #
 #####################################
 
-source common
-
 echo ""
 echo "DOS Laptop Database - Intial Database Builder"
 echo "=========================================="
