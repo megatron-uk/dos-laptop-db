@@ -28,6 +28,13 @@
    }
 },
 {
+   "model": "laptops.audiodriver",
+   "pk": 5,
+   "fields": {
+      "name": "No DOS driver"
+   }
+},
+{
    "model": "laptops.audiodigiother",
    "pk": 1,
    "fields": {
@@ -39,6 +46,20 @@
    "pk": 2,
    "fields": {
       "name": "DirectSound"
+   }
+},
+{
+   "model": "laptops.audiodigiother",
+   "pk": 3,
+   "fields": {
+      "name": "AC97"
+   }
+},
+{
+   "model": "laptops.audiodigiother",
+   "pk": 4,
+   "fields": {
+      "name": "None"
    }
 },
 {
@@ -67,6 +88,13 @@
    "pk": 4,
    "fields": {
       "name": "AWE32/64"
+   }
+},
+{
+   "model": "laptops.audiodigisb",
+   "pk": 5,
+   "fields": {
+      "name": "None"
    }
 },
 {
@@ -116,6 +144,13 @@
    "pk": 7,
    "fields": {
       "name": "OPL3 (emulated)"
+   }
+},
+{
+   "model": "laptops.audiofm",
+   "pk": 8,
+   "fields": {
+      "name": "None"
    }
 },
 {
@@ -242,8 +277,188 @@
    "pk": 1,
    "fields": {
       "manufacturer": 1,
-      "model": "1946 Solo-1E",
+      "model": "ES1946 Solo-1E",
       "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": "The ES1946 Solo-1E™ PCI AudioDrive® solution implements a single-chip PCI audio solution, providing high-quality audio processing while maintaining full legacy DOS game compatibility.\r\nWith a dynamic range over 80 dB, the ES1946 complies with the Microsoft® PC 97 / PC 98 / PC 99 specifications and meets WHQL audio requirements. The ES1946 forms a complete audio subsystem on a single chip for notebook platforms.\r\n\r\nThe ES1946 includes an I2S Zoom Video port interface which allows playback of MPEG audio using the 16-bit stereo music DAC; thus reducing the total audio solution chip count.\r\n\r\nThe ES1946 incorporates a microcontroller, ESFM™ music synthesizer, 16-bit stereo wave ADC and DAC, 16-bit stereo music DAC, MPU-401 UART mode serial port, I2S Zoom Video port, serial port interface to external wavetable music synthesizer, dual game port, hardware master volume control,\r\nDMA control logic with FIFO, and PCI bus interface logic. There are three stereo inputs (typically line-in, CD audio, and auxiliary line) and a mono microphone input.\r\n\r\nThe ES1946 also incorporates Spatializer® VBX™ technology, provided by Desper Products, Inc., a subsidiary of Spatializer Audio Laboratories, Inc. This processor expands the stereo sound field emitted by two speakers to create a resonant 3-D sound environment.\r\n\r\nThe ES1946 integrates ESS’ field-proven hardware design for DOS game compatibility with hardware FM synthesis (ESFM™ synthesis) and three methods for legacy audio control interface: PC/PCI, Distributed DMA, and Transparent DMA. Transparent DMA requires no sideband signals from PC core logic chipsets in addition to the standard PCI 2.2 bus. TDMA is compatible with Pentium®, Pentium II®, and Pentium Pro® chipsets as well as standard PCI add-in cards.\r\n\r\nThe ES1946 provides a serial EEPROM interface for ease of programming the Subsystem ID and Subsystem Vendor ID.\r\n\r\nThe ES1946 can record, compress, and play back voice, sound, and music with built-in mixer controls. It supports stereo full-duplex operation for simultaneous record and playback. The ESFM™ synthesizer has extended capabilities within native mode operation providing superior sound and power-down capabilities.\r\n\r\nThe ES1946 is compliant with Advanced Power Management (APM) 1.2, Advanced Configuration and Power Interface (ACPI) 1.0, and PCI Power Management Interface (PPMI) 1.0.\r\n\r\nIt is available in an industry-standard 100-pin Thin Quad Flat Pack (TQFP) package.\r\n\r\n(Taken from the ESS Solo-1E device whitepaper)\r\n\r\n=======\r\n\r\nThe ESS Solo-1E is the very last of the audio chips from ESS which has the great ESFM FM-synthesiser technology. Whilst it can be debated whether a real OPL2/OPL3 chip from Yamaha sounds better or not, it cannot be debated that all of the subsequent ESS chips (the ESS Allegro, ESS Maestro etc) are objectively worse-sounding for DOS gaming purposes.\r\n\r\nThe Solo-1 and Solo-1E are both initialised using the same tools: \r\n\r\n- ESSOLO.SYS (in config.sys)\r\n- ESSOLO.COM (in autoexec.bat)\r\n- ESSOLO.INI (binary configuration -not text!- file located at c:\\)\r\n\r\nIn most configurations, the SYS and COM tools simply configure the card and then exit - leaving no running driver or TSR in memory."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 2,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1938 Solo-1",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": "The Solo-1TM PCI AudioDrive® solution implements a singlechip PCI audio solution, providing high-quality audio processing while maintaining full legacy DOS game compatibility. With a dynamic range over 80 dB, the Solo-1 complies with the Microsoft® PC 97/PC 98 specifications\r\nand meets WHQL audio requirements. The Solo-1 forms a complete audio subsystem on a single chip for both add-in card and motherboard platforms.\r\n\r\nThe Solo-1 incorporates a microcontroller, ESFMTM music synthesizer, 3-D stereo effects processor, 16-bit stereo wave ADC and DAC, 16-bit stereo music DAC, MPU-401 UART mode serial port, dual game port, hardware master volume control, a serial port interface to external wavetable music synthesizer, DMA control logic with FIFO, and PCI bus interface logic. There are three stereo\r\ninputs (typically line-in, CD audio, and auxiliary line) and a mono microphone input.\r\n\r\nThe Solo-1 integrates ESS’ field-proven hardware design for DOS game compatibility with hardware FM synthesis (ESFM) and three methods for legacy audio control interface: PC/PCI, Distributed DMA, and Transparent DMA. Transparent DMA requires no sideband signals from PC core logic chipsets in addition to the standard PCI 2.1 bus. TDMA is compatible with Pentium®, Pentium Pro®, and Pentium® II chipsets as well as standard PCI add-in cards.\r\n\r\nThe Solo-1 can record, compress, and play back voice, sound, and music with built-in mixer controls. It supports stereo full-duplex operation for simultaneous record and playback. The ESFM synthesizer has extended capabilities within native mode operation providing superior sound and power-down capabilities.\r\n\r\nThe integrated 3-D audio effects processor uses technology from Spatializer® Audio Laboratories, Inc. and expands the sound field emitted by two speakers to create a resonant 3-D sound environment.\r\n\r\nThe Solo-1 is compliant with Advanced Configuration and Power Interface (ACPI) standards.\r\n\r\nIt is available in an industry-standard 100-pin Thin Quad Flat Pack (TQFP) package.\r\n\r\n(Taken from the ESS Solo-1E device whitepaper)\r\n\r\n=======\r\n\r\nThe ESS Solo-1 is one of the very last of the audio chips from ESS which has the great ESFM FM-synthesiser technology. Whilst it can be debated whether a real OPL2/OPL3 chip from Yamaha sounds better or not, it cannot be debated that all of the subsequent ESS chips (the ESS Allegro, ESS Maestro etc) are objectively worse-sounding for DOS gaming purposes.\r\n\r\nThe Solo-1 and its later variant, the Solo-1E, are both initialised using the same tools: \r\n\r\n- ESSOLO.SYS (in config.sys)\r\n- ESSOLO.COM (in autoexec.bat)\r\n- ESSOLO.INI (binary configuration -not text!- file located at c:\\)\r\n\r\nIn most configurations, the SYS and COM tools simply configure the card and then exit - leaving no running driver or TSR in memory."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 3,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4297A",
+      "bus": 3,
+      "digi_sb": 5,
+      "digi_other": 3,
+      "fm": 8,
+      "midi": 7,
+      "driver": 5,
+      "notes": "The CS4297 is a AC’97 1.03 compatible stereo audio Codec designed for PC multimedia systems.\r\n\r\nUsing the industry leading CrystalClear delta-sigma and mixed signal technology, the CS4297 paves the way for PC’97-compliant desktop, portable, and entertainment PCs, where high-quality audio is required.\r\n\r\nThe CS4297, when coupled with a DC’97 PCI audio accelerator such as the CS4610, implements a cost-effective, superior quality, two-chip audio solution. The CS4297 Audio Codec ’97 and CS4610 PCI Audio Accelerator are the first members of the SoundFusion family of advanced PCI audio products for next generation multimedia PCs. \r\n\r\n(Taken from the CS4297 white paper pdf)\r\n\r\n=====\r\n\r\nThis is an AC97-only audio codec found on later PCI-based laptops. It is well supported in Windows but has -no- DOS support at all."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 4,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YMF701 (OPL3-SA)",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 3,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 5,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YMF711/YMF718 (OPL3-SA2)",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 3,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 6,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YMF715/YMF719 (OPL3-SA3)",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 3,
+      "midi": 7,
+      "driver": 2,
+      "notes": "Final versions of the OPL3-SA ISA-based sound devices. Adds 3d-surround equaliser effect."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 9,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YMF262/YMF289",
+      "bus": 6,
+      "digi_sb": 5,
+      "digi_other": 4,
+      "fm": 3,
+      "midi": 7,
+      "driver": 1,
+      "notes": "Real OPL3 stereo FM synth by Yamaha."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 10,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YM3812",
+      "bus": 6,
+      "digi_sb": 5,
+      "digi_other": 4,
+      "fm": 1,
+      "midi": 7,
+      "driver": 1,
+      "notes": "Real OPL2 mono FM synth chip from Yamaha."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 11,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES488 AudioDrive",
+      "bus": 1,
+      "digi_sb": 1,
+      "digi_other": 4,
+      "fm": 8,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 12,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES688 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 8,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 13,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES938",
+      "bus": 6,
+      "digi_sb": 5,
+      "digi_other": 4,
+      "fm": 8,
+      "midi": 7,
+      "driver": 2,
+      "notes": "3D effects chip for the AudioDrive audio devices. Not capable of any output by itself."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 14,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1488 Audiodrive",
+      "bus": 1,
+      "digi_sb": 1,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 15,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1688 AudioDrive",
+      "bus": 1,
       "digi_sb": 2,
       "digi_other": 1,
       "fm": 5,
@@ -254,17 +469,422 @@
 },
 {
    "model": "laptops.audio",
-   "pk": 2,
+   "pk": 16,
    "fields": {
       "manufacturer": 1,
-      "model": "1938 Solo-1",
-      "bus": 3,
+      "model": "ES1698 AudioDrive",
+      "bus": 1,
       "digi_sb": 2,
       "digi_other": 1,
       "fm": 5,
       "midi": 7,
       "driver": 2,
       "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 17,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1788 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 18,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1868 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 19,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1869 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 20,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1878 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 21,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1879 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 22,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1887 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 23,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1888 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 24,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1898 AudioDrive",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 25,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1948 Maestro-1",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 7,
+      "midi": 4,
+      "driver": 3,
+      "notes": "MIDI support is only available within Windows."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 26,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1968 Maestro-2",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 7,
+      "midi": 4,
+      "driver": 3,
+      "notes": "MIDI support is only available within Windows."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 27,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1978 Maestro-2E",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 7,
+      "midi": 4,
+      "driver": 3,
+      "notes": "MIDI support is only available within Windows."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 28,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1980 Maestro-3",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 7,
+      "midi": 7,
+      "driver": 3,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 29,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1983 Maestro-3i",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 7,
+      "midi": 7,
+      "driver": 3,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 30,
+   "fields": {
+      "manufacturer": 1,
+      "model": "ES1969 Solo-1",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 5,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 31,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4236 / CS4236B",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 32,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4237 / CS4237B",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 33,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4238",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 34,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS9233",
+      "bus": 6,
+      "digi_sb": 5,
+      "digi_other": 4,
+      "fm": 8,
+      "midi": 4,
+      "driver": 2,
+      "notes": "Wavetable addon chip, usually with 1, 2 or 4MB or sample ROM. Normally attached via MPU401 interface (which requires DOS initialisation utility)."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 35,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS9236",
+      "bus": 6,
+      "digi_sb": 5,
+      "digi_other": 4,
+      "fm": 8,
+      "midi": 4,
+      "driver": 2,
+      "notes": "Wavetable addon chip, usually with 1, 2 or 4MB or sample ROM. Normally attached via MPU401 interface (which requires DOS initialisation utility)."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 36,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4235",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 37,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4239",
+      "bus": 1,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 38,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4610",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 39,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4611",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 40,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4622",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": "Supported in DOS, but the FM synth emulation is dreadful."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 41,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4624",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": "Supported in DOS; digital audio is clear, but the FM synth emulation is dreadful and struggles with many popular DOS games (Duke Nukem 3D and Descent being prime examples).\r\n\r\nFound on the IBM Thinkpad T20/T21/T22 models, along with a number of others."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 42,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4280",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 43,
+   "fields": {
+      "manufacturer": 6,
+      "model": "CS4281",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 1,
+      "fm": 7,
+      "midi": 7,
+      "driver": 2,
+      "notes": "Appears on a number of IBM Thinkpad models (X20/X21/240X).\r\n\r\nDOS configuration tool is available. Performance of this part is unknown."
    }
 },
 {
