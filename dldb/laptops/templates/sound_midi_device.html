@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content1 %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="{% url 'homepage' %}">Home</a></li>
+					<li class="breadcrumb-item active"><a href="{% url 'sound_home' %}">Audio &amp; Sound</a></li>
+					<li class="breadcrumb-item">MIDI Support</a></li>
+					<li class="breadcrumb-item">{{device.name}}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h5>Support for MIDI: {{device.name}}</h5>
+			{% if device.notes %}
+				<p>{{device.notes|linebreaks}}</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_audiomidi_change' device.pk %}">Edit notes</a>
+				{% endif %}
+			{% else %}
+				<p>There are no notes stored for this device.</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_audiomidi_change' device.pk %}">Add notes</a>
+				{% endif %}
+			{% endif %}
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div>
+				<h5>Audio Devices supporting MIDI mode: {{device.name}}</h5>
+				{% if devices %}
+					<p>These audio devices support this specific MIDI type.</p>
+					<table class="table table-bordered table-striped table-hover" id="datatable1">
+						<thead>
+							<tr>
+								<th>Manufacturer</th>
+								<th>Model</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for a in devices %}
+								<tr>
+									<td>{{a.manufacturer}}</td>
+									<td><a href="{% url 'sound_device' a.pk %}">{{a.model}}</a></td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+				<p>There are no audio devices in the database which support this specific MIDI type.</p>
+				{% endif %}
+			</div>
+		</div>
+		<br>
+		<hr>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div>
+				<h5>Laptops supporting MIDI mode: {{device.name}}</h5>
+				{% if laptops %}
+					<p>These laptops have audio devices which <i>only</i> support this specific MIDI type.</p>
+					<table class="table table-bordered table-striped table-hover" id="datatable2">
+						<thead>
+							<tr>
+								<th>Manufacturer</th>
+								<th>Model</th>
+								<th>Sub-Model</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for l in laptops %}
+								<tr>
+									<td>{{l.manufacturer.manufacturer}}</td>
+									<td>{{l.model}}</td>
+									<td>{{l.submodel}}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+				<p>There are no laptops in the database which <i>only</i> support this specific MIDI type.</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	{% load static %}
+	<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+	<script src="{% static 'js/datatables.min.js' %}"></script>
+	{% if devices|length > 20 %}
+	<script>
+		new DataTable('#datatable1');
+	</script>
+	{% endif %}
+	{% if laptops|length > 20 %}
+	<script>
+		new DataTable('#datatable2');
+	</script>
+	{% endif %}
+	
+{% endblock %}

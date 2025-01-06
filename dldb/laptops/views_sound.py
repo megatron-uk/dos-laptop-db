@@ -41,3 +41,63 @@ def device(request, device_id):
 		'device_examples' : device_examples,
 	}
 	return render(request, "sound_device.html", data)
+	
+def sb_digi_device(request, device_support_id):
+	
+	device = AudioDigiSB.objects.get(pk = device_support_id)
+	devices = Audio.objects.filter(digi_sb = device).order_by('manufacturer__manufacturer', 'model')
+	audio_device_ids = []
+	for a in devices:
+		audio_device_ids.append(a.pk)
+	laptops = LaptopAudio.objects.filter(audio__in = audio_device_ids).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
+	data = {
+		'device' : device,
+		'devices' : devices,
+		'laptops' : laptops,
+	}
+	return render(request, "sound_sb_device.html", data)
+
+def fm_device(request, device_support_id):
+	
+	device = AudioFM.objects.get(pk = device_support_id)
+	devices = Audio.objects.filter(fm = device).order_by('manufacturer__manufacturer', 'model')
+	audio_device_ids = []
+	for a in devices:
+		audio_device_ids.append(a.pk)
+	laptops = LaptopAudio.objects.filter(audio__in = audio_device_ids).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
+	data = {
+		'device' : device,
+		'devices' : devices,
+		'laptops' : laptops,
+	}
+	return render(request, "sound_fm_device.html", data)
+
+def other_digi_device(request, device_support_id):
+	
+	device = AudioDigiOther.objects.get(pk = device_support_id)
+	devices = Audio.objects.filter(digi_other = device).order_by('manufacturer__manufacturer', 'model')
+	audio_device_ids = []
+	for a in devices:
+		audio_device_ids.append(a.pk)
+	laptops = LaptopAudio.objects.filter(audio__in = audio_device_ids).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
+	data = {
+		'device' : device,
+		'devices' : devices,
+		'laptops' : laptops,
+	}
+	return render(request, "sound_other_digi_device.html", data)
+
+def midi_device(request, device_support_id):
+	
+	device = AudioMIDI.objects.get(pk = device_support_id)
+	devices = Audio.objects.filter(midi = device).order_by('manufacturer__manufacturer', 'model')
+	audio_device_ids = []
+	for a in devices:
+		audio_device_ids.append(a.pk)
+	laptops = LaptopAudio.objects.filter(audio__in = audio_device_ids).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
+	data = {
+		'device' : device,
+		'devices' : devices,
+		'laptops' : laptops,
+	}
+	return render(request, "sound_midi_device.html", data)

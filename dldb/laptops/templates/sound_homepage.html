@@ -3,7 +3,126 @@
 
 	<div class="container">
 		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="{% url 'homepage' %}">Home</a></li>
+					<li class="breadcrumb-item">Audio &amp; Sound</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div>
+				<h5>DOS Audio Support</h5>
+				<p>Unlike modern operating systems, support for audio in DOS is largely based on the popularity of a small
+				number of products from a few hardware manufacturers; a standard API or driver layer was not available at the time - this
+				came much later with the introduction of Windows.</p>
+				<p>Ad Lib was one of the first companies to get a product in the market which was supported by a wide range
+				of software and games - the Adlib Music Synthesizer with the Yamaha OPL2 FM synthesizer. All subsequent companies had to support the hardware 
+				interface implemented by the Adlib card in order to have any chance of being successful.</p>
+				<p>Later, Creative Labs introduced a range of sound hardware that integrated both the Yamaha OPL2 (and later OPL3) FM
+				synth as well as adding hardware to support sampled digital audio, and this became the <i>killer feature</i> for all
+				devices which followed.</p>
+				<p>If you want to play DOS games on real hardware with the widest range of compatability, you need a device which supports:
+				<ul>
+					<li>OPL2 or OPL3 FM synthesis</li>
+					<li>Soundblaster or Soundblaster Pro digital audio</li>
+				</ul>
+				Many hardware companies have produced devices which support these hardware standards, though not all to the same degree
+				of accuracy. With a laptop you are almost always restricted to the audio hardware built-in to the system, so it is important
+				to understand the features and limitations of the audio device - some are significantly more compatible, or better
+				sounding than other models.
+				</p>
+			</div>
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div>
+				<h5>Audio Standards</h5>
+				<p>Each audio device in the DOS Laptop DB has a number of characteristics which we group into four main
+				areas:
+				<ul>
+					<li>Soundblaster Support - Which models of Soundblaster does the device support?</li>
+					<li>Other Digital Support - Does the device support Windows Sound System or DirectSound, for example?</li>
+					<li>FM Synth Support - Does the device support OPL2 or OPL3? Is it a real Yamaha synth or an alternative?</li>
+					<li>MIDI Support - Does the device have MIDI (non-FM) music support? Does it support General MIDI, GS, XG or some other format?</li>
+				</ul>
+				</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-3">
+				<table class="table table-bordered table-hover">
+					<tr><th>Soundblaster Support</th></tr>
+					{% for s in adigisb %}
+					<tr><td><a href="{% url 'sb_digi_device' s.pk %}">{{s.name}}</a></td></tr>
+					{% endfor %}
+				</table>
+				{% if request.user %}
+				<a href="{% url 'admin:laptops_audiodigisb_add' %}">Add SB Category</a>
+				{% else %}
+				<a href="">You must login to add new SB Categories</a>
+				{% endif %}
+			</div>
+			
+			<div class="col-3">
+				<table class="table table-bordered table-hover">
+					<tr><th>Other Digital Support</th></tr>
+					{% for s in adigiother %}
+					<tr><td><a href="{% url 'other_digi_device' s.pk %}">{{s.name}}</a></td></tr>
+					{% endfor %}
+				</table>
+				{% if request.user %}
+				<a href="{% url 'admin:laptops_audiodigiother_add' %}">Add Other Digital Category</a>
+				{% else %}
+				<a href="">You must login to add new Other Digital Categories</a>
+				{% endif %}
+			</div>
+			
+			<div class="col-3">
+				<table class="table table-bordered table-hover">
+					<tr><th>FM Synth Support</th></tr>
+					{% for s in afm %}
+					<tr><td><a href="{% url 'fm_device' s.pk %}">{{s.name}}</a></td></tr>
+					{% endfor %}
+				</table>
+				{% if request.user %}
+				<a href="{% url 'admin:laptops_audiofm_add' %}">Add FM Synth Category</a>
+				{% else %}
+				<a href="">You must login to add new FM Synth Categories</a>
+				{% endif %}
+			</div>
+			
+			<div class="col-3">
+				<table class="table table-bordered table-hover">
+					<tr><th>MIDI Support</th></tr>
+					{% for s in amidi %}
+					<tr><td><a href="{% url 'midi_device' s.pk %}">{{s.name}}</a></td></tr>
+					{% endfor %}
+				</table>
+				{% if request.user %}
+				<a href="{% url 'admin:laptops_audiomidi_add' %}">Add MIDI Category</a>
+				{% else %}
+				<a href="">You must login to add new MIDI Categories</a>
+				{% endif %}
+			</div>
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
 			<h5>Audio Devices</h5>
+			<p>A list of all the audio devices which are used within every laptop entered in the database. Select 
+			a model to see the full specifications and the laptops which use that part.</p>
 			<table class="table table-bordered table-striped table-hover" id="datatable">
 				<thead>
 					<tr>

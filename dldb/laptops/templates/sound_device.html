@@ -5,6 +5,7 @@
 		<div class="row">
 			<div class="col">
 				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="{% url 'homepage' %}">Home</a></li>
 					<li class="breadcrumb-item active"><a href="{% url 'sound_home' %}">Audio &amp; Sound</a></li>
 					<li class="breadcrumb-item active">{{audio.manufacturer.manufacturer}}</li>
 					<li class="breadcrumb-item">{{audio.model}}</li>
@@ -31,10 +32,10 @@
 			
 			<div class="col">
 				<table class="table table-bordered table-hover">
-					<tr><th>Soundblaster Support</th><td>{{audio.digi_sb}}</td></tr>
-					<tr><th>Other Digital Support</th><td>{{audio.digi_other}}</td></tr>
-					<tr><th>FM Support</th><td>{{audio.fm}}</td></tr>
-					<tr><th>MIDI Support</th><td>{{audio.midi}}</td></tr>
+					<tr><th>Soundblaster Support</th><td><a href="{% url 'sb_digi_device' audio.digi_sb.pk %}">{{audio.digi_sb}}</a></td></tr>
+					<tr><th>Other Digital Support</th><td><a href="{% url 'other_digi_device' audio.digi_other.pk %}">{{audio.digi_other}}</a></td></tr>
+					<tr><th>FM Support</th><td><a href="{% url 'fm_device' audio.fm.pk %}">{{audio.fm}}</a></td></tr>
+					<tr><th>MIDI Support</th><td><a href="{% url 'midi_device' audio.midi.pk %}">{{audio.midi}}</a></td></tr>
 					<tr><th>DOS Driver Type</th><td>{{audio.driver}}</td></tr>
 				</table>
 			</div>
