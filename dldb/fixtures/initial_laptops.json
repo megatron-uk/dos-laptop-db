@@ -44,7 +44,7 @@
    "pk": 1,
    "fields": {
       "name": "WSS",
-      "notes": "None"
+      "notes": "Windows Sound System (WSS) is a sound card specification developed by Microsoft, released at the end of 1992 for Windows 3.1. It was sold as a bundle which included an ISA sound card, a microphone, a pair of headphones and a software package.\r\n\r\nWSS featured support for up to 16-bit, 48 kHz digital sampling, beyond the capabilities of the popular Sound Blaster Pro, although it was less frequently supported than Sound Blaster and Gravis sound cards, as well as Roland sound cards, daughterboards, and sound modules. In addition, the WSS featured RCA analog audio outputs, an uncommon feature among sound cards of this era; other connections were a microphone input, a stereo line input and a stereo headphone output.\r\n\r\nWSS was supported by most popular DOS sound libraries developed in the 1990s, such as the Miles Sound System and HMI Sound Operating System, as well as less popular ones such as Loudness Sound System, Digital Sound Interface Kit, Digital Sound & Music Interface and Junglevision Sound Drive.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Windows_Sound_System)\r\n\r\n=====\r\n\r\nWhilst many audio devices support WSS, there is not a great number of DOS games which do. Still, in some titles the use of an audio device in its -native- WSS mode -can- sometimes offer better quality digital audio playback.\r\n\r\nIt should be noted that many later audio devices offer DirectSound support instead of, or in addition to WSS, as this is the direct successor for Windows-based audio.\r\n\r\nFor -most- purposes, the inclusion of WSS support for an audio device should be considered a -bonus-; it is primarily the support for one or more Sound Blaster modes which is of substantially greater importance.\r\n\r\nFor the purposes of this database, if an audio device has WSS support, then it should be taken to mean that it has no later (or better) Windows support. e.g:\r\n\r\nDirectSound > AC97 > WSS > No other digital support"
    }
 },
 {
@@ -52,7 +52,7 @@
    "pk": 2,
    "fields": {
       "name": "DirectSound",
-      "notes": "None"
+      "notes": "DirectSound is a deprecated software component of the Microsoft DirectX library for the Windows operating system, superseded by XAudio2. It provides a low-latency interface to sound card drivers written for Windows 95 through Windows XP and can handle the mixing and recording of multiple audio streams. DirectSound was originally written for Microsoft by John Miles.\r\n\r\nBesides providing the essential service of passing audio data to the sound card, DirectSound provides other essential capabilities such as recording and mixing sound, adding effects to sound (e.g., reverb, echo, or flange), using hardware accelerated buffers (if the sound card supports hardware audio acceleration) in Windows 95 through XP, and positioning sounds in 3D space. DirectSound also provides a means to capture sounds from a microphone or other input and controlling capture effects during audio capture.\r\n\r\nAfter many years of development, today DirectSound is a mature API, and supplies many other useful capabilities, such as the ability to play multichannel sounds at high resolution. While DirectSound was designed to be used by games, today it is used to play audio in many audio applications. DirectShow uses DirectSound's hardware audio acceleration capabilities if the sound card's hardware audio acceleration capabilities exist and are exposed by the audio driver.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/DirectSound)\r\n\r\n=====\r\n\r\nDirectSound is a direct (no pun intended) successor to the earlier Windows Sound System specification). \r\n\r\nWhilst support for DirectSound can be a positive, it offers absolutely no benefits at all to the gamer who wishes to play DOS games natively.\r\n\r\nFor the purposes of this database, if an audio device supports both WSS and DirectSound, we have recorded it as supporting the later standard as neither are primary drivers to choose an audio device for DOS compatibility. e.g:\r\n\r\nDirectSound > AC97 > WSS > No other digital support"
    }
 },
 {
@@ -60,7 +60,7 @@
    "pk": 3,
    "fields": {
       "name": "AC97",
-      "notes": "None"
+      "notes": "AC'97 (Audio Codec '97) is an audio codec standard developed by Intel Architecture Labs and various codec manufacturers in 1997. The standard was used in motherboards, modems, and sound cards.\r\n\r\nThe specification covers two types of components, and the AC-Link digital interface between them:\r\n\r\n- an AC'97 digital controller (DC97), which is typically built into the southbridge of the chipset, and\r\n- an AC'97 audio and/or modem codec, available from several vendors, which contains the analog components of the architecture.\r\n\r\nAC'97 defines a high-quality, 16- or 24-bit audio architecture with 5.1 surround sound support for the PC. AC'97 supports a 96 kHz sampling rate at 24-bit stereo resolution and a 48 kHz sampling rate at 24-bit stereo resolution for multichannel recording and playback.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/AC%2797)\r\n\r\n=====\r\n\r\nWhilst an audio device can be AC97 compliant this does not mean it offers DirectSound support. Most Windows 98+ audio hardware will be AC97 compliant, not all of those AC97 devices will have DirectSound drivers.\r\n\r\nThere is -some- work available to use AC97 (and other) compliant audio devices within DOS:\r\n\r\n- https://github.com/crazii/SBEMU\r\n\r\n... but this should -not- be taken as an indicator to choose a device with AC97 support.\r\n\r\nFor the purposes of this database if a device is listed as having AC97 support, this should be taken to mean that it does not have DirectSound support. e.g.\r\n\r\nDirectSound > AC97 > WSS > No other digital support"
    }
 },
 {
@@ -68,7 +68,7 @@
    "pk": 4,
    "fields": {
       "name": "None",
-      "notes": "None"
+      "notes": "This category is present to indicate that a particular audio device does not support -any- non-Sound Blaster digital audio output modes.\r\n\r\nWhilst a device may have no non-Sound Blaster digital audio support, it may still offer Sound Blaster digital output options and/or FM or MIDI modes."
    }
 },
 {
@@ -76,7 +76,7 @@
    "pk": 1,
    "fields": {
       "name": "SB 1.0/2.0 (8bit mono)",
-      "notes": "None"
+      "notes": "The Sound Blaster 1.0 (code named \"Killer Kard\"), CT1320A, was released in 1989. In addition to Game Blaster features, it has a 9-voice (11 voices in drum mode) FM synthesizer using the Yamaha YM3812 chip, also known as OPL2. It provided compatibility with the market leader AdLib sound card, which had gained support in PC games in the preceding year. Creative used the \"DSP\" acronym to designate the digital audio part of the Sound Blaster. This stood for Digital Sound Processor, rather than the more common digital signal processor, and is a simple microcontroller from the Intel MCS-51 family (supplied by Intel and Matra MHS, among others). It can play back 8-bit monaural sampled sound at up to 23 kHz sampling frequency and record 8-bit at up to 12 kHz. The sole DSP-like features of the circuit are ADPCM decompression and a primitive non-MPU-401-compatible MIDI interface. The ADPCM decompression schemes supported are 2 to 1, 3 to 1 and 4 to 1. The CT1320B variety of the Sound Blaster 1.0 typically has C/MS chips installed in sockets rather than soldered on the PCB, though units do exist with the C/MS chips soldered on.\r\n\r\nSome sources note that the original Sound Blaster 1.0 was produced under the CT1310 number. This however is a topic of ongoing debate. Creative refers to CT1310 for the Sound Blaster 1.0 on its website.\r\n\r\nIn less than a year, the Sound Blaster became the top-selling expansion card for the PC. It achieved this by providing an AdLib-compatible product, with additional features, for the same, and often lower, price. The inclusion of a game port was important to its early success. PCs of this era did not include a game port. Game port cards were costly (around US$50) and used one of the few expansion slots PCs had at the time. Given the choice between an AdLib card or a fully-compatible Sound Blaster card that came with a game port, saved a slot, and included the \"DSP\" for not much more in price, many consumers opted for the Sound Blaster. In-game support for the digital portion of the card did not happen until after the Sound Blaster had gained dominance.\r\n\r\nWhen Microsoft announced Multimedia PC (MPC) in November 1990, it suggested to developers that they use the Sound Blaster as it was the only sound card that came close to complying with the MPC standard. The press speculated that Microsoft based the MPC standard on the Sound Blaster's specifications. By 1993 Computer Gaming World wondered \"why would a gamer\" buy a competing AdLib card that was not Sound Blaster-compatible. Creative advertised the Sound Blaster 16 (\"the 16-bit sound standard\") with the slogan \"Get Real\", emphasizing its \"real 100% Sound Blaster compatibility\" and rhetorically asking \"why those other manufacturers spend so much time comparing themselves to Sound Blaster\".\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Sound_Blaster)\r\n\r\n=====\r\n\r\nSound Blaster 1.5\r\n\r\nThe Sound Blaster 1.5 is a slight variation which dropped support for two optional CMS music chips which made the earlier 1.0 model compatible with the earlier Creative Game Blaster. Most games do not support this and it is of no relevance to digital audio support.\r\n\r\nSound Blaster 2.0\r\n\r\nThe Sound Blaster 2.0 added some supporting features which allowed for double buffered DMA audio output.\r\n\r\nMost DOS games which support digital audio output will support either/both the Soundblaster 1.0/2.0. This means, in reality:\r\n\r\n- 8bit digital audio\r\n- Mono\r\n- Up to 22KHz sampling\r\n\r\nHaving Sound Blaster 1.0 support is the absolute lowest common denominator for any DOS game which wants digital audio output.\r\n\r\nFor the purposes of this database, SB 1.0/2.0 support refers only to the digital audio portion."
    }
 },
 {
@@ -84,7 +84,7 @@
    "pk": 2,
    "fields": {
       "name": "SB Pro 1.0/2.0 (8bit stereo)",
-      "notes": "None"
+      "notes": "The Sound Blaster Pro (1.0), Model CT1330, announced in May 1991, was the first significant redesign of the card's core features, and complied with the Microsoft MPC standard.\r\n\r\nThe Sound Blaster Pro supported faster digital input and output sampling rates (up to 22.05 kHz stereo or 44.1 kHz mono), added a \"mixer\" to provide a crude master volume control (independent of the volume of sound sources feeding the mixer), and a crude high pass or low pass filter. \r\n\r\nThe Sound Blaster Pro used a pair of YM3812 chips to provide stereo music-synthesis (one for each channel). The Sound Blaster Pro was fully backward compatible with the original Sound Blaster line, and by extension, the AdLib sound card. \r\n\r\nThe Sound Blaster Pro was the first Creative sound card to have a built-in CD-ROM interface. Most Sound Blaster Pro cards featured a proprietary interface for a Panasonic (Matsushita MKE) drive. \r\n\r\nThe Sound Blaster Pro cards are basically 8-bit ISA cards, they use only the lower 8 data bits of the ISA bus. While at first glance it appears to be a 16-bit ISA card, it does not have 'fingers' for data transfer on the higher \"AT\" portion of the bus connector. It uses the 16-bit extension to the ISA bus to provide the user with an additional choice for an IRQ (10) and DMA (0)m channel only found on the 16-bit portion of the edge connector.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Sound_Blaster)\r\n\r\n=====\r\n\r\nSound Blaster Pro (2.0)\r\n\r\nThe revised version, the Sound Blaster Pro 2, Model CT1600, replaced the YM3812s with a more advanced Yamaha YMF262 (OPL3). Otherwise it is functionally identical to the original Sound Blaster Pro. \r\n\r\n(Taken from https://en.wikipedia.org/wiki/Sound_Blaster)\r\n\r\n=====\r\n\r\nThe Sound Blaster Pro models offered a step-up from the original Sound Blaster 1.0 / 2.0 by providing:\r\n\r\n- Stereo 8bit digital audio\r\n- Up to 22KHz stereo recording or 44KHz mono\r\n- TWO Yamaha OPL2 chips offering stereo FM (Pro 1.0)\r\n- OR a single Yamaha OPL3 chip (Pro 2.0)\r\n\r\nNote that support for dual OPL2 stereo was short-lived, as most manufacturers moved to the OPL3 (offering stereo in one package), so the amount of games with dual OPL2 stereo music is limited. Whilst the OPL3 is backwards compatible with the OPL2, it is -not- backwards compatible with -dual- OPL2 chips; rendering any dual OPL2 soundtrack in mono.\r\n\r\nWhen most games refer to Sound Blaster Pro it can usually be assumed that they are referring to digital stereo sample playback (e.g. a gunshot from Doom in the left or right speaker), unless it specifically refers to dual-OPL2 music.\r\n\r\nFor the purposes of this database, SB Pro 1.0/2.0 support refers only to the digital audio portion."
    }
 },
 {
@@ -92,7 +92,7 @@
    "pk": 3,
    "fields": {
       "name": "SB 16 (16bit stereo)",
-      "notes": "None"
+      "notes": "The Sound Blaster 16 is similar to the Sound Blaster Pro (2.0), retaining the Yamaha OPL3 FM synth and increasing the digital audio quality to 16bit stereo, with up to 44KHz playback and record.\r\n\r\nThere were many, many variants of the Sound Blaster 16, all initial models were equipped with a real Yamaha OPL3 (either a YMF262 or the YMF289), but some later cards used the Creative CQM FM synth instead. For the purposes of this database we refer only to the digital audio part of the Sound Blaster 16.\r\n\r\nWhilst many DOS games (especially later titles) support the Sound Blaster 16, in reality not many games developers provided digital audio samples with their games which would take full advantage of it. Most games still distributed 8bit samples at less than 44KHz.\r\n\r\nThe Sound Blaster 16 is fully backwards compatible with the Sound Blaster Pro (2.0, not 1.0) and the earlier Sound Blaster (1.0 / 1.5 / 2.0).\r\n\r\nNot many (any?) hardware manufacturers directly support Sound Blaster 16 modes in their hardware, meaning that to get SB 16 support you usually require a genuine Creative Labs SB 16 mode.\r\n\r\nThe SB16 always supports:\r\n\r\n- 16bit stereo digital audio\r\n- Up to 44KHz playback and record\r\n- OPL3 FM synth (either real, or in later models; implemented via non-Yamaha hardware)\r\n\r\nFor the purposes of this database, SB16 support refers only to the digital audio portion."
    }
 },
 {
@@ -100,7 +100,7 @@
    "pk": 4,
    "fields": {
       "name": "AWE32/64",
-      "notes": "None"
+      "notes": "Released in March 1994, the Sound Blaster AWE32 (Advanced WavEffects) introduced an all new MIDI synthesizer section based on the EMU8000. The AWE32 consisted of two distinct audio sections; the Creative digital audio section (audio codec, optional CSP/ASP chip socket, Yamaha OPL3), and the E-mu MIDI synthesizer section. The synthesizer section consisted of the EMU8000 sampler and effects processor, an EMU8011 1 MB sample ROM, and 512 KB of sample RAM (expandable to 28 MB).\r\n\r\nSound Blaster AWE64\r\n\r\nThe AWE32's successor, the Sound Blaster AWE64 (November 1996), was significantly smaller, being a \"half-length ISA card\" (that term is misleading—see the pictures for size comparison). It offered similar features to the AWE32, but also had a few notable improvements, including support for greater polyphony, although this was a product of 32 extra software-emulated channels (the additional channels could also be obtained on AWE32 hardware by using the AWE64's driver software). The 30-pin SIMM slots from AWE32/SB32 were replaced with a proprietary memory format which could be (expensively) purchased from Creative.\r\n\r\nThe main improvements were better compatibility with older SB models, and an improved signal-to-noise ratio. The AWE64 came in two versions: A standard version (later rebranded as Value) with 512 KB of RAM and a Gold version with 4 MB of RAM and a separate S/PDIF output.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Sound_Blaster)\r\n\r\n=====\r\n\r\nThe AWE32 / AWE64 models retain the same backwards compatibility as the Sound Blaster 16, as well as the same variation of OPL3 synth support (early models with a real Yamaha part, later models with an alternative implementation).\r\n\r\nThere are no (known) 3rd party implementations of the AWE32 / AWE64 by other manufacturers, nor are there any (known) laptop implementations. This entry is present simply to complete the listing of DOS-based Sound Blaster modes that are present in games.\r\n\r\nSupport for AWE32 / AWE64 in games is restricted to the very latest DOS games (it being introduced as Windows 95 was starting to take off, and the market moving away from DOS).\r\n\r\nAs with the SB16, the AWE32 supports:\r\n\r\n- 16bit stereo digital audio\r\n- Up to 44KHz playback and record\r\n- OPL3 FM synthesis (subject to having an OPL3 part; real or otherwise, on board)"
    }
 },
 {
@@ -108,7 +108,7 @@
    "pk": 5,
    "fields": {
       "name": "None",
-      "notes": "None"
+      "notes": "This category is present to indicate that a particular audio device does not support -any- variations of Creative Labs Sound Blaster hardware at -all-.\r\n\r\nThe use of an audio device with -no- Sound Blaster hardware compatibility is strongly discouraged for any laptop which is intended for native DOS based gaming."
    }
 },
 {
@@ -116,7 +116,7 @@
    "pk": 1,
    "fields": {
       "name": "OPL2 (real, single, mono)",
-      "notes": "None"
+      "notes": "In 1985, Yamaha created the YM3812, also known as the OPL2.\r\n\r\nLimited to two-operator FM synthesis, the YM3812 is unable to accurately reproduce timbres of real instruments and percussive sounds unlike other FM chips. Melody polyphony is limited to nine voices in melodic mode and six voices in percussive mode.\r\n\r\nAmong its newly-added features is the ability to pick between four waveforms for each individual oscillator by setting a register. In addition to the original sine wave, three modified waveforms can be produced: half-sine waves (where the negative part of the sine is muted), absolute-sine waves (where the negative part is inverted), and pseudo-sawtooth waves (quarter sine waves upward only with silent sections in between). This odd way of producing waveforms give the YM3812 a characteristic sound. \r\n\r\nThe YM3812 is used with an external YM3014B monophonic DAC chip to output its audio in analog form, like with the YM3526.\r\n\r\nHaving little competition on the market at the time of introduction of Adlib and Sound Blaster in the late 1980s, the chip became the de-facto standard for \"Sound Blaster compatible\" sound cards.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Yamaha_OPL)\r\n\r\n=====\r\n\r\nThe YM3812 (OPL2) chip from Yamaha is a mono FM synth which formed the basis of the Adlib Music Synthesizer and the original Creative Sound Blaster cards.\r\n\r\nSupported in the vast majority of DOS games until Windows finally took over, having support for (at a minimum) OPL2 is an absolute -must- for any gamer wishing to play games natively in DOS with working music (and often, effects, too).\r\n\r\nIt is subject to intense arguments about which OPL2 implementation is superior, but most gamers would agree that having an original Yamaha OPL2 chip is far superior than most of the alternatives (possibly excepting the excellent ESS ESFM implementation of OPL3)."
    }
 },
 {
@@ -124,7 +124,7 @@
    "pk": 2,
    "fields": {
       "name": "OPL2 (real, dual, stereo)",
-      "notes": "None"
+      "notes": "The Sound Blaster Pro (1.0) utilised two real Yamaha YM3812 (OPL2) chips in a stereo configuration.\r\n\r\nFor most purposes this was backwards compatible with single OPL2 music, but offers the advantage of stereo support for those (few) titles which were composed specifically with dual OPL2 chips in mind.\r\n\r\nDual OPL2 chips are backwards compatible with single OPL2 requirements."
    }
 },
 {
@@ -132,7 +132,7 @@
    "pk": 3,
    "fields": {
       "name": "OPL3 (real, stereo)",
-      "notes": "None"
+      "notes": "Released as early as 1990, an upgraded version of the OPL2 known as the YMF262 (a.k.a. OPL3) was developed. It improves on the feature-set of the YM3812, which notably includes the ability to use four-operator FM synthesis. This makes the YMF262 produce more harmonically richer sound than its predecessors, similar to that of contemporary consumer synthesizer keyboards such as Yamaha DX100.\r\n\r\nThe following features were added:\r\n\r\n- twice as many channels (18 instead of 9)\r\n- simple stereo (hard left, center or hard right)\r\n- 4 channel sound output\r\n- 4 new waveforms (alternating-sine, \"camel\"-sine, square and logarithmic sawtooth)\r\n- 4 operator mode, pairing 2 channels together to create up to six 4 operator FM voices\r\n- reduced latency for host-register access (the OPL2 had much longer I/O access delays)\r\n- subtle differences in the sine-wave lookup table and envelope generator to YM3812 (e.g. the modulator waveform on YM3812 is delayed by one sample, whereas both carrier and modulator waveforms on OPL3 are properly synchronized)[\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Yamaha_OPL)\r\n\r\n=====\r\n\r\nThe YMF262 / YMF289 are real Yamaha implementations of the OPL3 design. Compared to the earlier OPL2 it offers stereo sound and more channels, allowing for more complex music.\r\n\r\nThe OPL3 is backwards compatible with (single) OPL2, but not dual chip OPL2. Many, many games take advantage of the OPL3 for more complex and realistic sounding music. However, it should be noted that almost all titles which support OPL3 -also- support OPL2, so it is -not- a deal breaker.\r\n\r\nMost gamers would agree that, excluding ESS (and the arguments over whether ESFM is better or worse), the original Yamaha implementation of the OPL3 is the 'best' or most authentic sounding. Regardless, it is better to have a real Yamaha OPL3 implementation than any of the emulated versions."
    }
 },
 {
@@ -140,7 +140,7 @@
    "pk": 4,
    "fields": {
       "name": "OPL4",
-      "notes": "None"
+      "notes": "The Yamaha YMF278 or YMF278B, also known as the OPL4 (OPL is an acronym for FM Operator Type-L), is a sound chip that incorporates both FM synthesis and sample-based synthesis.\r\n\r\nThe FM part is essentially a YMF262 (OPL3) block; thus, it is also backward-compatible with the YM3526 (OPL) and the YM3812 (OPL2). Like the OPL3, it can operate in one of four ways:\r\n\r\n- 18 two-operator FM channels\r\n- 6 four-operator FM channels + 6 two-operator FM channels\r\n- 15 two-operator FM channels + 5 FM drums\r\n- 6 four-operator FM channels + 3 two-operator FM channels + 5 FM drums\r\n- Four-operator FM allows more complex sounds but reduces polyphony.\r\n\r\nUnlike the OPL3, which has four channels for sound output, the OPL4 features six channels.\r\n\r\nThe sample synthesis part is based on pulse-code modulation (PCM). It features:\r\n\r\n- Up to 24 simultaneous sounds (voices)\r\n- Output sampling frequency of 44.1 kHz (it can also accept 22.05-kHz samples – they are up-sampled to 44.1 kHz before output)\r\n- Waveform data lengths of 8, 12, or 16 bits\r\n- Stereo output (with a 4-bit/16-level pan for each voice)\r\n\r\nThe PCM synthesizer part accepts:\r\n\r\n- Up to 4 MB of external memory for wave data\r\n- Up to 512 samples\r\n- External ROM or SRAM memory. If SRAM is connected, then wave data can be downloaded from the OPL4.\r\n- Chip select signals for 128 KB, 512 KB, 1 MB, or 2 MB memory can be output.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Yamaha_YMF278)\r\n\r\n====\r\n\r\nFor DOS gaming purposes the OPL4 is mainly of use through the sample synthesis part, where it is broadly equivalent to other wavetable / waveblaster / MIDI implementations. The expanded FM synth side is not known to be supported in any DOS games of the period."
    }
 },
 {
@@ -148,7 +148,7 @@
    "pk": 5,
    "fields": {
       "name": "ESFM",
-      "notes": "None"
+      "notes": "ESFM is a FM synthesis technology implemented by ESS. \r\n\r\nESFM audio devices were OPL3-compatible but developed in-house, and has 20 voices, 72 operators, and operated in two modes: Native and Legacy. \r\n\r\nIn Native mode, ESFM allows more than six 4-operator FM voices to be mapped, potentially allowing for a significant increase in the complexity of tones generated. The drivers for Windows 9x incorporate their own custom instrument patches which make use of this extended Native mode. \r\n\r\nConversely, Legacy mode provides full backward-compatibility with Yamaha's YMF262. ESFM's output in this mode is moderately faithful to the YMF262 overall, but some tones are rendered quite differently, resulting in unique distortions in the sound and music of some games. \r\n\r\nMany DOS gamers prefer the softer sound of the ESFM implementation over Yamaha's original OPL3 output.\r\n\r\nLots of games had specific support for ESS sound cards.\r\n\r\n(Taken from https://dosdays.co.uk/topics/Manufacturers/ess.php)\r\n\r\n=====\r\n\r\nMost gamers agree that ESFM is one of the most fauithful implementations of the OPL3 sound (though better or worse than a real Yamaha OPL3 is still up for debate!), and in the ESFM native mode, a reasonable number of games offer FM soundtracks with increased complexity and sounds.\r\n\r\nIt should be noted that ESFM is only present in cards -after- the ISA-based ES688, up to (and -including-) the PCI-based ESS Solo-1 and Solo-1E devices. All subsequent ESS parts (including ESS Allegro and all ESS Maestro models) remove the ESFM technology and instead rely on a (substantially inferior) OPL3 emulation.\r\n\r\nIf a real Yamaha OPL2 or OPL3 is not possible, then an ESFM based FM synth is -highly- recommended as the next best option."
    }
 },
 {
@@ -156,7 +156,7 @@
    "pk": 6,
    "fields": {
       "name": "OPL2 (emulated)",
-      "notes": "None"
+      "notes": "This device uses an implementation of OPL2 FM synthesis that is either completely emulated in software, or is based on a hardware emulation which is substantially inferior to real Yamaha OPL2 silicon.\r\n\r\nThe quality of the FM music and effects from a device using emulated/alternative OPL2 implementation may vary wildly or could have issues in playing back certain compositions which are designed to work on native OPL2 chips.\r\n\r\nNote that ESS ESFM FM synths are -not- included in this category."
    }
 },
 {
@@ -164,7 +164,7 @@
    "pk": 7,
    "fields": {
       "name": "OPL3 (emulated)",
-      "notes": "None"
+      "notes": "This device uses an implementation of OPL3 FM synthesis that is either completely emulated in software, or is based on a hardware emulation which is substantially inferior to real Yamaha OPL3 silicon.\r\n\r\nThe quality of the FM music and effects from a device using emulated/alternative OPL3 implementation may vary wildly or could have issues in playing back certain compositions which are designed to work on native OPL3 chips.\r\n\r\nNote that ESS ESFM FM synths are -not- included in this category."
    }
 },
 {
@@ -172,7 +172,7 @@
    "pk": 8,
    "fields": {
       "name": "None",
-      "notes": "None"
+      "notes": "This category is present to indicate that an audio device has no FM synth capability at -all-.\r\n\r\nIt may still offer Sound Blaster digital audio modes, non-Sound Blaster digital audio or MIDI options that make it a feasible choice, but it will -not- support any native OPL2  / OPL3 soundtrack in DOS games."
    }
 },
 {
@@ -180,7 +180,7 @@
    "pk": 3,
    "fields": {
       "name": "MIDI (non-GM/GS)",
-      "notes": "None"
+      "notes": "These devices support MIDI, but not any generally well-supported modes like GM (general midi), GS (Roland's own general sound) or XG (Yamaha).\r\n\r\nThis may be because the device does not support the required range of instruments (such as the Roland MT-32), does not communicate with the host via standard MIDI protocols (e.g. Gravis Ultrasound or Creative AWE) or it predates the introduction of the GM, GS or XG standards.\r\n\r\nUsing these devices for DOS games which expect to talk to standard GM/GS/XG compliant hardware may not be supported."
    }
 },
 {
@@ -188,7 +188,7 @@
    "pk": 4,
    "fields": {
       "name": "GM",
-      "notes": "None"
+      "notes": "Devices which support (only) the GM (general MIDI) standard.\r\n\r\nThese devices should be accessible via standard MPU401 ports and play back (with some level of faith!) sound tracks which are composed for GM hardware.\r\n\r\nThe MIDI functionality of these devices may be restricted to either DOS or Windows or may require special initialisation software or drivers. See the individual device for details."
    }
 },
 {
@@ -196,7 +196,7 @@
    "pk": 5,
    "fields": {
       "name": "GS",
-      "notes": "None"
+      "notes": "These devices support the Roland GS (general sound) standard.\r\n\r\nDevices which support GS should -also- support GM (general MIDI) and play back soundtracks composed for -either- instrument set.\r\n\r\nThe MIDI functionality of these devices may be restricted to either DOS or Windows or may require special initialisation software or drivers. See the individual device for details."
    }
 },
 {
@@ -204,7 +204,7 @@
    "pk": 6,
    "fields": {
       "name": "XG",
-      "notes": "None"
+      "notes": "These devices support the Yamaha XG (Xtended General MIDI) standard.\r\n\r\nDevices which support XG should also be backwards compatible with the GM standard.\r\n\r\nThe MIDI functionality of these devices may be restricted to either DOS or Windows or may require special initialisation software or drivers. See the individual device for details."
    }
 },
 {
@@ -212,7 +212,7 @@
    "pk": 7,
    "fields": {
       "name": "None",
-      "notes": "None"
+      "notes": "These devices have no MIDI support. They are unable to play back soundtracks composed for GM, GS or XG standards.\r\n\r\nNote that this does not apply to the presence of a MPU401 / MIDI port on the audio device (e.g. a dedicated DIN port or DB15 gameport) which can be used to communicate with an external MIDI module; this -only- relates to the device not being a compliant MIDI output device itself."
    }
 },
 {
@@ -319,7 +319,7 @@
       "model": "ES1946 Solo-1E",
       "bus": 3,
       "digi_sb": 2,
-      "digi_other": 1,
+      "digi_other": 2,
       "fm": 5,
       "midi": 7,
       "driver": 2,
@@ -334,11 +334,11 @@
       "model": "ES1938 Solo-1",
       "bus": 3,
       "digi_sb": 2,
-      "digi_other": 1,
+      "digi_other": 2,
       "fm": 5,
       "midi": 7,
       "driver": 2,
-      "notes": "The Solo-1TM PCI AudioDrive® solution implements a singlechip PCI audio solution, providing high-quality audio processing while maintaining full legacy DOS game compatibility. With a dynamic range over 80 dB, the Solo-1 complies with the Microsoft® PC 97/PC 98 specifications\r\nand meets WHQL audio requirements. The Solo-1 forms a complete audio subsystem on a single chip for both add-in card and motherboard platforms.\r\n\r\nThe Solo-1 incorporates a microcontroller, ESFMTM music synthesizer, 3-D stereo effects processor, 16-bit stereo wave ADC and DAC, 16-bit stereo music DAC, MPU-401 UART mode serial port, dual game port, hardware master volume control, a serial port interface to external wavetable music synthesizer, DMA control logic with FIFO, and PCI bus interface logic. There are three stereo\r\ninputs (typically line-in, CD audio, and auxiliary line) and a mono microphone input.\r\n\r\nThe Solo-1 integrates ESS’ field-proven hardware design for DOS game compatibility with hardware FM synthesis (ESFM) and three methods for legacy audio control interface: PC/PCI, Distributed DMA, and Transparent DMA. Transparent DMA requires no sideband signals from PC core logic chipsets in addition to the standard PCI 2.1 bus. TDMA is compatible with Pentium®, Pentium Pro®, and Pentium® II chipsets as well as standard PCI add-in cards.\r\n\r\nThe Solo-1 can record, compress, and play back voice, sound, and music with built-in mixer controls. It supports stereo full-duplex operation for simultaneous record and playback. The ESFM synthesizer has extended capabilities within native mode operation providing superior sound and power-down capabilities.\r\n\r\nThe integrated 3-D audio effects processor uses technology from Spatializer® Audio Laboratories, Inc. and expands the sound field emitted by two speakers to create a resonant 3-D sound environment.\r\n\r\nThe Solo-1 is compliant with Advanced Configuration and Power Interface (ACPI) standards.\r\n\r\nIt is available in an industry-standard 100-pin Thin Quad Flat Pack (TQFP) package.\r\n\r\n(Taken from the ESS Solo-1E device whitepaper)\r\n\r\n=======\r\n\r\nThe ESS Solo-1 is one of the very last of the audio chips from ESS which has the great ESFM FM-synthesiser technology. Whilst it can be debated whether a real OPL2/OPL3 chip from Yamaha sounds better or not, it cannot be debated that all of the subsequent ESS chips (the ESS Allegro, ESS Maestro etc) are objectively worse-sounding for DOS gaming purposes.\r\n\r\nThe Solo-1 and its later variant, the Solo-1E, are both initialised using the same tools: \r\n\r\n- ESSOLO.SYS (in config.sys)\r\n- ESSOLO.COM (in autoexec.bat)\r\n- ESSOLO.INI (binary configuration -not text!- file located at c:\\)\r\n\r\nIn most configurations, the SYS and COM tools simply configure the card and then exit - leaving no running driver or TSR in memory."
+      "notes": "The Solo-1TM PCI AudioDrive® solution implements a singlechip PCI audio solution, providing high-quality audio processing while maintaining full legacy DOS game compatibility. With a dynamic range over 80 dB, the Solo-1 complies with the Microsoft® PC 97/PC 98 specifications\r\nand meets WHQL audio requirements. The Solo-1 forms a complete audio subsystem on a single chip for both add-in card and motherboard platforms.\r\n\r\nThe Solo-1 incorporates a microcontroller, ESFMTM music synthesizer, 3-D stereo effects processor, 16-bit stereo wave ADC and DAC, 16-bit stereo music DAC, MPU-401 UART mode serial port, dual game port, hardware master volume control, a serial port interface to external wavetable music synthesizer, DMA control logic with FIFO, and PCI bus interface logic. There are three stereo\r\ninputs (typically line-in, CD audio, and auxiliary line) and a mono microphone input.\r\n\r\nThe Solo-1 integrates ESS’ field-proven hardware design for DOS game compatibility with hardware FM synthesis (ESFM) and three methods for legacy audio control interface: PC/PCI, Distributed DMA, and Transparent DMA. Transparent DMA requires no sideband signals from PC core logic chipsets in addition to the standard PCI 2.1 bus. TDMA is compatible with Pentium®, Pentium Pro®, and Pentium® II chipsets as well as standard PCI add-in cards.\r\n\r\nThe Solo-1 can record, compress, and play back voice, sound, and music with built-in mixer controls. It supports stereo full-duplex operation for simultaneous record and playback. The ESFM synthesizer has extended capabilities within native mode operation providing superior sound and power-down capabilities.\r\n\r\nThe integrated 3-D audio effects processor uses technology from Spatializer® Audio Laboratories, Inc. and expands the sound field emitted by two speakers to create a resonant 3-D sound environment.\r\n\r\nThe Solo-1 is compliant with Advanced Configuration and Power Interface (ACPI) standards.\r\n\r\nIt is available in an industry-standard 100-pin Thin Quad Flat Pack (TQFP) package.\r\n\r\n(Taken from the ESS Solo-1 device whitepaper)\r\n\r\n=======\r\n\r\nThe ESS Solo-1 is one of the very last of the audio chips from ESS which has the great ESFM FM-synthesiser technology. Whilst it can be debated whether a real OPL2/OPL3 chip from Yamaha sounds better or not, it cannot be debated that all of the subsequent ESS chips (the ESS Allegro, ESS Maestro etc) are objectively worse-sounding for DOS gaming purposes.\r\n\r\nThe Solo-1 and its later variant, the Solo-1E, are both initialised using the same tools: \r\n\r\n- ESSOLO.SYS (in config.sys)\r\n- ESSOLO.COM (in autoexec.bat)\r\n- ESSOLO.INI (binary configuration -not text!- file located at c:\\)\r\n\r\nIn most configurations, the SYS and COM tools simply configure the card and then exit - leaving no running driver or TSR in memory."
    }
 },
 {
@@ -413,7 +413,7 @@
       "fm": 3,
       "midi": 7,
       "driver": 1,
-      "notes": "Real OPL3 stereo FM synth by Yamaha."
+      "notes": "The YMF262 and YMF289 are real implementations of the OPL3 FM synth by Yamaha.\r\n\r\nThese discrete chips are fitted to many dedicated PC soundcards and are -sometimes- found in laptops which have seperate digital audio and FM audio components."
    }
 },
 {
@@ -653,7 +653,7 @@
       "fm": 7,
       "midi": 4,
       "driver": 3,
-      "notes": "MIDI support is only available within Windows."
+      "notes": "The Maestro-1™ PCI audio accelerator is part of ESS Technology’s new generation of architecture that not only meets the demands of advanced PC audio applications, but also enables the integration of a complete multimedia subsystem on either a single adapter or motherboard. \r\n\r\nMaestro-1’s functionality and interfaces are compliant with all major industry standards, including the Audio Subsystem Specification of PC97, Windows® 95 DirectSound™, Windows® Sound System® , AC’97 CODEC Interface, and PCI 2.1 Bus Specification.\r\n\r\nThe dual audio-engine Maestro-1 architecture consists of a 64-voice, pipelined, wavetable synthesizer and a proprietary programmable audio signal processor. Together they can simultaneously and efficiently handle multiple audio streams of different data types, high-quality music synthesis, and voice compression and decompression.\r\n\r\nThe Maestro-1 provides a high-performance PCI interface, while retaining full compatibility to existing DOS games through hardware emulation. The PCI bus is required for PC audio hardware to smoothly reproduce high-fidelity audio from Internet, MIDI, wave, and conferencing sources. The PCI bus achieves high-performance functionality by enabling the transfer of multiple, independent data streams. PCI improves data transfer efficiency by at least 20 times over the ISA bus. This is crucial for low-latency audio applications, such as Internet interactive audio.\r\n\r\nMicrosoft's DirectSound API is accelerated by digitally mixing up to 32 PCM streams of any frequency down to a single output stream of 48 kHz. Hardware acceleration frees the CPU to perform other tasks, such as video processing.\r\n\r\nThe Maestro-1’s Wave Processor (WP) provides high-quality wavetable synthesis cost-effectively by storing the downloadable table samples in system memory. With ESS’s WaveCache™ technology, the samples are retrieved using the PCI bus during playback. Each channel/stream has an independent pan, tremolo, vibrato and tone filter. The synthesizer also performs advanced audio effects such as reverb, chorus, flange, echo and 3-D spatial enhancement.\r\n\r\nThe Maestro-1 achieves complete DOS game compatibility through three major schemes: PC/PCI DMA, Distributed DMA, and Transparent DMA. Transparent DMA requires no sideband signals and is compatible with all Pentium® and Pentium Pro® chipsets with no constraints.\r\n\r\n(From the ESS Maestro-1 datasheet pdf)\r\n\r\n=====\r\n\r\nMIDI support is only available within Windows.\r\n\r\nNote that the datasheet makes no mention of the previous ESS ESFM FM synthesis technology - this is because it has been removed from the Maestro and subsequent ESS devices. FM performance with the Maestro-1 is significantly inferior to previous ESS audio devices."
    }
 },
 {
@@ -668,7 +668,7 @@
       "fm": 7,
       "midi": 4,
       "driver": 3,
-      "notes": "MIDI support is only available within Windows."
+      "notes": "The Maestro-2™ audio digital accelerator is a highly integrated PCI audio solution that brings advanced audio features to notebook computers. These features include a 64-voice wavetable synthesizer with Downloadable Sample (DLS) and complete DirectSound™ support. \r\n\r\nThe Maestro-2 proprietary technology supports both Microsoft®’s PC97 logo requirements and DOS game compatibility.\r\n\r\nThe Maestro-2 device works with any AC’97 compliant CODEC including ESS Technology’s own PT-101 AC’97-link CODEC. A secondary AC’97 CODEC interface supports an additional CODEC. Support for a Dumbar™ bridge docking solution for the secondary CODEC interface is planned for Q4 of 1997. The Maestro-2 communicates with a Dumbar bridge through a “super AC-link”. This link carries both PCM audio data and data for nonCODEC related data; i.e. game port, MPU-401, GPI/O, etc.\r\n\r\nThe dual audio-engine Maestro-2 architecture consists of a 64-voice, pipelined, wavetable synthesizer and a proprietary audio signal processor. Together they can simultaneously handle multiple audio streams of different data types, high-quality MIDI synthesis, and voice compression and decompression. Each channel/stream has an independent pan, tremolo, vibrato and tone filter. The synthesizer also performs advanced audio effects such as reverb, chorus, flange, echo and 3-D spatial enhancement.\r\n\r\nWaveCache™ technology reduces the system cost by storing data (synth samples, WAV files, algorithms) in host memory. The data is retrieved using high-performance PCI bus cycles during playback or recording.\r\n\r\nMicrosoft's DirectSound API is accelerated by digitally mixing up to 32 PCM streams of any frequency down to a single output stream of 48 kHz. This \"final\" buffer can then be piped to any CODEC (through the two attached AC'97 IF, 1394, USB) available to the system. This acceleration frees up the CPU to perform other tasks.\r\n\r\nThe Maestro-2 audio accelerator supports a number of different legacy audio schemes, including Distributed DMA protocol, PC/PCI DMA, Compaq® style one-signal SERIRQ#, and Transparent DMA. This ensures complete DOS game compatibility.\r\n\r\nThe Maestro-2 power management complies with both Advanced Configuration and Power Interface (ACPI) 1.0 and Advanced Power Management (APM) rev. 1.2.\r\n\r\n(From the ESS Maestro-2 datasheet pdf)\r\n\r\n=====\r\n\r\nMIDI support is only available within Windows.\r\n\r\nNote that the datasheet makes no mention of the previous ESS ESFM FM synthesis technology - this is because it has been removed from the Maestro and subsequent ESS devices. FM performance with the Maestro-1 is significantly inferior to previous ESS audio devices."
    }
 },
 {
@@ -683,7 +683,7 @@
       "fm": 7,
       "midi": 4,
       "driver": 3,
-      "notes": "MIDI support is only available within Windows."
+      "notes": "It appears that the main differences between the ESS Maestro-2 and the Maestro-2E are the inclusion of additional outputs (e.g digital S/P DIF) on the latter. Functionality wise they otherwise appear to be the same.\r\n\r\nMIDI support is only available within Windows.\r\n\r\nNote that the datasheet makes no mention of the previous ESS ESFM FM synthesis technology - this is because it has been removed from the Maestro and subsequent ESS devices. FM performance with the Maestro-1 is significantly inferior to previous ESS audio devices."
    }
 },
 {
@@ -698,7 +698,7 @@
       "fm": 7,
       "midi": 7,
       "driver": 3,
-      "notes": ""
+      "notes": "The ES1980 Maestro-3 PCI audio-modem accelerator combines advanced audio and modem functionality in a highly integrated PCI solution for notebook systems. It uses the highbandwidth PCI bus to deliver advanced PC audio features, such as HRTF 3D positional audio, DirectSound acceleration and DVD AC-3 5.1 to 2 speaker virtualization.\r\n\r\nThe ES1980 implements multistream DirectSound and DirectSound3D acceleration with digital mixing, sample rate conversion, and HRTF 3D filtering. The ES1980 maintains full DOS legacy audio compatibility over the standard PCI 2.1 and PCI 2.2 buses. The ES1980 is designed for high-performance consumer multimedia notebook PC applications.\r\n\r\nThe ES1980 includes a programmable audio signal processor and provides simultaneous support for multiple audio streams.\r\n\r\nWith its built-in DSP core, the ES1980 uses its dedicated direct memory access (DMA) engine to handle complex signal processing tasks with a bus-mastering PCI interface.\r\n\r\nThe support functions ensure efficient transfer of audio data streams to and from system memory buffers, providing a system solution with maximum performance and minimal host CPU loading. The architecture enables implementation of communications over the Internet from multiple sources. The ES1980 incorporates an HSP modem interface via its ACLink connecting with the ES2828 MC‘97 codec. The MC‘97 is used as the analog front end for the modem and DAA control.\r\n\r\nThe V.90 modem runs on the host while the ES1980 serves as the bidirectional buffer for data transmission and reception. The modem functions include the standard AT command set, V.42bis and Group 3 fax.\r\n\r\nThe ES1980, which operates at 3.3V digitally, is compliant with the Advanced Power Management (APM) 1.2, Advanced Configuration and Power Interface (ACPI) 1.1, and PCI Power\r\nManagement Interface (PPMI) 1.1. The ES1980 supports D0, D1, D2, and D3 power-saving modes for power efficiency when the audio system is both active and idle.\r\n\r\nThe ES1980 provides a high-quality docking solution and supports an AC-link based digital docking solution with its secondary AC‘97 Extension 2.1 compliant interface. CLKRUN#\r\npin support can be used to stop the PCI interface clock. This helps achieve the lowest power consumption in D3hot state.\r\n\r\nThe ES1980 provides full DOS game compatibility through three hardware implementations: PC/PCI, distributed DMA (DDMA), and transparent DMA (TDMA). \r\n\r\n(Taken from the ESS Maestro-3 datasheet pdf)\r\n\r\n=====\r\n\r\nMIDI support is only available within Windows.\r\n\r\nNote that the datasheet makes no mention of the previous ESS ESFM FM synthesis technology - this is because it has been removed from the Maestro and subsequent ESS devices. FM performance with the Maestro-1 is significantly inferior to previous ESS audio devices."
    }
 },
 {
@@ -924,6 +924,51 @@
       "midi": 7,
       "driver": 2,
       "notes": "Appears on a number of IBM Thinkpad models (X20/X21/240X).\r\n\r\nDOS configuration tool is available. Performance of this part is unknown."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 44,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YMF-744 (DS-1S)",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 3,
+      "midi": 6,
+      "driver": 2,
+      "notes": "The YMF744B (DS-1S) is a high performance audio controller for the PCI Bus. \r\n\r\nDS-1S consists of two separated functional blocks. One is the PCI Audio block and the other is the Legacy Audio block. \r\n\r\nPCI Audio block allows Software Driver to handle maximum of 73 concurrent audio streams with the Bus Master DMA engine.\r\nThe PCI Audio Engine converts the sampling rate of each audio stream and the streams are mixed without utilizing the CPU or causing system latency. By using the Software Driver from YAMAHA, PCI Audio provides 64-voice XG wavetable synthesizer with Reverb and variation. It also supports DirectSound hardware accelerator, Downloadable Sound (DLS) and DirectMusic accelerator.\r\n\r\nLegacy Audio block supports FM Synthesizer, Sound Blaster Pro, MPU401 UART mode and Joystick function in order to provide hardware compatibility for numerous PC games on real DOS without any software driver. To achieve legacy DMAC compatibility on the PCI, DS-1S supports both PC/PCI and Distributed DMA protocols. DS-1S also supports Serialized IRQ for legacy IRQ compatibility.\r\n\r\nDS-1S supports the connection to AC’97 which provides high quality DAC, ADC and analog mixing, and it can connect two AC’97s. In addition, it supports consumer IEC958, Audio Digital Interface (SPDIF), to connect external audio equipment by digital.\r\n\r\n(From Yamaha YMF744B datasheet pdf)\r\n\r\n=====\r\n\r\nIn DOS, the YMF744 provides the following functionality:\r\n\r\n- Sound Blaster Pro 2.0 compatible digital audio\r\n- True OPL3 FM synthesizer\r\n- MPU401 MIDI interface port\r\n\r\nIn Windows the device is much more advanced, providing the following:\r\n\r\n- DirectSound compatible interface\r\n- XG MIDI synthesizer (64 voice)\r\n\r\nIn most cases, the YMF744 is initialised in DOS using the SETUPDS.EXE utility which soft-configures the resources used by the device. In normal use the device does not need any drivers or TSR loading.\r\n\r\nBeing a PCI device, compatability does somewhat depend on the motherboard and chipset it is combined with; the best DOS performance being when it is used in PC/PCI mode on a supported motherboard chipset.\r\n\r\nThe YMF724/744/754 are a trio of very highly regarded PCI audio devices with high compatability with DOS games and clear, distortion free output. As a bonus they also have more advanced features for those gamers also wanting to use Windows."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 45,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YMF-724 (DS-1)",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 3,
+      "midi": 6,
+      "driver": 2,
+      "notes": "The YMF724F (DS-1) is a high performance audio controller for the PCI Bus. \r\n\r\nDS-1 consists of two separated functional blocks. One is the PCI Audio block and the other is the Legacy Audio block. PCI Audio block\r\nallows Software Driver to handle maximum of 73 concurrent audio streams with the Bus Master DMA engine.\r\n\r\nThe PCI Audio Engine converts the sampling rate of each audio stream and the streams are mixed without utilizing the CPU or causing system latency. By using the Software Driver from YAMAHA, PCI Audio provides 64-voice XG wavetable synthesizer with Reverb and variation. It also supports DirectSound hardware accelerator, Downloadable Sound (DLS) and DirectMusic accelerator.\r\n\r\nLegacy Audio block supports FM Synthesizer, Sound Blaster Pro, MPU401 UART mode and Joystick function in order to provide hardware compatibility for numerous PC games on real DOS without any software driver. To achieve legacy DMAC compatibility on the PCI, DS-1 supports both PC/PCI and Distributed DMA protocols. DS-1 also supports Serialized IRQ for legacy IRQ compatibility.\r\n\r\nDS-1 supports the connection to AC’97 which provides high quality DAC, ADC and analog mixing. In addition, it supports consumer IEC958, Audio Digital Interface (SPDIF) output, for high-quality, external audio amplification.\r\n\r\n(Taken from Yamaha YMF724 datasheet pdf)\r\n\r\n=====\r\n\r\nIn DOS, the YMF724 provides the following functionality:\r\n\r\n- Sound Blaster Pro 2.0 compatible digital audio\r\n- True OPL3 FM synthesizer\r\n- MPU401 MIDI interface port\r\n\r\nIn Windows the device is much more advanced, providing the following:\r\n\r\n- DirectSound compatible interface\r\n- XG MIDI synthesizer (64 voice)\r\n\r\nIn most cases, the YMF724 is initialised in DOS using the SETUPDS.EXE utility which soft-configures the resources used by the device. In normal use the device does not need any drivers or TSR loading.\r\n\r\nBeing a PCI device, compatability does somewhat depend on the motherboard and chipset it is combined with; the best DOS performance being when it is used in PC/PCI mode on a supported motherboard chipset.\r\n\r\nThe YMF724/744/754 are a trio of very highly regarded PCI audio devices with high compatability with DOS games and clear, distortion free output. As a bonus they also have more advanced features for those gamers also wanting to use Windows."
+   }
+},
+{
+   "model": "laptops.audio",
+   "pk": 46,
+   "fields": {
+      "manufacturer": 2,
+      "model": "YMF-754 (DS-1E)",
+      "bus": 3,
+      "digi_sb": 2,
+      "digi_other": 2,
+      "fm": 3,
+      "midi": 6,
+      "driver": 2,
+      "notes": "The YMF754 (DS-1E) is a high performance audio controller for the PCI Bus. \r\n\r\nDS-1E consists of two separated functional blocks. One is the PCI Audio block and the other is the Legacy Audio block.\r\n\r\nPCI Audio block provides 64-voice XG wavetable synthesizer with reverb and variation by using the software driver from YAMAHA. It also supports DirectSound hardware accelerator, Downloadable Sound (DLS) and DirectMusic accelerator.\r\n\r\nLegacy Audio block supports FM synthesizer, Sound Blaster Pro, MPU401 UART mode and Joystick function in order to provide hardware compatibility for numerous PC games on real DOS without any software driver.\r\n\r\nDS-1E supports the connection to AC’97 which provides high quality DAC, ADC and analog mixer, and it can connect two AC’97s. In addition, it supports consumer IEC958, Digital Audio Interface (SPDIF In/Out), to connect external audio equipment by digital.\r\nIn addition to support the same functions of YMF744B (DS-1S), DS-1E adds direct recording function for SPDIF In, and realizes to use SPDIF In and Zoomed Video Port at the same time. And, DS-1E is featured with the capability of dramatically reducing power consumption at normal operation\r\n\r\n(From the Yamaha YMF754 datasheet pdf)\r\n\r\n=====\r\n\r\nIn DOS, the YMF754 provides the following functionality:\r\n\r\n- Sound Blaster Pro 2.0 compatible digital audio\r\n- True OPL3 FM synthesizer\r\n- MPU401 MIDI interface port\r\n\r\nIn Windows the device is much more advanced, providing the following:\r\n\r\n- DirectSound compatible interface\r\n- XG MIDI synthesizer (64 voice)\r\n\r\nIn most cases, the YMF754 is initialised in DOS using the SETUPDS.EXE utility which soft-configures the resources used by the device. In normal use the device does not need any drivers or TSR loading.\r\n\r\nBeing a PCI device, compatability does somewhat depend on the motherboard and chipset it is combined with; the best DOS performance being when it is used in PC/PCI mode on a supported motherboard chipset.\r\n\r\nThe YMF724/744/754 are a trio of very highly regarded PCI audio devices with high compatability with DOS games and clear, distortion free output. As a bonus they also have more advanced features for those gamers also wanting to use Windows."
    }
 },
 {
