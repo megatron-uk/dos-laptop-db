@@ -179,7 +179,7 @@
    "model": "laptops.audiomidi",
    "pk": 3,
    "fields": {
-      "name": "MIDI (non-GM/GS)",
+      "name": "MIDI (non-GM/GS/XG)",
       "notes": "These devices support MIDI, but not any generally well-supported modes like GM (general midi), GS (Roland's own general sound) or XG (Yamaha).\r\n\r\nThis may be because the device does not support the required range of instruments (such as the Roland MT-32), does not communicate with the host via standard MIDI protocols (e.g. Gravis Ultrasound or Creative AWE) or it predates the introduction of the GM, GS or XG standards.\r\n\r\nUsing these devices for DOS games which expect to talk to standard GM/GS/XG compliant hardware may not be supported."
    }
 },
@@ -1000,7 +1000,7 @@
    "pk": 4,
    "fields": {
       "name": "Intel 440MX",
-      "notes": "The Intel® 440MX chipset represents the latest in chipset integration. By providing a cost effective, low power single-component chipset\r\nspecifically designed to reduce system cost, space and power, this product is ideal for lowpower, low cost applied computing platform\r\nsolutions. \r\n\r\nThe 440MX chipset offers designers an extremely cost effective way to enable Intel quality, reliability, and initiatives across all their\r\nlow power market segments.\r\n\r\nThe 440MX chipset supports low power Intel® CeleronTM processor and Intel® Pentium® III processor designs. The 440MX is offered in the\r\nsmall form-factor, 492 Ball Grid Array (BGA) package with a typical power dissipation of 2.1W making it an effective solution for fanless\r\napplications.\r\n\r\nThe 440MX chipset provides advanced features like support for USB, ACPI power management and AC-97 link interface, which enable soft technologies. The chipset is a single component that integrates the North Bridge and the South Bridge and an additional AC-97 digital link (2 channels) into one chip. It replaces the ISA interface with an 8-bit X-bus that supports KBC, SIO, and Flash memory.\r\n\r\n(Taken from the Intel® 440MX Chipset For Applied Computing PDF)"
+      "notes": "The Intel® 440MX chipset represents the latest in chipset integration. By providing a cost effective, low power single-component chipset specifically designed to reduce system cost, space and power, this product is ideal for lowpower, low cost applied computing platform solutions. \r\n\r\nThe 440MX chipset offers designers an extremely cost effective way to enable Intel quality, reliability, and initiatives across all their low power market segments.\r\n\r\nThe 440MX chipset supports low power Intel® CeleronTM processor and Intel® Pentium® III processor designs. The 440MX is offered in the small form-factor, 492 Ball Grid Array (BGA) package with a typical power dissipation of 2.1W making it an effective solution for fanless applications.\r\n\r\nThe 440MX chipset provides advanced features like support for USB, ACPI power management and AC-97 link interface, which enable soft technologies. The chipset is a single component that integrates the North Bridge and the South Bridge and an additional AC-97 digital link (2 channels) into one chip. It replaces the ISA interface with an 8-bit X-bus that supports KBC, SIO, and Flash memory.\r\n\r\n(Taken from the Intel® 440MX Chipset For Applied Computing PDF)"
    }
 },
 {
@@ -1111,7 +1111,7 @@
    "model": "laptops.lcdtype",
    "pk": 1,
    "fields": {
-      "name": "TFT (active matrix)",
+      "name": "TFT (LCD)",
       "notes": "None"
    }
 },
@@ -1119,7 +1119,7 @@
    "model": "laptops.lcdtype",
    "pk": 2,
    "fields": {
-      "name": "DSTN",
+      "name": "DSTN (LCD)",
       "notes": "None"
    }
 },
@@ -1127,8 +1127,32 @@
    "model": "laptops.lcdtype",
    "pk": 3,
    "fields": {
-      "name": "HPA",
+      "name": "HPA (LCD)",
       "notes": "None"
+   }
+},
+{
+   "model": "laptops.lcdtype",
+   "pk": 4,
+   "fields": {
+      "name": "STN (LCD)",
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.lcdtype",
+   "pk": 5,
+   "fields": {
+      "name": "Gas Plasma",
+      "notes": ""
+   }
+},
+{
+   "model": "laptops.lcdtype",
+   "pk": 6,
+   "fields": {
+      "name": "TFT IPS (LCD)",
+      "notes": ""
    }
 },
 {
