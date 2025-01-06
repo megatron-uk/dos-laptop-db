@@ -36,29 +36,15 @@
 	
 	<div class="container">
 		<div class="row">
-			<h5>Laptops using {{chipset.name}}</h5>
-			{% if laptops %}
-				<table class="table table-bordered table-striped table-hover" id="datatable">
-					<thead>
-						<tr>
-							<th>Manufacturer</th>
-							<th>Model</th>
-							<th>Sub-Model</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for l in laptops %}
-							<tr>
-								<td>{{l.manufacturer.manufacturer}}</td>
-								<td>{{l.model}}</td>
-								<td>{{l.submodel}}</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			{% else %}
-			<p>There are no laptops in the database which use this chipset.</p>
-			{% endif %}
+			<div>
+				<h5>Laptops with this Chipset</h5>
+				{% if laptops %}
+					<p>These laptops use this Chipset type.</p>
+					{% include "laptop_list_fragment.html" %}
+				{% else %}
+				<p>There are no laptops in the database which use this Chipset.</p>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 

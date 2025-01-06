@@ -32,7 +32,7 @@ def device(request, device_id):
 	device_images = AudioImage.objects.filter(audio = audio)
 	device_examples = AudioRecording.objects.filter(audio = audio)
 	
-	laptops = LaptopAudio.objects.filter(audio = audio)
+	laptops = LaptopAudio.objects.filter(audio = audio).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
 	
 	data = {
 		'audio' : audio,

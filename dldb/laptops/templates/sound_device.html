@@ -115,29 +115,31 @@
 	
 	<div class="container">
 		<div class="row">
-			<h5>Laptops with this device</h5>
-			{% if laptops %}
-				<table class="table table-bordered table-striped table-hover">
-					<thead>
-						<tr>
-							<th>Manufacturer</th>
-							<th>Model</th>
-							<th>Sub-Model</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for l in laptops %}
+			<div>
+				<h5>Laptops with this device</h5>
+				{% if laptops %}
+					<table class="table table-bordered table-striped table-hover">
+						<thead>
 							<tr>
-								<td>{{l.manufacturer.manufacturer}}</td>
-								<td>{{l.model}}</td>
-								<td>{{l.submodel}}</td>
+								<th>Manufacturer</th>
+								<th>Model</th>
+								<th>Sub-Model</th>
 							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			{% else %}
-			<p>There are no laptops in the database which use this device.</p>
-			{% endif %}
+						</thead>
+						<tbody>
+							{% for l in laptops %}
+								<tr>
+									<td>{{l.laptop.manufacturer.manufacturer}}</td>
+									<td>{{l.laptop.model}}</td>
+									<td>{{l.laptop.submodel}}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+				<p>There are no laptops in the database which use this device.</p>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 

@@ -18,7 +18,7 @@ def home(request):
 def cpu_device(request, device_id):
 	""" 486DX """
 	cpu = CPUClass.objects.get(pk = device_id)
-	laptops = LaptopCPU.objects.filter(cpu = cpu)
+	laptops = LaptopCPU.objects.filter(cpu = cpu).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
 	data = {
 		'cpu' : cpu,
 		'laptops' : laptops,
@@ -28,7 +28,7 @@ def cpu_device(request, device_id):
 def chipset_device(request, device_id):
 	""" Intel 440BX """
 	chipset = Chipset.objects.get(pk = device_id)
-	laptops = Laptop.objects.filter(chipset = chipset)
+	laptops = Laptop.objects.filter(chipset = chipset).order_by('manufacturer__manufacturer', 'model', 'submodel')
 	data = {
 		'chipset' : chipset,
 		'laptops' : laptops,

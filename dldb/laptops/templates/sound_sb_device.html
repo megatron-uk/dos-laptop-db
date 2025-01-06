@@ -70,24 +70,7 @@
 				<h5>Laptops supporting Sound Blaster mode: {{device.name}}</h5>
 				{% if laptops %}
 					<p>These laptops have audio devices which <i>only</i> support this specific Sound Blaster mode.</p>
-					<table class="table table-bordered table-striped table-hover" id="datatable2">
-						<thead>
-							<tr>
-								<th>Manufacturer</th>
-								<th>Model</th>
-								<th>Sub-Model</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for l in laptops %}
-								<tr>
-									<td>{{l.manufacturer.manufacturer}}</td>
-									<td>{{l.model}}</td>
-									<td>{{l.submodel}}</td>
-								</tr>
-							{% endfor %}
-						</tbody>
-					</table>
+					{% include "laptop_list_fragment_nested.html" %}
 				{% else %}
 				<p>There are no laptops in the database which <i>only</i> support this specific Sound Blaster mode.</p>
 				{% endif %}

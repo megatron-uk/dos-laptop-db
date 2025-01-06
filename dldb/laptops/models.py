@@ -157,7 +157,7 @@ class LCD(models.Model):
 	screen_type = models.ForeignKey(LCDType, on_delete=models.PROTECT)
 	
 	def __str__(self):
-		return f'{self.res_x}x{self.yes_y}, {self.screen_size}" ({self.screen_type.name})' 
+		return f'{self.res_x}x{self.res_y}, {self.screen_size}" ({self.screen_type.name})' 
 	
 	class Meta:
 		constraints = [
@@ -307,7 +307,7 @@ class Laptop(models.Model):
 	mouse = models.ForeignKey(Mouse, on_delete=models.PROTECT)
 	
 	def __str__(self):
-		return f"{self.manufacturer} {self.model} {self.submodel} ({self.lcd})"
+		return f"{self.manufacturer} {self.model} {self.submodel}"
 	
 	class Meta:
 		constraints = [
@@ -320,7 +320,7 @@ class Laptop(models.Model):
 
 class LaptopCPU(models.Model):
 	
-	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE)
 	cpu = models.ForeignKey(CPUClass, on_delete=models.PROTECT)
 	
 	def __str__(self):
@@ -337,7 +337,7 @@ class LaptopCPU(models.Model):
 
 class LaptopVideo(models.Model):
 	
-	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE)
 	video = models.ForeignKey(Video, on_delete=models.PROTECT)
 	
 	def __str__(self):
@@ -354,7 +354,7 @@ class LaptopVideo(models.Model):
 
 class LaptopAudio(models.Model):
 	
-	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE)
 	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
 	
 	def __str__(self):
@@ -371,11 +371,11 @@ class LaptopAudio(models.Model):
 		
 class LaptopLCD(models.Model):
 	
-	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE)
 	lcd = models.ForeignKey(LCD, on_delete=models.PROTECT)
 	
 	def __str__(self):
-		return f"{self.laptop} - {self.audio}"
+		return f"{self.laptop} - {self.lcd}"
 	
 	class Meta:
 		constraints = [
@@ -389,7 +389,7 @@ class LaptopLCD(models.Model):
 class AudioRecording(models.Model):
 	""" Audio recording for a given soundcard """
 
-	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
+	audio = models.ForeignKey(Audio, on_delete=models.CASCADE)
 	title = models.CharField(max_length = 255, unique = False, blank = False)
 	notes = models.TextField(blank = False)
 	recording = models.FileField(upload_to="uploads/audio/")
@@ -400,7 +400,7 @@ class AudioRecording(models.Model):
 class AudioImage(models.Model):
 	""" Audio chipset/card images """
 
-	audio = models.ForeignKey(Audio, on_delete=models.PROTECT)
+	audio = models.ForeignKey(Audio, on_delete=models.CASCADE)
 	title = models.CharField(max_length = 255, unique = False, blank = False)
 	notes = models.TextField(blank = False)
 	image = models.ImageField(upload_to="uploads/images/audio/")
@@ -411,7 +411,7 @@ class AudioImage(models.Model):
 class VideoImage(models.Model):
 	""" Video chipset/card images """
 
-	video = models.ForeignKey(Video, on_delete=models.PROTECT)
+	video = models.ForeignKey(Video, on_delete=models.CASCADE)
 	title = models.CharField(max_length = 255, unique = False, blank = False)
 	notes = models.TextField(blank = False)
 	image = models.ImageField(upload_to="uploads/images/video/")
@@ -422,7 +422,7 @@ class VideoImage(models.Model):
 class LaptopImage(models.Model):
 	""" Laptop images """
 
-	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE)
 	title = models.CharField(max_length = 255, unique = False, blank = False)
 	notes = models.TextField(blank = False)
 	image = models.ImageField(upload_to="uploads/images/laptop/")
@@ -433,7 +433,7 @@ class LaptopImage(models.Model):
 class ScalingImage(models.Model):
 	""" Screen scaling image for a given laptop """
 
-	laptop = models.ForeignKey(Laptop, on_delete=models.PROTECT)
+	laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE)
 	title = models.CharField(max_length = 255, unique = False, blank = False)
 	notes = models.TextField(blank = False)
 	image = models.ImageField(upload_to="uploads/images/scaling/")
