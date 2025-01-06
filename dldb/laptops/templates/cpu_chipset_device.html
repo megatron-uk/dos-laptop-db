@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content1 %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="{% url 'cpu_home' %}">CPU Technology</a></li>
+					<li class="breadcrumb-item active">Chipsets</li>
+					<li class="breadcrumb-item">{{chipset.name}}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h5>{{chipset.name}}</h5>
+			{% if chipset.notes %}
+				<p>{{chipset.notes|linebreaks}}</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_chipset_change' chipset.pk %}">Edit notes</a>
+				{% endif %}
+			{% else %}
+				<p>There are no notes stored for this chipset.</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_chipset_change' chipset.pk%}">Add notes</a>
+				{% endif %}
+			{% endif %}
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	
+	<div class="container">
+		<div class="row">
+			<h5>Laptops using {{chipset.name}}</h5>
+			{% if laptops %}
+				<table class="table table-bordered table-striped table-hover" id="datatable">
+					<thead>
+						<tr>
+							<th>Manufacturer</th>
+							<th>Model</th>
+							<th>Sub-Model</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for l in laptops %}
+							<tr>
+								<td>{{l.manufacturer.manufacturer}}</td>
+								<td>{{l.model}}</td>
+								<td>{{l.submodel}}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+			<p>There are no laptops in the database which use this chipset.</p>
+			{% endif %}
+		</div>
+	</div>
+
+	{% load static %}
+	<script src="{% static 'js/calamansi.min.js' %}"></script>
+	<script>
+		Calamansi.autoload();
+	</script>
+	<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+	<script src="{% static 'js/datatables.min.js' %}"></script>
+	{% if laptops|length > 20 %}
+	<script>
+		new DataTable('#datatable');
+	</script>
+	{% endif %}
+	
+{% endblock %}

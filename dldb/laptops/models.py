@@ -4,6 +4,7 @@ class AudioDriver(models.Model):
 	""" No driver, one time init, loadable driver, tsr, etc """
 
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -15,6 +16,7 @@ class AudioDigiOther(models.Model):
 	""" WSS etc"""
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -26,6 +28,7 @@ class AudioDigiSB(models.Model):
 	""" SB, SB Pro, SB 16 """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -37,6 +40,7 @@ class AudioFM(models.Model):
 	""" OPL2, ESFM, Emulated OPL3 etc """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -48,6 +52,7 @@ class AudioMIDI(models.Model):
 	""" MPU401 etc """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -59,6 +64,7 @@ class Bus(models.Model):
 	""" ISA, PCI, etc """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name} interface" 
@@ -73,7 +79,8 @@ class AudioManufacturer(models.Model):
 	""" Yamaha, ESS, Creative Labs """
 	
 	manufacturer = models.CharField(max_length = 255, unique = False, blank = False)
-
+	notes = models.TextField(blank = True)
+	
 	def __str__(self):
 		return f"{self.manufacturer}" 
 	
@@ -110,6 +117,7 @@ class Chipset(models.Model):
 	""" Intel 440BX """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 
 	def __str__(self):
 		return f"{self.name}" 
@@ -121,6 +129,7 @@ class CPUClass(models.Model):
 	""" Intel Pentium """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 
 	def __str__(self):
 		return f"{self.name}" 
@@ -132,6 +141,7 @@ class LCDType(models.Model):
 	""" TFT, DSTN """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 
 	def __str__(self):
 		return f"{self.name}" 
@@ -162,6 +172,7 @@ class Mouse(models.Model):
 	""" Trackpad, Trackpoint, Trackball, None, etc """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -173,6 +184,7 @@ class RamType(models.Model):
 	""" PC66, PC100 """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 
 	def __str__(self):
 		return f"{self.name} RAM" 
@@ -184,6 +196,7 @@ class VideoAccel3DTypes(models.Model):
 	""" OpenGL, S3D, Glige, Direct3D """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -195,6 +208,7 @@ class VideoScalingHW(models.Model):
 	""" No scaling in hw, bilinear, etc """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -206,6 +220,7 @@ class VideoScalingSW(models.Model):
 	""" No scaling software, driver, TSE """
 	
 	name = models.CharField(max_length = 255, unique = True, blank = False)
+	notes = models.TextField(blank = True)
 	
 	def __str__(self):
 		return f"{self.name}" 
@@ -217,6 +232,7 @@ class VideoManufacturer(models.Model):
 	""" ATI, Nvidia, Neomagic """
 	
 	manufacturer = models.CharField(max_length = 255, unique = False, blank = False)
+	notes = models.TextField(blank = True)
 
 	def __str__(self):
 		return f"{self.manufacturer}" 
@@ -263,6 +279,7 @@ class LaptopManufacturer(models.Model):
 	""" IBM, Dell, Toshiba """
 	
 	manufacturer = models.CharField(max_length = 255, unique = False, blank = False)
+	notes = models.TextField(blank = True)
 
 	def __str__(self):
 		return f"{self.manufacturer}" 

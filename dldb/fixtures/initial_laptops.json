@@ -3,273 +3,312 @@
    "model": "laptops.audiodriver",
    "pk": 1,
    "fields": {
-      "name": "Not required"
+      "name": "Not required",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodriver",
    "pk": 2,
    "fields": {
-      "name": "Initialisation only"
+      "name": "Initialisation only",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodriver",
    "pk": 3,
    "fields": {
-      "name": "Driver"
+      "name": "Driver",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodriver",
    "pk": 4,
    "fields": {
-      "name": "TSR"
+      "name": "TSR",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodriver",
    "pk": 5,
    "fields": {
-      "name": "No DOS driver"
+      "name": "No DOS driver",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigiother",
    "pk": 1,
    "fields": {
-      "name": "WSS"
+      "name": "WSS",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigiother",
    "pk": 2,
    "fields": {
-      "name": "DirectSound"
+      "name": "DirectSound",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigiother",
    "pk": 3,
    "fields": {
-      "name": "AC97"
+      "name": "AC97",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigiother",
    "pk": 4,
    "fields": {
-      "name": "None"
+      "name": "None",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 1,
    "fields": {
-      "name": "SB 1.0/2.0 (8bit mono)"
+      "name": "SB 1.0/2.0 (8bit mono)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 2,
    "fields": {
-      "name": "SB Pro 1.0/2.0 (8bit stereo)"
+      "name": "SB Pro 1.0/2.0 (8bit stereo)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 3,
    "fields": {
-      "name": "SB 16 (16bit stereo)"
+      "name": "SB 16 (16bit stereo)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 4,
    "fields": {
-      "name": "AWE32/64"
+      "name": "AWE32/64",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiodigisb",
    "pk": 5,
    "fields": {
-      "name": "None"
+      "name": "None",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 1,
    "fields": {
-      "name": "OPL2 (real, single, mono)"
+      "name": "OPL2 (real, single, mono)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 2,
    "fields": {
-      "name": "OPL2 (real, dual, stereo)"
+      "name": "OPL2 (real, dual, stereo)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 3,
    "fields": {
-      "name": "OPL3 (real, stereo)"
+      "name": "OPL3 (real, stereo)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 4,
    "fields": {
-      "name": "OPL4"
+      "name": "OPL4",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 5,
    "fields": {
-      "name": "ESFM"
+      "name": "ESFM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 6,
    "fields": {
-      "name": "OPL2 (emulated)"
+      "name": "OPL2 (emulated)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 7,
    "fields": {
-      "name": "OPL3 (emulated)"
+      "name": "OPL3 (emulated)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiofm",
    "pk": 8,
    "fields": {
-      "name": "None"
+      "name": "None",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomidi",
    "pk": 3,
    "fields": {
-      "name": "MIDI (non-GM/GS)"
+      "name": "MIDI (non-GM/GS)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomidi",
    "pk": 4,
    "fields": {
-      "name": "GM"
+      "name": "GM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomidi",
    "pk": 5,
    "fields": {
-      "name": "GS"
+      "name": "GS",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomidi",
    "pk": 6,
    "fields": {
-      "name": "XG"
+      "name": "XG",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomidi",
    "pk": 7,
    "fields": {
-      "name": "None"
+      "name": "None",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.bus",
    "pk": 1,
    "fields": {
-      "name": "ISA"
+      "name": "ISA",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.bus",
    "pk": 2,
    "fields": {
-      "name": "VESA VLB"
+      "name": "VESA VLB",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.bus",
    "pk": 3,
    "fields": {
-      "name": "PCI"
+      "name": "PCI",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.bus",
    "pk": 4,
    "fields": {
-      "name": "PCIe"
+      "name": "PCIe",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.bus",
    "pk": 5,
    "fields": {
-      "name": "AGP"
+      "name": "AGP",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.bus",
    "pk": 6,
    "fields": {
-      "name": "Other"
+      "name": "Other",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomanufacturer",
    "pk": 1,
    "fields": {
-      "manufacturer": "ESS"
+      "manufacturer": "ESS",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomanufacturer",
    "pk": 2,
    "fields": {
-      "manufacturer": "Yamaha"
+      "manufacturer": "Yamaha",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomanufacturer",
    "pk": 3,
    "fields": {
-      "manufacturer": "Creative Labs"
+      "manufacturer": "Creative Labs",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomanufacturer",
    "pk": 4,
    "fields": {
-      "manufacturer": "Neomagic"
+      "manufacturer": "Neomagic",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomanufacturer",
    "pk": 5,
    "fields": {
-      "manufacturer": "IBM"
+      "manufacturer": "IBM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.audiomanufacturer",
    "pk": 6,
    "fields": {
-      "manufacturer": "Crystal Semiconductor"
+      "manufacturer": "Crystal Semiconductor",
+      "notes": "None"
    }
 },
 {
@@ -891,420 +930,480 @@
    "model": "laptops.chipset",
    "pk": 1,
    "fields": {
-      "name": "Intel 430TX"
+      "name": "Intel 430TX",
+      "notes": "Intel, now currently embedded in the Chipset Industry, decided to make another giant leap with the final addition to the Socket-7 line of chipsets, originally thought of as being called the Triton IV chipset and boasting features not even found in the HX chipset the TX chipset turned out to be a bit of a disappointment for most users, although not all.\r\n\r\nThe TX Chipset was intended to be the first and last Socket-7 chipset to be able to boast high end features such as SDRAM and USB support while allowing the user a variety of power saving options to use. The highly integrated 2 chip packaging solution found in the TX chipset is superior even to that of the 430HX chipset, one of the few areas in which the TX chipset is actually superior to the HX.\r\n\r\nThe SDRAM performance of the TX chipset isn't \"bone shattering\" due to a timing problem with the chipset (which has been corrected in the Pentium II successor to the TX chipset, the LX chipset), however the stability of SDRAM and the TX chipset at higher bus speeds is much greater than that of EDO and the HX Chipset.\r\n\r\nThe UltraDMA specification is another plus of the TX chipset, with theoretical transfer rates as high as 33MB/S, nearly equivalent to UltraWide SCSI-3 performance although that number cannot be reproduced significantly in real world applications. Unfortunately the TX chipset still doesn't have the deep CPU and PCI buffers found in the HX chipset, however the performance difference between the TX and the HX chipsets is barely noticeable. \r\n\r\nThe 256MB maximum memory limit of the TX chipset is blurred by its meager 64MB cacheable memory area which takes us back to the old days of the FX chipset. Intel made the TX chipset the proper fare well to the Socket-7 standard in order to make way for the new Slot-1 motherboards, however what they failed to realize was that by not giving the user the option of AGP in a Socket-7 motherboard other companies such as VIA are able to step up and satisfy this need.\r\n\r\n(Taken from https://dosdays.co.uk/topics/intel_chipsets.php)"
    }
 },
 {
    "model": "laptops.chipset",
    "pk": 2,
    "fields": {
-      "name": "Intel 440BX"
+      "name": "Intel 440BX",
+      "notes": "The Intel 440BX is the third Pentium II chipset released by Intel, succeeding the 440FX and 440LX. With the new 100 MHz front side bus, Pentium II CPUs were able to scale better in performance by reducing the difference between processor clock and bus speed. The previous 66 MHz bus had become a serious bottleneck and dated back to the first Pentium \"Classic\" chipsets.\r\n\r\nThe 440BX had two closely related chipset peers; the 440ZX and 440MX. 440MX is a mobile chipset for laptops, although a number of notebooks did use 440BX. 440ZX is a cost-reduced version of 440BX. It has a lower maximum RAM limit resulting from having support for only 2 RAM banks. The 440ZX-66, designed for Intel Celeron processors, is limited to 66 MHz FSB speed.\r\n\r\nThe 440BX became one of Intel's most popular chipsets. Enthusiasts enjoyed its overclockability, with the chipset capable of running the front-side bus at speeds ranging from 66 MHz to well over 133 MHz, in stark contrast to the 440LX's struggle to top 75 MHz. A common overclock involved the pin-40 hack, or using an ABIT BP6 or Asus P2B, and setting the bus speed on a 66 MHz Covington or Mendocino-core Celeron to 100 MHz. The Mendocino-core Celeron 300A became a \"sweet spot\" for overclockers, with nearly 100% success rates at reaching 450 MHz on a 100 MHz FSB, allowing it to equate to a much more expensive Pentium II at 450 MHz. Other popular overclocks included the SL2W8-stepping Deschutes-core Pentium II that could often run to 450 MHz at 100 MHz FSB, and the SL35D Katmai-core Pentium III 450 MHz which could frequently manage 600 MHz on a 133 MHz FSB. The later Pentium III Coppermine-core processor was easily overclocked and performed well on 440BX motherboards. Finally, the unsupported Tualatin-core Pentium III could be used with an adapter and various modifications, with varying degrees of success.\r\n\r\nIronically, the 440BX offered better performance than several of its successors. The i810 and i820 chipsets were unable to beat the 440BX at the 100 MHz FSB speed. The i820 was plagued with a requirement for high cost RDRAM to reach good performance, along with a string of reliability issues involving an RDRAM-to-SDRAM memory translator hub in designs using that chipset with SDRAM. Unofficially, the 440BX could often be taken to 133 MHz FSB. Enthusiast motherboards, such as the Asus P3B-F and Abit BH6/BF6/BE6 series, were equipped with BIOS options to set the board to this unofficial speed. With a 133 MHz FSB, the 440BX could even match the later i815 chipset, which was designed to accommodate the final Tualatin-core Pentium III.\r\n\r\nUnfortunately, running a 440BX above 100 MHz FSB resulted in the AGP video card being forced to run on an overclocked AGP bus, as the 440BX only had \"2/3\" and \"1/1\" bus dividers. Some video cards were tolerant of this, such as various early NVIDIA GeForce cards, but more than a few were unstable with a 35% AGP overclock. The PCI bus was not affected by this problem (there was a \"1/4\" bus divider for the PCI bus on the 440BX) so users could use a PCI graphics card in lieu of an AGP one. However, this inflicted a performance penalty on graphical performance since PCI has significantly lower bandwidth throughput than AGP.\r\n\r\nStill, the later i815 was considered the best Pentium III chipset because it offered a better feature set and very similar performance relative to the 440BX. Not only did the i815 support a proper \"1/2\" AGP divider for the 133 MHz FSB clock rate, AGP 4x, and Ultra DMA 100, but the later revisions also directly supported the Tualatin Pentium III; however, the i815 had a RAM limit of 512MB compared to 440BX's 1GB RAM limit.\r\n\r\nThe success of the 440BX chipset has caused various software emulation and virtualization packages to use it as part of their virtual system. VMware and Microsoft Virtual PC present the Intel 440BX chipset virtually to hosted virtual machines, due to its broad compatibility.\r\n\r\n(Taken from the Wikipedia page for the Intel 440BX)"
    }
 },
 {
    "model": "laptops.chipset",
    "pk": 3,
    "fields": {
-      "name": "Intel 440ZX"
+      "name": "Intel 440ZX",
+      "notes": "The Intel 440ZX chipset is mainly a cut-down version of the 440BX designed for lower costs and smaller form factors.\r\n\r\nThe main differences to the full 440BX are:\r\n\r\n- Only supports 2 banks of RAM (instead of 4)\r\n- Only supports 66MHz bus speeds (instead of 66MHz and 100MHz)"
    }
 },
 {
    "model": "laptops.chipset",
    "pk": 4,
    "fields": {
-      "name": "Intel 440MX"
+      "name": "Intel 440MX",
+      "notes": "The Intel® 440MX chipset represents the latest in chipset integration. By providing a cost effective, low power single-component chipset\r\nspecifically designed to reduce system cost, space and power, this product is ideal for lowpower, low cost applied computing platform\r\nsolutions. \r\n\r\nThe 440MX chipset offers designers an extremely cost effective way to enable Intel quality, reliability, and initiatives across all their\r\nlow power market segments.\r\n\r\nThe 440MX chipset supports low power Intel® CeleronTM processor and Intel® Pentium® III processor designs. The 440MX is offered in the\r\nsmall form-factor, 492 Ball Grid Array (BGA) package with a typical power dissipation of 2.1W making it an effective solution for fanless\r\napplications.\r\n\r\nThe 440MX chipset provides advanced features like support for USB, ACPI power management and AC-97 link interface, which enable soft technologies. The chipset is a single component that integrates the North Bridge and the South Bridge and an additional AC-97 digital link (2 channels) into one chip. It replaces the ISA interface with an 8-bit X-bus that supports KBC, SIO, and Flash memory.\r\n\r\n(Taken from the Intel® 440MX Chipset For Applied Computing PDF)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 1,
    "fields": {
-      "name": "286"
+      "name": "286",
+      "notes": "The Intel 80286 (also marketed as the iAPX 286 and often called Intel 286) is a 16-bit microprocessor that was introduced on February 1, 1982. It was the first 8086-based CPU with separate, non-multiplexed address and data buses and also the first with memory management and wide protection abilities. The 80286 used approximately 134,000 transistors in its original nMOS (HMOS) incarnation and, just like the contemporary 80186, it can correctly execute most software written for the earlier Intel 8086 and 8088 processors.\r\n\r\nThe 80286 was employed for the IBM PC/AT, introduced in 1984, and then widely used in most PC/AT compatible computers until the early 1990s. In 1987, Intel shipped its five-millionth 80286 microprocessor.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Intel_80286)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 2,
    "fields": {
-      "name": "386SX (inc deriviatives)"
+      "name": "386SX (inc deriviatives)",
+      "notes": "In 1988, Intel introduced the 80386SX, most often referred to as the 386SX, a cut-down version of the 80386 with a 16-bit data bus, mainly intended for lower-cost PCs aimed at the home, educational, and small-business markets, while the 386DX remained the high-end variant used in workstations, servers, and other demanding tasks. \r\n\r\nThe CPU remained fully 32-bit internally, but the 16-bit bus was intended to simplify circuit-board layout and reduce total cost.\r\n\r\nThe 16-bit bus simplified designs but hampered performance. Only 24 pins were connected to the address bus, therefore limiting addressing to 16 MB, but this was not a critical constraint at the time. \r\n\r\nPerformance differences were due not only to differing data-bus widths, but also due to performance-enhancing cache memories often employed on boards using the original chip. This version can run 32-bit application software at 70 to 90 percent compared to the regular Intel386 DX CPU.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/I386)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 3,
    "fields": {
-      "name": "386DX (inc deriviatives"
+      "name": "386DX (inc deriviatives",
+      "notes": "The Intel 386, originally released as the 80386 and later renamed i386, was the first x86 32-bit microprocessor designed by Intel. Pre-production samples of the 386 were released to select developers in 1985, while mass production commenced in 1986. \r\n\r\nThe processor was a significant evolution in the x86 architecture, extending a long line of processors that stretched back to the Intel 8008. The 386 was the central processing unit (CPU) of many workstations and high-end personal computers of the time. The 386 began to fall out of public use starting with the release of the i486 processor in 1989, while in embedded systems the 386 remained in widespread use until Intel finally discontinued it in 2007.\r\n\r\nCompared to its predecessor the Intel 80286, the 80386 added a three-stage instruction pipeline which it brings up to total of 6-stage instruction pipeline, extended the architecture from 16-bits to 32-bits, and added an on-chip memory management unit. This paging translation unit made it much easier to implement operating systems that used virtual memory. It also offered support for register debugging.\r\n\r\nThe 80386 featured three operating modes: real mode, protected mode and virtual mode. The protected mode, which debuted in the 80286, was extended to allow the 386 to address up to 4 GB of memory. With the addition of segmented addressing system, it can expand up to 64 terabytes of virtual memory. The all new virtual 8086 mode (or VM86) made it possible to run one or more real mode programs in a protected environment, although some programs were not compatible.\r\n\r\nThe 32-bit i386 can correctly execute most code intended for the earlier 16-bit processors such as 8086 and 80286 that were ubiquitous in early PCs. As the original implementation of the 32-bit extension of the 80286 architecture, the i386 instruction set, programming model, and binary encodings are still the common denominator for all 32-bit x86 processors, which is termed the i386 architecture, x86, or IA-32, depending on context. \r\n\r\n(Taken from https://en.wikipedia.org/wiki/I386)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 4,
    "fields": {
-      "name": "486SX"
+      "name": "486SX",
+      "notes": "The Intel 486SX is a 486DX with the internal FPU / Floating Point Unit disabled (or removed) in order to reduce cost. \r\n\r\nFor all non-floating point operations the 486SX performs at a parity with the equivalent 486DX part."
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 5,
    "fields": {
-      "name": "486DX"
+      "name": "486DX",
+      "notes": "The Intel 486, officially named i486 and also known as 80486, is a microprocessor introduced in 1989. It is a higher-performance follow-up to the Intel 386. It represents the fourth generation of binary compatible CPUs following the 8086 of 1978, the Intel 80286 of 1982, and 1985's i386.\r\n\r\nIt was the first tightly-pipelined x86 design as well as the first x86 chip to include more than one million transistors. It offered a large on-chip cache and an integrated floating-point unit. When it was announced, the initial performance was originally published between 15 and 20 VAX MIPS, between 37,000 and 49,000 dhrystones per second, and between 6.1 and 8.2 double-precision megawhetstones per second for both 25 and 33 MHz version.\r\n\r\nA typical 50 MHz i486 executes 41 million instructions per second Dhrystone MIPS and SPEC integer rating of 27.9. It is approximately twice as fast as the i386 or i286 per clock cycle. The i486's improved performance is thanks to its five-stage pipeline with all stages bound to a single cycle. The enhanced FPU unit on the chip was significantly faster than the i387 FPU per cycle. The i387 FPU was a separate, optional math coprocessor installed in a motherboard socket alongside the i386 (but introduced as an internal component as part of the 486DX).\r\n\r\nThe i486 was succeeded by the original Pentium. Orders were discontinued for the i486 on March 30, 2007 and the last shipments were on September 28, 2007.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/I486)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 6,
    "fields": {
-      "name": "486DX2"
+      "name": "486DX2",
+      "notes": "The first major update to the i486 design came in March 1992 with the release of the clock-doubled 486DX2 series. \r\n\r\nIt was the first time that the CPU core clock frequency was separated from the system bus clock frequency by using a dual clock multiplier, supporting 486DX2 chips at 40 and 50 MHz. The faster 66 MHz 486DX2-66 was released that August.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/I486)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 7,
    "fields": {
-      "name": "486DX4"
+      "name": "486DX4",
+      "notes": "The 486 DX4 is a clock-tripled 486 microprocessor with 16 KB level 1 cache.\r\n\r\nIntel named it DX4 (rather than DX3) as a consequence of litigation with Advanced Micro Devices over trademarks. The product was officially named IntelDX4, but OEMs continued using the i486 naming convention.\r\n\r\nIntel produced the 486 DX4 with two clock speed steppings: A 75-MHz version (3× 25 MHz multiplier), and a 100-MHz version (3× 33.3 MHz or 2x 50 MHz). Both chips were released in March 1994. A version of IntelDX4 featuring write-back cache was released in October 1994. The original write-through versions of the chip are marked with a laser-embossed “&E,” while the write-back-enabled versions are marked “&EW.” i486 OverDrive editions of IntelDX4 had locked multipliers, and therefore can only run at 3× the external clock speed. The 100-MHz model of the processor had an iCOMP rating of 435, while the 75-MHz processor had a rating of 319. IntelDX4 was an OEM-only product, but the DX4 Overdrive could be purchased at a retail store.\r\n\r\nThe DX4 microprocessor is mostly pin-compatible with the 486, but requires a lower 3.3-V supply. Normal i486DX and DX2 processors use a 5-V supply; plugging a DX4 into an unmodified socket will destroy the processor. Motherboards lacking support for the 3.3-V CPUs can sometimes make use of them using a voltage regulator module (VRM) that fits between the socket and the CPU. The 486 DX4 OverDrive CPUs have voltage regulator modules built in.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Intel_DX4)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 8,
    "fields": {
-      "name": "Intel Pentium"
+      "name": "Intel Pentium",
+      "notes": "The Pentium (also referred to as the i586 or P5 Pentium) is a microprocessor introduced by Intel on March 22, 1993. It is the first CPU using the Pentium brand. Considered the fifth generation in the x86 (8086) compatible line of processors, succeeding the i486, its implementation and microarchitecture was internally called P5.\r\n\r\nLike the Intel i486, the Pentium is instruction set compatible with the 32-bit i386. It uses a very similar microarchitecture to the i486, but was extended enough to implement a dual integer pipeline design, as well as a more advanced floating-point unit (FPU) that was noted to be ten times faster than its predecessor.\r\n\r\nThe Pentium was succeeded by the Pentium Pro in November 1995. In October 1996, the Pentium MMX was introduced, complementing the same basic microarchitecture of the original Pentium with the MMX instruction set, larger caches, and some other enhancements. Intel discontinued the P5 Pentium processors (sold as a cheaper product since the release of the Pentium II in 1997) in early 2000 in favor of the Celeron processor, which had also replaced the 80486 brand.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Pentium_(original))"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 9,
    "fields": {
-      "name": "Intel Pentium MMX"
+      "name": "Intel Pentium MMX",
+      "notes": "The P55C (or 80503) was developed by Intel's Research & Development Center in Haifa, Israel. It was sold as Pentium with MMX Technology (usually just called Pentium MMX); although it was based on the P5 core, it featured a new set of 57 \"MMX\" instructions intended to improve performance on multimedia tasks, such as encoding and decoding digital media data. The Pentium MMX line was introduced on October 22, 1996, and released in January 1997.\r\n\r\nThe new instructions worked on new data types: 64-bit packed vectors of either eight 8-bit integers, four 16-bit integers, two 32-bit integers, or one 64-bit integer. So, for example, the PADDUSB (Packed ADD Unsigned Saturated Byte) instruction adds two vectors, each containing eight 8-bit unsigned integers together, elementwise; each addition that would overflow saturates, yielding 255, the maximal unsigned value that can be represented in a byte. \r\n\r\nOther changes to the core include a 6-stage pipeline (vs. 5 on P5) with a return stack (first done on Cyrix 6x86) and better parallelism, an improved instruction decoder, 16KB L1 data cache + 16KB L1 instruction cache with Both 4-way associativity (vs. 8KB L1 Data/instruction with 2-way on P5), 4 write buffers that could now be used by either pipeline (vs. one corresponding to each pipeline on P5) and an improved branch predictor taken from the Pentium Pro,[27][28] with a 512-entry buffer (vs. 256 on P5).\r\n\r\nIt contained 4.5 million transistors and had an area of 140 mm2. It was fabricated in a 280 nm CMOS process with the same metal pitches as the previous 350 nm BiCMOS process, so Intel described it as \"350 nm\" because of its similar transistor density.[30] The process has four levels of interconnect.\r\n\r\nWhile the P55C remained compatible with Socket 7, the voltage requirements for powering the chip differ from the standard Socket 7 specifications. Most motherboards manufactured for Socket 7 before the establishment of the P55C standard are not compliant with the dual voltage rail required for proper operation of this CPU (2.8 volt core voltage, 3.3 volt input/output (I/O) voltage). Intel addressed the issue with OverDrive upgrade kits that featured an interposer with its own voltage regulation.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Pentium_(original)#MMX)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 10,
    "fields": {
-      "name": "Intel Pentium II"
+      "name": "Intel Pentium II",
+      "notes": "The Pentium II is a brand of sixth-generation Intel x86 microprocessors based on the P6 microarchitecture, introduced on May 7, 1997. It combined the P6 microarchitecture seen on the Pentium Pro with the MMX instruction set of the Pentium MMX.\r\n\r\nContaining 7.5 million transistors (27.4 million in the case of the mobile Dixon with 256 KB on-die L2 cache), the Pentium II featured an improved version of the first P6-generation core of the Pentium Pro, which contained 5.5 million transistors. However, its L2 cache subsystem was a downgrade when compared to the Pentium Pro's. \r\n\r\nIn 1998, Intel stratified the Pentium II family by releasing the Pentium II-based Celeron line of processors for low-end computers and the Intel Pentium II Xeon line for servers and workstations. The Celeron was characterized by a reduced or omitted (in some cases present but disabled) on-die full-speed L2 cache and a 66 MT/s FSB. The Xeon was characterized by a range of full-speed L2 cache (from 512 KB to 2048 KB), a 100 MT/s FSB, a different physical interface (Slot 2), and support for symmetric multiprocessing.\r\n\r\nIn February 1999, the Pentium II was replaced by the nearly identical Pentium III, which only added the then-new SSE instruction set. However, the older family would continue to be produced until June 2001 for desktop units, September 2001 for mobile units, and the end of 2003 for embedded devices.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Pentium_II)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 11,
    "fields": {
-      "name": "Intel Pentium III"
+      "name": "Intel Pentium III",
+      "notes": "The Pentium III (marketed as Intel Pentium III Processor, informally PIII or P3) brand refers to Intel's 32-bit x86 desktop and mobile CPUs based on the sixth-generation P6 microarchitecture introduced on February 28, 1999. \r\n\r\nThe brand's initial processors were very similar to the earlier Pentium II-branded processors. The most notable differences were the addition of the Streaming SIMD Extensions (SSE) instruction set (to accelerate floating point and parallel calculations), and the introduction of a controversial serial number embedded in the chip during manufacturing.\r\n\r\nEven after the release of the Pentium 4 in late 2000, the Pentium III continued to be produced with new models introduced up until early 2003. They were then discontinued in April 2004 for desktop units and May 2007 for mobile units.\r\n\r\nSimilarly to the Pentium II it superseded, the Pentium III was also accompanied by the Celeron brand for lower-end versions, and the Xeon for high-end (server and workstation) derivatives. \r\n\r\nThe Pentium III was eventually superseded by the Pentium 4, but its Tualatin core also served as the basis for the Pentium M CPUs, which used many ideas from the P6 microarchitecture. Subsequently, it was the Pentium M microarchitecture of Pentium M branded CPUs, and not the NetBurst found in Pentium 4 processors, that formed the basis for Intel's energy-efficient Core microarchitecture of CPUs branded Core 2, Pentium Dual-Core, Celeron (Core), and Xeon.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Pentium_III)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 12,
    "fields": {
-      "name": "Intel Pentium 4"
+      "name": "Intel Pentium 4",
+      "notes": "Pentium 4 is a series of single-core CPUs for desktops, laptops and entry-level servers manufactured by Intel. The processors were shipped from November 20, 2000 until August 8, 2008. All Pentium 4 CPUs are based on the NetBurst microarchitecture, the successor to the P6.\r\n\r\nThe Pentium 4 Willamette (180 nm) introduced SSE2, while the Prescott (90 nm) introduced SSE3 and later 64-bit technology. Later versions introduced Hyper-Threading Technology (HTT). The first Pentium 4-branded processor to implement 64-bit was the Prescott (90 nm) (February 2004), but this feature was not enabled. Intel subsequently began selling 64-bit Pentium 4s using the \"E0\" revision of the Prescotts, being sold on the OEM market as the Pentium 4, model F. The E0 revision also adds eXecute Disable (XD) (Intel's name for the NX bit) to Intel 64. Intel's official launch of Intel 64 (under the name EM64T at that time) in mainstream desktop processors was the N0 stepping Prescott-2M.\r\n\r\nIntel also marketed a version of their low-end Celeron processors based on the NetBurst microarchitecture (often referred to as Celeron 4), and a high-end derivative, Xeon, intended for multi-socket servers and workstations. In 2005, the Pentium 4 was complemented by the more advanced dual-core-brands Pentium D and Pentium Extreme Edition, all were succeeded at the top range by the Core 2 brand, while production continued until 2008, with Pentium 4 replaced by Pentium Dual-Core.[\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Pentium_4)"
    }
 },
 {
    "model": "laptops.cpuclass",
    "pk": 13,
    "fields": {
-      "name": "Intel Celeron"
+      "name": "Intel Celeron",
+      "notes": "Celeron is a series of IA-32 and x86-64 computer microprocessors targeted at low-cost personal computers, manufactured by Intel from 1998 until 2023.\r\n\r\nThe first Celeron-branded CPU was introduced on April 15, 1998, and was based on the Pentium II. Celeron-branded processors released from 2009 to 2023 are compatible with IA-32 software. They typically offer less performance per clock speed compared to flagship Intel CPU lines, such as the Pentium or Core brands. They often have less cache or intentionally disabled advanced features, with variable impact on performance.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Celeron)"
    }
 },
 {
    "model": "laptops.lcdtype",
    "pk": 1,
    "fields": {
-      "name": "TFT (active matrix)"
+      "name": "TFT (active matrix)",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.lcdtype",
    "pk": 2,
    "fields": {
-      "name": "DSTN"
+      "name": "DSTN",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.lcdtype",
    "pk": 3,
    "fields": {
-      "name": "HPA"
+      "name": "HPA",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.mouse",
    "pk": 1,
    "fields": {
-      "name": "None"
+      "name": "None",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.mouse",
    "pk": 2,
    "fields": {
-      "name": "Trackball"
+      "name": "Trackball",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.mouse",
    "pk": 3,
    "fields": {
-      "name": "Trackpad"
+      "name": "Trackpad",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.mouse",
    "pk": 4,
    "fields": {
-      "name": "Trackpoint"
+      "name": "Trackpoint",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 1,
    "fields": {
-      "name": "EDO SO-DIMM"
+      "name": "EDO SO-DIMM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 2,
    "fields": {
-      "name": "PC66 SO-DIMM"
+      "name": "PC66 SO-DIMM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 3,
    "fields": {
-      "name": "PC100 SO-DIMM"
+      "name": "PC100 SO-DIMM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.ramtype",
    "pk": 4,
    "fields": {
-      "name": "PC133 SO-DIMM"
+      "name": "PC133 SO-DIMM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 1,
    "fields": {
-      "name": "ATI CIF"
+      "name": "ATI CIF",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 2,
    "fields": {
-      "name": "Glide"
+      "name": "Glide",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 3,
    "fields": {
-      "name": "SGL"
+      "name": "SGL",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 4,
    "fields": {
-      "name": "S3D"
+      "name": "S3D",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 5,
    "fields": {
-      "name": "MeTaL"
+      "name": "MeTaL",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 6,
    "fields": {
-      "name": "Speedy3D"
+      "name": "Speedy3D",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 7,
    "fields": {
-      "name": "MSI"
+      "name": "MSI",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 8,
    "fields": {
-      "name": "NV1"
+      "name": "NV1",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 9,
    "fields": {
-      "name": "OpenGL"
+      "name": "OpenGL",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoaccel3dtypes",
    "pk": 10,
    "fields": {
-      "name": "Direct3D"
+      "name": "Direct3D",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalinghw",
    "pk": 1,
    "fields": {
-      "name": "None"
+      "name": "None",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalinghw",
    "pk": 2,
    "fields": {
-      "name": "Basic Support"
+      "name": "Basic Support",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalinghw",
    "pk": 3,
    "fields": {
-      "name": "Good Quality"
+      "name": "Good Quality",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalinghw",
    "pk": 4,
    "fields": {
-      "name": "Great Quality"
+      "name": "Great Quality",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalingsw",
    "pk": 1,
    "fields": {
-      "name": "None"
+      "name": "None",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalingsw",
    "pk": 2,
    "fields": {
-      "name": "Basic Support"
+      "name": "Basic Support",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalingsw",
    "pk": 3,
    "fields": {
-      "name": "Good Quality"
+      "name": "Good Quality",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videoscalingsw",
    "pk": 4,
    "fields": {
-      "name": "Great Quality"
+      "name": "Great Quality",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videomanufacturer",
    "pk": 1,
    "fields": {
-      "manufacturer": "ATI"
+      "manufacturer": "ATI",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videomanufacturer",
    "pk": 2,
    "fields": {
-      "manufacturer": "Cirrus Logic"
+      "manufacturer": "Cirrus Logic",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videomanufacturer",
    "pk": 3,
    "fields": {
-      "manufacturer": "Headland"
+      "manufacturer": "Headland",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videomanufacturer",
    "pk": 4,
    "fields": {
-      "manufacturer": "Matrox"
+      "manufacturer": "Matrox",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videomanufacturer",
    "pk": 5,
    "fields": {
-      "manufacturer": "Neomagic"
+      "manufacturer": "Neomagic",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videomanufacturer",
    "pk": 6,
    "fields": {
-      "manufacturer": "Nvidia"
+      "manufacturer": "Nvidia",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.videomanufacturer",
    "pk": 7,
    "fields": {
-      "manufacturer": "S3"
+      "manufacturer": "S3",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.laptopmanufacturer",
    "pk": 1,
    "fields": {
-      "manufacturer": "IBM"
+      "manufacturer": "IBM",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.laptopmanufacturer",
    "pk": 2,
    "fields": {
-      "manufacturer": "Toshiba"
+      "manufacturer": "Toshiba",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.laptopmanufacturer",
    "pk": 3,
    "fields": {
-      "manufacturer": "Dell"
+      "manufacturer": "Dell",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.laptopmanufacturer",
    "pk": 4,
    "fields": {
-      "manufacturer": "Sony"
+      "manufacturer": "Sony",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.laptopmanufacturer",
    "pk": 5,
    "fields": {
-      "manufacturer": "HP"
+      "manufacturer": "HP",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.laptopmanufacturer",
    "pk": 6,
    "fields": {
-      "manufacturer": "Acer"
+      "manufacturer": "Acer",
+      "notes": "None"
    }
 },
 {
    "model": "laptops.laptopmanufacturer",
    "pk": 7,
    "fields": {
-      "manufacturer": "Fujitsu Siemens"
+      "manufacturer": "Fujitsu Siemens",
+      "notes": "None"
    }
 }
 ]

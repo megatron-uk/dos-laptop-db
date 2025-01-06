@@ -11,6 +11,8 @@ urlpatterns = [
     path("", views.home, name="homepage"),
     
     path("cpu", views_cpu.home, name="cpu_home"),
+    path("cpu/cpu/<device_id>", views_cpu.cpu_device, name="cpu_device"),
+    path("cpu/chipset/<device_id>", views_cpu.chipset_device, name="chipset_device"),
     
     path("sound", views_sound.home, name="sound_home"),
     path("sound/device/<device_id>", views_sound.device, name="sound_device"),

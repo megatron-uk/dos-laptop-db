@@ -48,6 +48,9 @@
 				{% endif %}
 			{% else %}
 				<p>There are no notes stored for this device.</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_audio_change' audio.pk %}">Add notes</a>
+				{% endif %}
 			{% endif %}
 		</div>
 		<hr>

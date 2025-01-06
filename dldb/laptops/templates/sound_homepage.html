@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<h5>Audio Devices</h5>
-			<table class="table table-bordered table-striped table-hover">
+			<table class="table table-bordered table-striped table-hover" id="datatable">
 				<thead>
 					<tr>
 						<th>Manufacturer</th>
@@ -36,4 +36,13 @@
 		</div>
 	</div>
 
+	{% load static %}
+	<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+	<script src="{% static 'js/datatables.min.js' %}"></script>
+	{% if audio|length > 20 %}
+	<script>
+		new DataTable('#datatable');
+	</script>
+	{% endif %}
+	
 {% endblock %}
