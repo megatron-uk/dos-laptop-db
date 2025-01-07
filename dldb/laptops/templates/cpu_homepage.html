@@ -17,20 +17,24 @@
 		
 			<div class="col">
 				<h5>CPU Classes</h5>
-				<table class="table table-bordered table-striped table-hover" id="datatable1">
-					<thead>
-						<tr>
-							<th>CPU Class</th>
-						</tr>
-					</thead>
-					<tbody>
-					{% for c in cpuclass %}
-						<tr>
-							<td><a href="{% url 'cpu_device' c.pk %}">{{c.name}}</a></td>
-						</tr>
-					{% endfor %}
-					</tbody>
-				</table>
+				{% if cpuclass %}
+					<table class="table table-bordered table-striped table-hover" id="datatable1">
+						<thead>
+							<tr>
+								<th>CPU Class</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for c in cpuclass %}
+							<tr>
+								<td><a href="{% url 'cpu_device' c.pk %}">{{c.name}}</a></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+					<p>There are no CPU classes recorded in the database.</p>
+				{% endif %}
 				{% if request.user %}
 				<a href="{% url 'admin:laptops_cpuclass_add' %}">Add new CPU class</a>
 				{% else %}
@@ -40,20 +44,24 @@
 			
 			<div class="col">
 				<h5>CPU Chipsets</h5>
-				<table class="table table-bordered table-striped table-hover" id="datatable2">
-					<thead>
-						<tr>
-							<th>Chipset Name</th>
-						</tr>
-					</thead>
-					<tbody>
-					{% for c in chipset %}
-						<tr>
-							<td><a href="{% url 'chipset_device' c.pk %}">{{c.name}}</a></td>
-						</tr>
-					{% endfor %}
-					</tbody>
-				</table>
+				{% if chipset %}
+					<table class="table table-bordered table-striped table-hover" id="datatable2">
+						<thead>
+							<tr>
+								<th>Chipset Name</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for c in chipset %}
+							<tr>
+								<td><a href="{% url 'chipset_device' c.pk %}">{{c.name}}</a></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+					<p>There are no chipsets recorded in the database.</p>
+				{% endif %}
 				{% if request.user %}
 				<a href="{% url 'admin:laptops_cpuclass_add' %}">Add new chipset</a>
 				{% else %}

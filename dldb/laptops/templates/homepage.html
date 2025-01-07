@@ -1,3 +1,91 @@
 {% extends "base.html" %}
 {% block content1 %}
+
+	{% load static %}
+
+	<div class="container">
+		<div class="row">
+		
+			<div class="col-3">
+				<div class="card mb-3">
+					<h3 class="card-header">Laptops</h3>
+					<img class="rounded" src="{% static 'img/Toshiba_Tecra.png' %}" alt="Image sourced from https://archive.org/details/toshiba-tools-utilities-cd-rom-tecra-520-530-cdt">
+					<div class="card-body">
+						<p class="card-text">The main database containing laptops from various manufacturers which 
+						are of relevance to gamers wanting to play in native DOS.</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Total records: {{laptops_count}}</li>
+						<li class="list-group-item">Total companies: {{laptops_mfr_count}}</li>
+						<li class="list-group-item">Most common company: {% if laptops_mfr_highest %}{{laptops_mfr_highest.manufacturer__manufacturer}}{% else %}N/A{% endif %}</li>
+						<li class="list-group-item">Most common model: {% if laptops_model_highest %}{{laptops_model_highest.model}}{% else %}N/A{% endif %}</li>
+					</ul>
+					<div class="card-footer text-muted">
+						<a href="{% url 'sound_home' %}">More...</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-3">
+				<div class="card mb-3">
+					<h3 class="card-header">Audio &amp; Sound</h3>
+					<img class="rounded" src="{% static 'img/OPL3.jpg' %}" alt="Yamaha audio chip. The image is credited with © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)">
+					<div class="card-body">
+						<p class="card-text">A listing of various audio devices and sound standards which are of 
+						interest to games running in DOS. Check out how compatible a sound chip is, or which
+						laptops it is available in!</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Total records: {{audio_count}}</li>
+						<li class="list-group-item">Total companies: {{audio_mfr_count}}</li>
+						<li class="list-group-item">Most common company: {% if audio_mfr_highest %}{{audio_mfr_highest.manufacturer__manufacturer}}{% else %}N/A{% endif %}</li>
+					</ul>
+					<div class="card-footer text-muted">
+						<a href="{% url 'sound_home' %}">More...</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-3">
+				<div class="card mb-3">
+					<h3 class="card-header">Graphics</h3>
+					<img class="rounded" src="{% static 'img/ATI_Rage_LT_Pro_AGP.png' %}" alt="ATI Rage video chip. The image is credited to Trio3D - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=55446494">
+					<div class="card-body">
+						<p class="card-text">The list of graphics hardware found within laptops recorded in this 
+						database.</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Total records: {{video_count}}</li>
+						<li class="list-group-item">Total companies: {{video_mfr_count}}</li>
+						<li class="list-group-item">Most common company: {% if video_mfr_highest %}{{video_mfr_highest.manufacturer__manufacturer}}{% else %}N/A{% endif %}</li>
+					</ul>
+					<div class="card-footer text-muted">
+						<a href="{% url 'video_home' %}">More...</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-3">
+				<div class="card mb-3">
+					<h3 class="card-header">Screens</h3>
+					<img class="rounded" src="{% static 'img/DELL_LCD.jpg' %}" alt="Image sourced from https://commons.wikimedia.org/wiki/File:Computer_monitor.jpg">
+					<div class="card-body">
+						<p class="card-text">The screen technologies, panel sizes and resolutions which are used
+						by laptops within the database..</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Total records: {{screen_count}}</li>
+						<li class="list-group-item">Most common type: {% if screen_type_highest %}{{screen_type_highest.screen_type__name}}{% else %}N/A{% endif %}</li>
+						<li class="list-group-item">Most common size: {% if screen_size_highest %}{{screen_size_highest.screen_size}}"{% else %}N/A{% endif %}</li>
+						<li class="list-group-item">Most common resolution: {% if screen_res_highest %}{{screen_res_highest.0}}{% else %}N/A{% endif %}</li>
+					</ul>
+					<div class="card-footer text-muted">
+						<a href="{% url 'lcd_home' %}">More...</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
 {% endblock %}

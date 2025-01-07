@@ -48,26 +48,30 @@
 		<div class="row">
 			<div>
 				<h5>Screens</h5>
-				<p>A list of all the screens which are used on all of the laptops entered in the database. Select 
-				one to see the full specifications and the laptops which use that part.</p>
-				<table class="table table-bordered table-striped table-hover" id="datatable2">
-					<thead>
-						<tr>
-							<th>Screen Type</th>
-							<th>Screen Size</th>
-							<th>Resolution</th>
-						</tr>
-					</thead>
-					<tbody>
-					{% for s in screens %}
-						<tr>
-							<td>{{s.screen_type.name}}</td>
-							<td>{{s.screen_size}}"</td>
-							<td>{{s.res_x}}x{{s.res_y}}</td>
-						</tr>
-					{% endfor %}
-					</tbody>
-				</table>
+				{% if screens %}
+					<p>A list of all the screens which are recorded as being used by laptops entered in the database. Select 
+					one to see the full specifications and the laptops which use that part.</p>
+					<table class="table table-bordered table-striped table-hover" id="datatable2">
+						<thead>
+							<tr>
+								<th>Screen Type</th>
+								<th>Screen Size</th>
+								<th>Resolution</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for s in screens %}
+							<tr>
+								<td>{{s.screen_type.name}}</td>
+								<td>{{s.screen_size}}"</td>
+								<td>{{s.res_x}}x{{s.res_y}}</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+					<p>There are no screens recorded in the database.</p>
+				{% endif %}
 				{% if request.user %}
 				<a href="{% url 'admin:laptops_lcd_add' %}">Add new Screen model</a>
 				{% else %}
