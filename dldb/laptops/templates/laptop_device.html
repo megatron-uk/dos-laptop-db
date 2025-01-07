@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content1 %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="{% url 'homepage' %}">Home</a></li>
+					<li class="breadcrumb-item active"><a href="{% url 'laptop_home' %}">Laptops</a></li>
+					<li class="breadcrumb-item">{{laptop.manufacturer.manufacturer}} {{laptop.model}} {{laptop.submodel}}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+		
+			<div class="col-6">
+				<table class="table table-bordered table-hover">
+					<tbody>
+						<tr><th>Manufacturer</th><td>{{laptop.manufacturer.manufacturer}}</td></tr>
+						<tr><th>Model</th><td>{{laptop.model}}</td></tr>
+						<tr><th>Sub-Model</th><td>{{laptop.submodel}}</td></tr>
+						<tr><th>Chipset</th><td>{{laptop.chipset}}</td></tr>
+						{% if laptopcpu %}
+							{% for cpu in laptopcpu %}
+							<tr><th>CPU</th><td>{{cpu.cpu}} {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a href="{% url 'admin:laptops_laptopcpu_change' cpu.pk %}">Remove this CPU</a></em>{% endif %}</td></tr>
+							{% endfor %}
+							<tr><th>CPU</th><td>Add Additional CPU Class {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a href="{% url 'admin:laptops_laptopcpu_add' %}?laptop={{laptop.pk}}">Add a CPU</a></em>{% endif %}</td></tr>
+						{% else %}
+							<tr><th>CPU</th><td>No CPU Class Recorded {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a href="{% url 'admin:laptops_laptopcpu_add' %}?laptop={{laptop.pk}}">Add a CPU</a></em>{% endif %}</td></tr>
+						{% endif %}
+						{% if laptop.cpumin == laptop.cpumax %}
+							<tr><th>Speed Range</th><td>{{laptop.cpumax}}MHz</td></tr>
+						{% else %}
+							<tr><th>Speed Range</th><td>{{laptop.cpumin}} - {{laptop.cpumax}}MHz</td></tr>
+						{% endif %}
+						
+					</tbody>
+				</table>
+				{% if request.user %}
+				<a href="{% url 'admin:laptops_laptop_change' laptop.pk %}">Edit this Laptop</a>
+				{% else %}
+				<a href="">You must login to edit this Laptop</a>
+				{% endif %}
+			</div>
+			
+			<div class="col-6">
+				<table class="table table-bordered table-hover">
+					<tbody>
+						<tr><th>RAM Type</th><td>{{laptop.ram}}</td></tr>
+						<tr><th>RAM Slots</th><td>{{laptop.ramslots}}</td></tr>
+						{% if laptop.rammin == laptop.rammax %}
+							<tr><th>RAM Size</th><td>{{laptop.rammax}}MB</td></tr>
+						{% else %}
+							<tr><th>RAM Size</th><td>{{laptop.rammin}} - {{laptop.rammax}}MB</td></tr>
+						{% endif %}
+						<tr><th>Audio OUT</th><td>{% if laptop.audio_out %}YES{% else %}NO{% endif %}</td></tr>
+						<tr><th>Line IN</th><td>{% if laptop.line_in %}YES{% else %}NO{% endif %}</td></tr>
+						<tr><th>Microphone IN</th><td>{% if laptop.mic_in %}YES{% else %}NO{% endif %}</td></tr>
+						<tr><th>PCMCIA Sockets</th><td>{% if laptop.pcmcia %}x{{laptop.pcmcia}}{% else %}NO{% endif %}</td></tr>
+						<tr><th>Pointer Type</th><td>{{laptop.mouse}}</td></tr>
+					</tbody>
+				</table>
+			</div>
+		
+		LaptopCPU
+		Chipset
+		LaptopAudio
+		LaptopVideo
+		LaptopLCD
+		LaptopImage
+		</div>
+	</div>
+	
+{% endblock %}

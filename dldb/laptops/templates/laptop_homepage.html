@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content1 %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="{% url 'homepage' %}">Home</a></li>
+					<li class="breadcrumb-item">Laptops</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-4">
+				<div class="card border-secondary mb-3">
+					<div class="card-header">Laptops</div>
+					<div class="card-body">
+						<h4 class="card-title">{{laptops|length}} Laptops</h4>
+						<p class="card-text">There are <em>{{laptops_model_groupby|length}}</em> model ranges in the database and 
+						<em>{{laptops_submodel_groupby|length}}</em> sub-models, with a total of <em>{{laptops|length}}</em> variations.</p>
+						<p>The most numerous laptop model is the <em>{{laptops_model_highest.model}}</em>, with a total of 
+						<em>{{laptops_model_highest.group_count}}</em> sub-models.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-4">
+				<div class="card border-secondary mb-3">
+					<div class="card-header">Laptop Manufacturers</div>
+					<div class="card-body">
+						<h4 class="card-title">{{laptops_mfr_groupby|length}} Companies</h4>
+						<p class="card-text">There are laptops from <em>{{laptops_mfr_groupby|length}}</em> companies in the database. 
+						The most popular company is <em>{{laptops_mfr_highest.manufacturer__manufacturer}}</em>, with <em>{{laptops_mfr_highest.group_count}}</em> models.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-4">
+				<div class="card border-secondary mb-3">
+					<div class="card-header">Latest Additions</div>
+					<div class="card-body">
+						<p>
+						<ul>
+							{% for l in latest_laptops %}
+								<li><a href="{% url 'laptop_device' l.pk %}">{{l}}</a></li>
+							{% endfor %}
+						</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div>
+				<br>
+				<h5>Laptops</h5>
+				{% if laptops %}
+					<p>The following laptops are recorded in the database..</p>
+					{% include "laptop_list_fragment.html" %}
+				{% else %}
+				<p>There are no laptops recorded in the database.</p>
+				{% endif %}
+				{% if request.user %}
+				<a href="{% url 'admin:laptops_laptop_add' %}">Add new Laptop</a>
+				{% else %}
+				<a href="">You must login to add new Laptop models</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	
+	{% load static %}
+	<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+	<script src="{% static 'js/datatables.min.js' %}"></script>
+	{% if screentypes|length > 20 %}
+	<script>
+		new DataTable('#datatable1');
+	</script>
+	{% endif %}
+	{% if screens|length > 20 %}
+	<script>
+		new DataTable('#datatable2');
+	</script>
+	{% endif %}
+	
+{% endblock %}

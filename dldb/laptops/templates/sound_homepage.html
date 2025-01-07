@@ -43,128 +43,168 @@
 	
 	<div class="container">
 		<div class="row">
-			<div>
-				<h5>Audio Standards</h5>
-				<p>Each audio device in the DOS Laptop DB has a number of characteristics which we group into four main
-				areas:
-				<ul>
-					<li>Soundblaster Support - Which models of Soundblaster does the device support?</li>
-					<li>Other Digital Support - Does the device support Windows Sound System or DirectSound, for example?</li>
-					<li>FM Synth Support - Does the device support OPL2 or OPL3? Is it a real Yamaha synth or an alternative?</li>
-					<li>MIDI Support - Does the device have MIDI (non-FM) music support? Does it support General MIDI, GS, XG or some other format?</li>
-				</ul>
-				</p>
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item" role="presentation">
+					<a class="nav-link active" data-bs-toggle="tab" href="#standards" aria-selected="true" role="tab">Audio Standards</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" data-bs-toggle="tab" href="#companies" aria-selected="false" tabindex="-1" role="tab">Companies <span class="badge rounded-pill bg-light">{{aman_count|length}}</span></a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link"  data-bs-toggle="tab" href="#devices" aria-selected="false" tabindex="-1" role="tab">Devices <span class="badge rounded-pill bg-light">{{devices|length}}</span></a>
+				</li>
+			</ul>
+		</div>
+
+	
+		<div id="TabContent" class="tab-content">
+		
+			<div class="tab-pane fade show active" id="standards" role="tabpanel">
+				<div class="row">
+					<div>
+						<br>
+						<h5>Audio Standards</h5>
+						<p>Each audio device in the DOS Laptop DB has a number of characteristics which we group into four main
+						areas:
+						<ul>
+							<li>Soundblaster Support - Which models of Soundblaster does the device support?</li>
+							<li>Other Digital Support - Does the device support Windows Sound System or DirectSound, for example?</li>
+							<li>FM Synth Support - Does the device support OPL2 or OPL3? Is it a real Yamaha synth or an alternative?</li>
+							<li>MIDI Support - Does the device have MIDI (non-FM) music support? Does it support General MIDI, GS, XG or some other format?</li>
+						</ul>
+						</p>
+					</div>
+				</div>			
+				<div class="row">
+					<div class="col-3">
+						<table class="table table-bordered table-hover">
+							<tr><th>Soundblaster Support</th></tr>
+							{% for s in adigisb %}
+							<tr><td><a title="View all devices which support {{s.name}}" href="{% url 'sb_digi_device' s.pk %}">{{s.name}}</a></td></tr>
+							{% endfor %}
+						</table>
+						{% if request.user %}
+						<a href="{% url 'admin:laptops_audiodigisb_add' %}">Add SB Category</a>
+						{% else %}
+						<a href="">You must login to add new SB Categories</a>
+						{% endif %}
+					</div>
+					
+					<div class="col-3">
+						<table class="table table-bordered table-hover">
+							<tr><th>Other Digital Support</th></tr>
+							{% for s in adigiother %}
+							<tr><td><a title="View all devices which support {{s.name}}" href="{% url 'other_digi_device' s.pk %}">{{s.name}}</a></td></tr>
+							{% endfor %}
+						</table>
+						{% if request.user %}
+						<a href="{% url 'admin:laptops_audiodigiother_add' %}">Add Other Digital Category</a>
+						{% else %}
+						<a href="">You must login to add new Other Digital Categories</a>
+						{% endif %}
+					</div>
+					
+					<div class="col-3">
+						<table class="table table-bordered table-hover">
+							<tr><th>FM Synth Support</th></tr>
+							{% for s in afm %}
+							<tr><td><a title="View all devices which support {{s.name}}" href="{% url 'fm_device' s.pk %}">{{s.name}}</a></td></tr>
+							{% endfor %}
+						</table>
+						{% if request.user %}
+						<a href="{% url 'admin:laptops_audiofm_add' %}">Add FM Synth Category</a>
+						{% else %}
+						<a href="">You must login to add new FM Synth Categories</a>
+						{% endif %}
+					</div>
+					
+					<div class="col-3">
+						<table class="table table-bordered table-hover">
+							<tr><th>MIDI Support</th></tr>
+							{% for s in amidi %}
+							<tr><td><a title="View all devices which support {{s.name}}" href="{% url 'midi_device' s.pk %}">{{s.name}}</a></td></tr>
+							{% endfor %}
+						</table>
+						{% if request.user %}
+						<a href="{% url 'admin:laptops_audiomidi_add' %}">Add MIDI Category</a>
+						{% else %}
+						<a href="">You must login to add new MIDI Categories</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="tab-pane fade" id="companies" role="tabpanel">
+				<div class="row">
+					<div>
+						<br>
+						<h5>Audio Device Companies</h5>
+					
+						{% if aman_count %}
+							<p>A list of all manufacturers of audio devices which are in the database.</p>
+							<table class="table table-bordered table-striped table-hover" id="datatable1">
+								<thead>
+									<tr>
+										<th>Manufacturer</th>
+										<th>Audio Devices</th>
+									</tr>
+								</thead>
+								<tbody>
+								{% for a in aman_count %}
+									<tr>
+										<td><a href="{% url 'sound_company' a.manufacturer__id %}">{{a.manufacturer__manufacturer}}</a></td>
+										<td>{{a.group_count}}</td>
+									</tr>
+								{% endfor %}
+								</tbody>
+							</table>
+						{% else %}
+							<p>There are no audio devices recorded in the database.</p>
+						{% endif %}
+						{% if request.user %}
+						<a href="{% url 'admin:laptops_audiomanufacturer_add' %}">Add new Manufacturer</a>
+						{% else %}
+						<a href="">You must login to add new Manufacturers</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		
+			<div class="tab-pane fade" id="devices" role="tabpanel">
+				<div class="row">
+					<div>
+						<br>
+						<h5>Audio Devices</h5>
+						{% if devices %}
+							<p>A list of all the audio devices which are recorded in the database.</p> 
+							{% include "audio_list_fragment.html" %}
+						{% else %}
+							<p>There are no audio devices recorded in the database.</p>
+						{% endif %}
+						{% if request.user %}
+						<a href="{% url 'admin:laptops_audio_add' %}">Add new device</a>
+						{% else %}
+						<a href="">You must login to add new devices</a>
+						{% endif %}
+					</div>
+				</div>
 			</div>
 		</div>
 		
-		<div class="row">
-			<div class="col-3">
-				<table class="table table-bordered table-hover">
-					<tr><th>Soundblaster Support</th></tr>
-					{% for s in adigisb %}
-					<tr><td><a href="{% url 'sb_digi_device' s.pk %}">{{s.name}}</a></td></tr>
-					{% endfor %}
-				</table>
-				{% if request.user %}
-				<a href="{% url 'admin:laptops_audiodigisb_add' %}">Add SB Category</a>
-				{% else %}
-				<a href="">You must login to add new SB Categories</a>
-				{% endif %}
-			</div>
-			
-			<div class="col-3">
-				<table class="table table-bordered table-hover">
-					<tr><th>Other Digital Support</th></tr>
-					{% for s in adigiother %}
-					<tr><td><a href="{% url 'other_digi_device' s.pk %}">{{s.name}}</a></td></tr>
-					{% endfor %}
-				</table>
-				{% if request.user %}
-				<a href="{% url 'admin:laptops_audiodigiother_add' %}">Add Other Digital Category</a>
-				{% else %}
-				<a href="">You must login to add new Other Digital Categories</a>
-				{% endif %}
-			</div>
-			
-			<div class="col-3">
-				<table class="table table-bordered table-hover">
-					<tr><th>FM Synth Support</th></tr>
-					{% for s in afm %}
-					<tr><td><a href="{% url 'fm_device' s.pk %}">{{s.name}}</a></td></tr>
-					{% endfor %}
-				</table>
-				{% if request.user %}
-				<a href="{% url 'admin:laptops_audiofm_add' %}">Add FM Synth Category</a>
-				{% else %}
-				<a href="">You must login to add new FM Synth Categories</a>
-				{% endif %}
-			</div>
-			
-			<div class="col-3">
-				<table class="table table-bordered table-hover">
-					<tr><th>MIDI Support</th></tr>
-					{% for s in amidi %}
-					<tr><td><a href="{% url 'midi_device' s.pk %}">{{s.name}}</a></td></tr>
-					{% endfor %}
-				</table>
-				{% if request.user %}
-				<a href="{% url 'admin:laptops_audiomidi_add' %}">Add MIDI Category</a>
-				{% else %}
-				<a href="">You must login to add new MIDI Categories</a>
-				{% endif %}
-			</div>
-		</div>
-		<hr>
-		<br>
-	</div>
-	
-	<div class="container">
-		<div class="row">
-			<h5>Audio Devices</h5>
-			{% if audio %}
-				<p>A list of all the audio devices which are used within every laptop entered in the database. Select 
-				a model to see the full specifications and the laptops which use that part.</p>
-				<table class="table table-bordered table-striped table-hover" id="datatable">
-					<thead>
-						<tr>
-							<th>Manufacturer</th>
-							<th>Model</th>
-							<th>Bus</th>
-							<th>SB Support</th>
-							<th>FM Support</th>
-							<th>MIDI Support</th>
-						</tr>
-					</thead>
-					<tbody>
-					{% for a in audio %}
-						<tr>
-							<td>{{a.manufacturer.manufacturer}}</td>
-							<td><a href="{% url 'sound_device' a.pk %}">{{a.model}}</a></td>
-							<td>{{a.bus.name}}</td>
-							<td>{{a.digi_sb}}</td>
-							<td>{{a.fm}}</td>
-							<td>{{a.midi}}</td>
-						</tr>
-					{% endfor %}
-					</tbody>
-				</table>
-			{% else %}
-				<p>There are no audio devices recorded in the database.</p>
-			{% endif %}
-			{% if request.user %}
-			<a href="{% url 'admin:laptops_audio_add' %}">Add new device</a>
-			{% else %}
-			<a href="">You must login to add new devices</a>
-			{% endif %}
-		</div>
 	</div>
 
 	{% load static %}
 	<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
 	<script src="{% static 'js/datatables.min.js' %}"></script>
+	{% if aman|length > 10 %}
+	<script>
+		new DataTable('#datatable1');
+	</script>
+	{% endif %}
 	{% if audio|length > 20 %}
 	<script>
-		new DataTable('#datatable');
+		new DataTable('#datatable2');
 	</script>
 	{% endif %}
 	

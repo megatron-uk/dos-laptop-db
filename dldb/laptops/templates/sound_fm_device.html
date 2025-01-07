@@ -35,57 +35,50 @@
 	
 	<div class="container">
 		<div class="row">
-			<div>
-				<h5>Audio Devices supporting FM Synthesis mode: {{device.name}}</h5>
-				{% if devices %}
-					<p>These audio devices support this specific FM synth mode.</p>
-					<table class="table table-bordered table-striped table-hover" id="datatable1">
-						<thead>
-							<tr>
-								<th>Manufacturer</th>
-								<th>Model</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for a in devices %}
-								<tr>
-									<td>{{a.manufacturer}}</td>
-									<td><a href="{% url 'sound_device' a.pk %}">{{a.model}}</a></td>
-								</tr>
-							{% endfor %}
-						</tbody>
-					</table>
-				{% else %}
-				<p>There are no audio devices in the database which support this specific FM synth mode.</p>
-				{% endif %}
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item" role="presentation">
+					<a class="nav-link active" data-bs-toggle="tab" href="#devices" aria-selected="true" role="tab">Audio Devices <span class="badge rounded-pill bg-light">{{devices|length}}</span></a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" data-bs-toggle="tab" href="#laptops" aria-selected="false" tabindex="-1" role="tab">Laptops <span class="badge rounded-pill bg-light">{{laptops|length}}</span></a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="TabContent" class="tab-content">
+		
+			<div class="tab-pane fade show active" id="devices" role="tabpanel">
+				<div class="row">
+					<div>
+						<br>
+						<h5>Audio Devices supporting FM Synthesis mode: {{device.name}}</h5>
+						{% if devices %}
+							<p>These audio devices support this specific FM synth mode.</p>
+							{% include "audio_list_fragment.html" %}
+						{% else %}
+						<p>There are no audio devices in the database which support this specific FM synth mode.</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+	
+			<div class="tab-pane fade" id="laptops" role="tabpanel">
+				<div class="row">
+					<div>
+						<br>
+						<h5>Laptops supporting FM Synthesis mode: {{device.name}}</h5>
+						{% if laptops %}
+							<p>These laptops have audio devices which <i>only</i> support this specific FM synth mode.</p>
+							{% include "laptop_list_fragment_nested.html" %}
+						{% else %}
+						<p>There are no laptops in the database which <i>only</i> support this specific FM synth mode.</p>
+						{% endif %}
+					</div>
+				</div>
 			</div>
 		</div>
-		<br>
-		<hr>
 	</div>
 	
-	<div class="container">
-		<div class="row">
-			<div>
-				<h5>Laptops supporting FM Synthesis mode: {{device.name}}</h5>
-				{% if laptops %}
-					<p>These laptops have audio devices which <i>only</i> support this specific FM synth mode.</p>
-					{% include "laptop_list_fragment_nested.html" %}
-				{% else %}
-				<p>There are no laptops in the database which <i>only</i> support this specific FM synth mode.</p>
-				{% endif %}
-			</div>
-		</div>
-	</div>
-
-	{% load static %}
-	<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
-	<script src="{% static 'js/datatables.min.js' %}"></script>
-	{% if devices|length > 20 %}
-	<script>
-		new DataTable('#datatable1');
-	</script>
-	{% endif %}
 	{% if laptops|length > 20 %}
 	<script>
 		new DataTable('#datatable2');

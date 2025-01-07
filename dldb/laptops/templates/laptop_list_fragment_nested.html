@@ -1,4 +1,4 @@
-<table class="table table-bordered table-striped table-hover" id="datatable2">
+<table class="table table-bordered table-striped table-hover" id="datatable_laptops">
 	<thead>
 		<tr>
 			<th>Manufacturer</th>
@@ -11,8 +11,13 @@
 			<tr>
 				<td>{{l.laptop.manufacturer.manufacturer}}</td>
 				<td>{{l.laptop.model}}</td>
-				<td>{{l.laptop.submodel}}</td>
+				<td><a href="{% url 'laptop_device' l.laptop.pk %}">{{l.laptop.submodel}}</a></td>
 			</tr>
 		{% endfor %}
 	</tbody>
 </table>
+{% if devices|length > 15 %}
+<script>
+	new DataTable('#datatable_laptops');
+</script>
+{% endif %}

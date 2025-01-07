@@ -19,7 +19,7 @@
 			<h5>Audio Device Details</h5>
 			<div class="col">
 				<table class="table table-bordered table-hover">
-					<tr><th>Manufacturer</th><td>{{audio.manufacturer.manufacturer}}</td></tr>
+					<tr><th>Manufacturer</th><td><a href="{% url 'sound_company' audio.manufacturer.pk %}">{{audio.manufacturer.manufacturer}}</a></td></tr>
 					<tr><th>Model</th><td>{{audio.model}}</td></tr>
 					<tr><th>Bus Type</th><td>{{audio.bus.name}}</td></tr>
 				</table>

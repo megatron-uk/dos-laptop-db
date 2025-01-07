@@ -8,4 +8,4 @@ def home(request):
 	
 	data = {
 	}
-	return render(request, "homepage.html", data)
+	return render(request, "video_homepage.html", data)

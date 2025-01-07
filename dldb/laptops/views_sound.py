@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Count
 
 # Create your views here.
 from .models import *
@@ -11,8 +12,9 @@ def home(request):
 	adigisb = AudioDigiSB.objects.all()
 	afm = AudioFM.objects.all()
 	amidi = AudioMIDI.objects.all()
-	aman = AudioManufacturer.objects.all()
-	audio = Audio.objects.all().order_by('manufacturer__manufacturer', 'model')
+	aman = AudioManufacturer.objects.all().order_by('manufacturer')
+	aman_count = Audio.objects.values('manufacturer__manufacturer', 'manufacturer__id').annotate(group_count=Count('id'))
+	devices = Audio.objects.all().order_by('manufacturer__manufacturer', 'model')
 	
 	data = {
 		'adriver' : adriver,
@@ -21,9 +23,27 @@ def home(request):
 		'afm' : afm,
 		'amidi' : amidi,
 		'aman' : aman,
-		'audio' : audio,
+		'aman_count' : aman_count,
+		'devices' : devices,
 	}
 	return render(request, "sound_homepage.html", data)
+	
+def company(request, company_id):
+	""" Audio device company """
+	
+	aman = AudioManufacturer.objects.get(pk = company_id)
+	devices = Audio.objects.filter(manufacturer = aman).order_by('model')
+	audio_device_ids = []
+	for a in devices:
+		audio_device_ids.append(a.pk)
+	laptops = LaptopAudio.objects.filter(audio__in = audio_device_ids).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
+	
+	data = {
+		'aman' : aman,
+		'devices' : devices,
+		'laptops' : laptops,
+	}
+	return render(request, "sound_company.html", data)
 	
 def device(request, device_id):
 	""" Details of an audio device """
@@ -31,7 +51,6 @@ def device(request, device_id):
 	audio = Audio.objects.get(pk = device_id)
 	device_images = AudioImage.objects.filter(audio = audio)
 	device_examples = AudioRecording.objects.filter(audio = audio)
-	
 	laptops = LaptopAudio.objects.filter(audio = audio).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
 	
 	data = {
@@ -50,6 +69,7 @@ def sb_digi_device(request, device_support_id):
 	for a in devices:
 		audio_device_ids.append(a.pk)
 	laptops = LaptopAudio.objects.filter(audio__in = audio_device_ids).order_by('laptop__manufacturer__manufacturer', 'laptop__model', 'laptop__submodel')
+	
 	data = {
 		'device' : device,
 		'devices' : devices,
