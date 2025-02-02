@@ -15,7 +15,7 @@
 	
 	<div class="container">
 		<div class="row">
-		
+			<h5>Base Specifications</h5>
 			<div class="col-6">
 				<table class="table table-bordered table-hover">
 					<tbody>
@@ -25,11 +25,11 @@
 						<tr><th>Chipset</th><td>{{laptop.chipset}}</td></tr>
 						{% if laptopcpu %}
 							{% for cpu in laptopcpu %}
-							<tr><th>CPU</th><td>{{cpu.cpu}} {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a href="{% url 'admin:laptops_laptopcpu_change' cpu.pk %}">Remove this CPU</a></em>{% endif %}</td></tr>
+							<tr><th>CPU</th><td>{{cpu.cpu}} {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a title="Remove this CPU Class from this laptop model" href="{% url 'admin:laptops_laptopcpu_change' cpu.pk %}">Remove this CPU</a></em> | <em><a title="Register an additional CPU Class for this laptop model" href="{% url 'admin:laptops_laptopcpu_add' %}?laptop={{laptop.pk}}">Add a CPU</a></em>{% endif %}</td></tr>
 							{% endfor %}
-							<tr><th>CPU</th><td>Add Additional CPU Class {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a href="{% url 'admin:laptops_laptopcpu_add' %}?laptop={{laptop.pk}}">Add a CPU</a></em>{% endif %}</td></tr>
+							
 						{% else %}
-							<tr><th>CPU</th><td>No CPU Class Recorded {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a href="{% url 'admin:laptops_laptopcpu_add' %}?laptop={{laptop.pk}}">Add a CPU</a></em>{% endif %}</td></tr>
+							<tr><th>CPU</th><td>No CPU Class Recorded {% if request.user %}&nbsp;&nbsp;&nbsp;<em><a title="Add a CPU Class for this laptop model" href="{% url 'admin:laptops_laptopcpu_add' %}?laptop={{laptop.pk}}">Add a CPU</a></em>{% endif %}</td></tr>
 						{% endif %}
 						{% if laptop.cpumin == laptop.cpumax %}
 							<tr><th>Speed Range</th><td>{{laptop.cpumax}}MHz</td></tr>
@@ -64,13 +64,139 @@
 					</tbody>
 				</table>
 			</div>
-		
-		LaptopCPU
-		Chipset
-		LaptopAudio
-		LaptopVideo
-		LaptopLCD
-		LaptopImage
+		</div>
+		<div class="row">
+			<h5>Notes</h5>
+			{% if laptop.notes %}
+				<p>{{laptop.notes|linebreaks}}</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_laptop_change' laptop.pk %}">Edit notes</a>
+				{% endif %}
+			{% else %}
+				<p>There are no notes stored for this laptop.</p>
+				{% if request.user %}
+					<a href="{% url 'admin:laptops_laptop_change' laptop.pk %}">Add notes</a>
+				{% endif %}
+			{% endif %}
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h5>Device Images</h5>
+				{% if laptopimages %}
+					<div class="row">
+					{% for i in laptopimages %}
+						<div class="col-2">
+							<a href="{{i.image.url}}"><img height="200" src="{{i.image.url}}" class="rounded img-thumbnail"></a>
+							{% if request.user %}
+							<a href="{% url 'admin:laptops_laptopimage_change' i.pk %}">Edit</a>
+							{% endif %}
+						</div>
+					{% endfor %}
+					</div>
+				{% else %}
+					<p>There are no images stored for this laptop.</p>
+				{% endif %}
+				{% if request.user %}
+					<br>
+					<a href="{% url 'admin:laptops_laptopimage_add'%}?laptop={{laptop.pk}}">Add images</a>
+				{% endif %}
+			</div>
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h5>Screens</h5>
+				{% if laptoplcd %}
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>Display Type</th>
+								<th>Size</th>
+								<th>Resolution</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for l in laptoplcd %}
+								<tr>
+									<td>{{l.lcd.screen_type}}</td>
+									<td>{{l.lcd.screen_size}}"</td>
+									<td>{{l.lcd.res_x}} x {{l.lcd.res_y}}</td>
+									<td><a href="{% url 'admin:laptops_laptoplcd_change' l.pk%}">Edit</a>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+					<p>There are no known LCD panel options for this laptop.</p>
+				{% endif %}
+				{% if request.user %}
+					<br>
+					<a href="{% url 'admin:laptops_laptoplcd_add'%}?laptop={{laptop.pk}}">Add LCD panel option</a>
+				{% endif %}
+			</div>
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h5>Graphics</h5>
+				{% if laptopvideo %}
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>Manufacturer</th>
+								<th>Model</th>
+								<th>Bus</th>
+								<th>Scaling (SW)</th>
+								<th>Scaling (HW)</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for l in laptopvideo %}
+								<tr>
+									<td>{{l.video.manufacturer}}</td>
+									<td>{{l.video.model}}</td>
+									<td>{{l.video.bus}}</td>
+									<td>{{l.video.scaling_sw}}</td>
+									<td>{{l.video.scaling_hw}}</td>
+									<td><a href="{% url 'admin:laptops_laptopvideo_change' l.pk%}">Edit</a>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				{% else %}
+					<p>There are no known graphics hardware options for this laptop.</p>
+				{% endif %}
+				{% if request.user %}
+					<br>
+					<a href="{% url 'admin:laptops_laptopvideo_add'%}?laptop={{laptop.pk}}">Add graphics option</a>
+				{% endif %}
+			</div>
+		</div>
+		<hr>
+		<br>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h5>Audio</h5>
+			</div>
 		</div>
 	</div>
 	

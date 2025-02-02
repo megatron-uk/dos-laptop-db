@@ -148,7 +148,7 @@
    "pk": 5,
    "fields": {
       "name": "ESFM",
-      "notes": "ESFM is a FM synthesis technology implemented by ESS. \r\n\r\nESFM audio devices were OPL3-compatible but developed in-house, and has 20 voices, 72 operators, and operated in two modes: Native and Legacy. \r\n\r\nIn Native mode, ESFM allows more than six 4-operator FM voices to be mapped, potentially allowing for a significant increase in the complexity of tones generated. The drivers for Windows 9x incorporate their own custom instrument patches which make use of this extended Native mode. \r\n\r\nConversely, Legacy mode provides full backward-compatibility with Yamaha's YMF262. ESFM's output in this mode is moderately faithful to the YMF262 overall, but some tones are rendered quite differently, resulting in unique distortions in the sound and music of some games. \r\n\r\nMany DOS gamers prefer the softer sound of the ESFM implementation over Yamaha's original OPL3 output.\r\n\r\nLots of games had specific support for ESS sound cards.\r\n\r\n(Taken from https://dosdays.co.uk/topics/Manufacturers/ess.php)\r\n\r\n=====\r\n\r\nMost gamers agree that ESFM is one of the most fauithful implementations of the OPL3 sound (though better or worse than a real Yamaha OPL3 is still up for debate!), and in the ESFM native mode, a reasonable number of games offer FM soundtracks with increased complexity and sounds.\r\n\r\nIt should be noted that ESFM is only present in cards -after- the ISA-based ES688, up to (and -including-) the PCI-based ESS Solo-1 and Solo-1E devices. All subsequent ESS parts (including ESS Allegro and all ESS Maestro models) remove the ESFM technology and instead rely on a (substantially inferior) OPL3 emulation.\r\n\r\nIf a real Yamaha OPL2 or OPL3 is not possible, then an ESFM based FM synth is -highly- recommended as the next best option."
+      "notes": "ESFM is a FM synthesis technology implemented by ESS. \r\n\r\nESFM audio devices were OPL3-compatible but developed in-house, and has 20 voices, 72 operators, and operated in two modes: Native and Legacy. \r\n\r\nIn Native mode, ESFM allows more than six 4-operator FM voices to be mapped, potentially allowing for a significant increase in the complexity of tones generated. The drivers for Windows 9x incorporate their own custom instrument patches which make use of this extended Native mode. \r\n\r\nConversely, Legacy mode provides full backward-compatibility with Yamaha's YMF262. ESFM's output in this mode is moderately faithful to the YMF262 overall, but some tones are rendered quite differently, resulting in unique distortions in the sound and music of some games. \r\n\r\nMany DOS gamers prefer the softer sound of the ESFM implementation over Yamaha's original OPL3 output.\r\n\r\nLots of games had specific support for ESS sound cards.\r\n\r\n(Taken from https://dosdays.co.uk/topics/Manufacturers/ess.php)\r\n\r\n=====\r\n\r\nMost gamers agree that ESFM is one of the most faithful implementations of the OPL3 sound (though better or worse than a real Yamaha OPL3 is still up for debate!), and in the ESFM native mode, a reasonable number of games offer FM soundtracks with increased complexity and sounds.\r\n\r\nIt should be noted that ESFM is only present in cards -after- the ISA-based ES688, up to (and -including-) the PCI-based ESS Solo-1 and Solo-1E devices. All subsequent ESS parts (including ESS Allegro and all ESS Maestro models) remove the ESFM technology and instead rely on a (substantially inferior) OPL3 emulation.\r\n\r\nIf a real Yamaha OPL2 or OPL3 is not possible, then an ESFM based FM synth is -highly- recommended as the next best option."
    }
 },
 {
@@ -267,8 +267,8 @@
    "model": "laptops.audiomanufacturer",
    "pk": 1,
    "fields": {
-      "manufacturer": "ESS",
-      "notes": "None"
+      "manufacturer": "ESS Technology",
+      "notes": "ESS Technology Incorporated is a private manufacturer of computer multimedia products, Audio DACs and ADCs based in Fremont, California with R&D centers in Kelowna, British Columbia, Canada and Beijing, China. It was founded by Forrest Mozer in 1983. Robert L. Blair is the CEO and President of the company.\r\n\r\nHistorically, ESS Technology was most famous for their line of their Audiodrive chips for audio cards. Now they are known for their line of Sabre DAC and ADC products.\r\n\r\nElectronic Speech Systems produced synthetic speech for, among other things, home computer systems like the Commodore 64. Within the hardware limitations of that time, ESS used Mozer's technology, in software, to produce realistic-sounding voices that often became the boilerplate for the respective games. Two popular sound bites from the Commodore 64 were \"He slimed me!!\" from Ghostbusters and Elvin Atombender's \"Another visitor. Stay a while—stay forever!\" in the original Impossible Mission.\r\n\r\nAt some point, the company moved from Berkeley to Fremont, California. Around that time, the company was renamed to ESS Technology.\r\n\r\nLater, in 1994, Forrest Mozer's son Todd Mozer, an ESS employee, branched off and started his own company called Sensory Circuits Inc, later Sensory, Inc. to market speech recognition technology.\r\n\r\nIn the mid-1990s, ESS started working on making PC audio, and later, video chips, and created the Audiodrive line, used in hundreds of different products. Audiodrive chips were at least nominally Creative Sound Blaster Pro compatible. Many Audiodrive chips also featured in-house developed, OPL3-compatible FM synthesizers (branded ESFM Synthesizers). These synthesizers were often reasonably faithful to the Yamaha OPL3 chip, which was an important feature for the time as some competing solutions, including Creative's own CQM synthesis featured in later ISA Sound Blaster compatibles, offered sub-par FM sound quality. Some PCI-interface Audiodrives (namely the ES1938 Solo-1) also provided legacy DOS compatibility through Distributed DMA and the SB-Link interface.\r\n\r\nMost recently, ESS SABRE DACs are used in the LG V10 smartphone, with a quad DAC configuration present in the V10's successor LG V20. A slightly upgraded version of the same DAC in the V20, the SABRE ES9218P, is used in the V30 as well as the V40 ThinQ. The ESS9038Pro is their flagship and competes against Japanese AKM (Asahi Kasei Microdevices) AK4499EXEQ and American Cirrus Logic CS43131 for a share of the market. ESS and AKM dominate the desktop audiophile devices including external DACs and integrated all in one DAC/Amp devices. Meanwhile Cirrus Logic dominates the portable device market, Apple Inc is its number one customer accounting for approximately 83% of its chip sales.\r\n\r\nThe luxury Sennheiser HE 1 electrostatic headphone utilizes 8 internal DACs of the SABRE ES9018.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/ESS_Technology)"
    }
 },
 {
@@ -276,7 +276,7 @@
    "pk": 2,
    "fields": {
       "manufacturer": "Yamaha",
-      "notes": "None"
+      "notes": "Yamaha designed the OPL (FM Operator Type-L) series of sound chips. They consist of low-cost sound chips providing FM synthesis for use in computing, music and video game applications.\r\n\r\nThe OPL series of chips enabled the creation of affordable sound cards for IBM PC compatibles in the late 1980s such the AdLib and Sound Blaster, effectively becoming a de-facto standard until they were supplanted by \"wavetable synthesis\" cards in the early-to-mid 1990s.\r\n\r\nOPL2 and/or OPL3 audio device functionality are -essential- for any gamer wishing to play games on native DOS. However, non-Yamaha implementations can often leave a lot to be desired...\r\n\r\nYamaha entered the PC audio MIDI scene with their TG100 sound module in 1991. At the time, they were competing directly with Roland's SC-55 Sound Canvas. The TG100 was followed with the TG300 in 1993. The TG-series was followed by the very popular MU-series which introduced Yamaha's superset of General MIDI, called XG.\r\n\r\nTheir OPL3-SA line of ISA-based audio devices proved very popular and the later DS-XG PCI audio chips provided a good blend of functions and features at reasonable prices.\r\n\r\n(Content from https://en.wikipedia.org/wiki/Yamaha_OPL and https://www.dosdays.co.uk/topics/Manufacturers/yamaha.php)"
    }
 },
 {
@@ -308,7 +308,7 @@
    "pk": 6,
    "fields": {
       "manufacturer": "Crystal Semiconductor",
-      "notes": "None"
+      "notes": "Crystal Semiconductor Corporation was an American computer company based in Austin, Texas, and active from 1984 to the early 2000s. Founded by Michael J. Callahan and James H. Clardy, the company originally specialized in the design and manufacture of silicon for mixed-signal integrated circuits, namely digital-to-analog (DAC) and analog-to-digital (ADC) converters. After being acquired by Cirrus Logic of San Jose, California, in 1991 for about $59 million, the company became a dominant player in the personal computer sound chip market.\r\n\r\nThe company exceeded $100 million in sales for the first time in 1991.  In September 1991, Cirrus Logic, Inc., a San Jose, California–based fabless semiconductor company specializing in personal computer chips, announced the acquisition of Crystal in a stock swap worth roughly $59 million at the time. The acquisition was completed in late October 1991, the company becoming an independent subsidiary of Cirrus Logic while retaining its headquarters, name, and marketing team. After the acquisition, Crystal pivoted away from general-purpose converters to modems and sound-generating ASICs for personal computers.[18] Prompted by growing sales and employment, between April and June 1993, the company's 350 workers moved out from their old headquarters to a new plant in Austin four times its size. Around the same time, Cirrus Logic earmarked another 45,000-square-foot plant in the area for them to occupy in January 1994.\r\n\r\nCrystal under Cirrus Logic's ownership employed 429 in 1995. Between 1997 and 1998 the company cut 30 jobs, amid a wave of layoffs at Cirrus Logic affecting between 400 and 500 workers total. Clardy left the company in 1997, citing overbearing management from Cirrus Logic. That year, Crystal launched a lawsuit against Milpitas-based OPTi Inc. and Singapore-based TriTech Microelectronics for alleged patent infringement of Crystal's mixed-signal technology. The courts ruled in favor of Crystal in late 1999 or early 2000, ordering TriTech and OPTi to pay their portion of a combined $20 million.\r\n\r\nIn April 2000, Cirrus Logic relocated their headquarters and management from San Jose to Crystal's home of Austin, citing a pivot away from video controller chips to Crystal's specialty of audio and optical storage controller chips. By 2002, Cirrus Logic had absorbed Crystal into their base of operations and finally retired the name.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Crystal_Semiconductor)"
    }
 },
 {
@@ -698,7 +698,7 @@
       "fm": 7,
       "midi": 7,
       "driver": 3,
-      "notes": "The ES1980 Maestro-3 PCI audio-modem accelerator combines advanced audio and modem functionality in a highly integrated PCI solution for notebook systems. It uses the highbandwidth PCI bus to deliver advanced PC audio features, such as HRTF 3D positional audio, DirectSound acceleration and DVD AC-3 5.1 to 2 speaker virtualization.\r\n\r\nThe ES1980 implements multistream DirectSound and DirectSound3D acceleration with digital mixing, sample rate conversion, and HRTF 3D filtering. The ES1980 maintains full DOS legacy audio compatibility over the standard PCI 2.1 and PCI 2.2 buses. The ES1980 is designed for high-performance consumer multimedia notebook PC applications.\r\n\r\nThe ES1980 includes a programmable audio signal processor and provides simultaneous support for multiple audio streams.\r\n\r\nWith its built-in DSP core, the ES1980 uses its dedicated direct memory access (DMA) engine to handle complex signal processing tasks with a bus-mastering PCI interface.\r\n\r\nThe support functions ensure efficient transfer of audio data streams to and from system memory buffers, providing a system solution with maximum performance and minimal host CPU loading. The architecture enables implementation of communications over the Internet from multiple sources. The ES1980 incorporates an HSP modem interface via its ACLink connecting with the ES2828 MC‘97 codec. The MC‘97 is used as the analog front end for the modem and DAA control.\r\n\r\nThe V.90 modem runs on the host while the ES1980 serves as the bidirectional buffer for data transmission and reception. The modem functions include the standard AT command set, V.42bis and Group 3 fax.\r\n\r\nThe ES1980, which operates at 3.3V digitally, is compliant with the Advanced Power Management (APM) 1.2, Advanced Configuration and Power Interface (ACPI) 1.1, and PCI Power\r\nManagement Interface (PPMI) 1.1. The ES1980 supports D0, D1, D2, and D3 power-saving modes for power efficiency when the audio system is both active and idle.\r\n\r\nThe ES1980 provides a high-quality docking solution and supports an AC-link based digital docking solution with its secondary AC‘97 Extension 2.1 compliant interface. CLKRUN#\r\npin support can be used to stop the PCI interface clock. This helps achieve the lowest power consumption in D3hot state.\r\n\r\nThe ES1980 provides full DOS game compatibility through three hardware implementations: PC/PCI, distributed DMA (DDMA), and transparent DMA (TDMA). \r\n\r\n(Taken from the ESS Maestro-3 datasheet pdf)\r\n\r\n=====\r\n\r\nMIDI support is only available within Windows.\r\n\r\nNote that the datasheet makes no mention of the previous ESS ESFM FM synthesis technology - this is because it has been removed from the Maestro and subsequent ESS devices. FM performance with the Maestro-1 is significantly inferior to previous ESS audio devices."
+      "notes": "The Maestro-3™ PCI audio-modem accelerator combines advanced audio and modem functionality in a highly integrated PCI solution for notebook systems. It uses the highbandwidth PCI bus to deliver advanced PC audio features, such as HRTF 3D positional audio, DirectSound acceleration and DVD AC-3 5.1 to 2 speaker virtualization.\r\n\r\nThe ES1980 implements multistream DirectSound and DirectSound3D acceleration with digital mixing, sample rate conversion, and HRTF 3D filtering. The ES1980 maintains full DOS legacy audio compatibility over the standard PCI 2.1 and PCI 2.2 buses. The ES1980 is designed for high-performance consumer multimedia notebook PC applications.\r\n\r\nThe ES1980 includes a programmable audio signal processor and provides simultaneous support for multiple audio streams.\r\n\r\nWith its built-in DSP core, the ES1980 uses its dedicated direct memory access (DMA) engine to handle complex signal processing tasks with a bus-mastering PCI interface.\r\n\r\nThe support functions ensure efficient transfer of audio data streams to and from system memory buffers, providing a system solution with maximum performance and minimal host CPU loading. The architecture enables implementation of communications over the Internet from multiple sources. The ES1980 incorporates an HSP modem interface via its ACLink connecting with the ES2828 MC‘97 codec. The MC‘97 is used as the analog front end for the modem and DAA control.\r\n\r\nThe V.90 modem runs on the host while the ES1980 serves as the bidirectional buffer for data transmission and reception. The modem functions include the standard AT command set, V.42bis and Group 3 fax.\r\n\r\nThe ES1980, which operates at 3.3V digitally, is compliant with the Advanced Power Management (APM) 1.2, Advanced Configuration and Power Interface (ACPI) 1.1, and PCI Power\r\nManagement Interface (PPMI) 1.1. The ES1980 supports D0, D1, D2, and D3 power-saving modes for power efficiency when the audio system is both active and idle.\r\n\r\nThe ES1980 provides a high-quality docking solution and supports an AC-link based digital docking solution with its secondary AC‘97 Extension 2.1 compliant interface. CLKRUN#\r\npin support can be used to stop the PCI interface clock. This helps achieve the lowest power consumption in D3hot state.\r\n\r\nThe ES1980 provides full DOS game compatibility through three hardware implementations: PC/PCI, distributed DMA (DDMA), and transparent DMA (TDMA). \r\n\r\n(Taken from the ESS Maestro-3 datasheet pdf)\r\n\r\n=====\r\n\r\nMIDI support is only available within Windows.\r\n\r\nNote that the datasheet makes no mention of the previous ESS ESFM FM synthesis technology - this is because it has been removed from the Maestro and subsequent ESS devices. FM performance with the Maestro-1 is significantly inferior to previous ESS audio devices."
    }
 },
 {
@@ -931,7 +931,7 @@
    "pk": 44,
    "fields": {
       "manufacturer": 2,
-      "model": "YMF-744 (DS-1S)",
+      "model": "YMF744 (DS-1S)",
       "bus": 3,
       "digi_sb": 2,
       "digi_other": 2,
@@ -946,7 +946,7 @@
    "pk": 45,
    "fields": {
       "manufacturer": 2,
-      "model": "YMF-724 (DS-1)",
+      "model": "YMF724 (DS-1)",
       "bus": 3,
       "digi_sb": 2,
       "digi_other": 2,
@@ -961,7 +961,7 @@
    "pk": 46,
    "fields": {
       "manufacturer": 2,
-      "model": "YMF-754 (DS-1E)",
+      "model": "YMF754 (DS-1E)",
       "bus": 3,
       "digi_sb": 2,
       "digi_other": 2,
@@ -1001,6 +1001,14 @@
    "fields": {
       "name": "Intel 440MX",
       "notes": "The Intel® 440MX chipset represents the latest in chipset integration. By providing a cost effective, low power single-component chipset specifically designed to reduce system cost, space and power, this product is ideal for lowpower, low cost applied computing platform solutions. \r\n\r\nThe 440MX chipset offers designers an extremely cost effective way to enable Intel quality, reliability, and initiatives across all their low power market segments.\r\n\r\nThe 440MX chipset supports low power Intel® CeleronTM processor and Intel® Pentium® III processor designs. The 440MX is offered in the small form-factor, 492 Ball Grid Array (BGA) package with a typical power dissipation of 2.1W making it an effective solution for fanless applications.\r\n\r\nThe 440MX chipset provides advanced features like support for USB, ACPI power management and AC-97 link interface, which enable soft technologies. The chipset is a single component that integrates the North Bridge and the South Bridge and an additional AC-97 digital link (2 channels) into one chip. It replaces the ISA interface with an 8-bit X-bus that supports KBC, SIO, and Flash memory.\r\n\r\n(Taken from the Intel® 440MX Chipset For Applied Computing PDF)"
+   }
+},
+{
+   "model": "laptops.chipset",
+   "pk": 5,
+   "fields": {
+      "name": "Unknown",
+      "notes": "This is a placeholder value for motherboards that we do not currently have chipset details for."
    }
 },
 {
@@ -1072,7 +1080,7 @@
    "pk": 9,
    "fields": {
       "name": "Intel Pentium MMX",
-      "notes": "The P55C (or 80503) was developed by Intel's Research & Development Center in Haifa, Israel. It was sold as Pentium with MMX Technology (usually just called Pentium MMX); although it was based on the P5 core, it featured a new set of 57 \"MMX\" instructions intended to improve performance on multimedia tasks, such as encoding and decoding digital media data. The Pentium MMX line was introduced on October 22, 1996, and released in January 1997.\r\n\r\nThe new instructions worked on new data types: 64-bit packed vectors of either eight 8-bit integers, four 16-bit integers, two 32-bit integers, or one 64-bit integer. So, for example, the PADDUSB (Packed ADD Unsigned Saturated Byte) instruction adds two vectors, each containing eight 8-bit unsigned integers together, elementwise; each addition that would overflow saturates, yielding 255, the maximal unsigned value that can be represented in a byte. \r\n\r\nOther changes to the core include a 6-stage pipeline (vs. 5 on P5) with a return stack (first done on Cyrix 6x86) and better parallelism, an improved instruction decoder, 16KB L1 data cache + 16KB L1 instruction cache with Both 4-way associativity (vs. 8KB L1 Data/instruction with 2-way on P5), 4 write buffers that could now be used by either pipeline (vs. one corresponding to each pipeline on P5) and an improved branch predictor taken from the Pentium Pro,[27][28] with a 512-entry buffer (vs. 256 on P5).\r\n\r\nIt contained 4.5 million transistors and had an area of 140 mm2. It was fabricated in a 280 nm CMOS process with the same metal pitches as the previous 350 nm BiCMOS process, so Intel described it as \"350 nm\" because of its similar transistor density.[30] The process has four levels of interconnect.\r\n\r\nWhile the P55C remained compatible with Socket 7, the voltage requirements for powering the chip differ from the standard Socket 7 specifications. Most motherboards manufactured for Socket 7 before the establishment of the P55C standard are not compliant with the dual voltage rail required for proper operation of this CPU (2.8 volt core voltage, 3.3 volt input/output (I/O) voltage). Intel addressed the issue with OverDrive upgrade kits that featured an interposer with its own voltage regulation.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Pentium_(original)#MMX)"
+      "notes": "The P55C (or 80503) was developed by Intel's Research & Development Center in Haifa, Israel. It was sold as Pentium with MMX Technology (usually just called Pentium MMX); although it was based on the P5 core, it featured a new set of 57 \"MMX\" instructions intended to improve performance on multimedia tasks, such as encoding and decoding digital media data. The Pentium MMX line was introduced on October 22, 1996, and released in January 1997.\r\n\r\nThe new instructions worked on new data types: 64-bit packed vectors of either eight 8-bit integers, four 16-bit integers, two 32-bit integers, or one 64-bit integer. So, for example, the PADDUSB (Packed ADD Unsigned Saturated Byte) instruction adds two vectors, each containing eight 8-bit unsigned integers together, elementwise; each addition that would overflow saturates, yielding 255, the maximal unsigned value that can be represented in a byte. \r\n\r\nOther changes to the core include a 6-stage pipeline (vs. 5 on P5) with a return stack (first done on Cyrix 6x86) and better parallelism, an improved instruction decoder, 16KB L1 data cache + 16KB L1 instruction cache with Both 4-way associativity (vs. 8KB L1 Data/instruction with 2-way on P5), 4 write buffers that could now be used by either pipeline (vs. one corresponding to each pipeline on P5) and an improved branch predictor taken from the Pentium Pro, with a 512-entry buffer (vs. 256 on P5).\r\n\r\nIt contained 4.5 million transistors and had an area of 140 mm2. It was fabricated in a 280 nm CMOS process with the same metal pitches as the previous 350 nm BiCMOS process, so Intel described it as \"350 nm\" because of its similar transistor density.[30] The process has four levels of interconnect.\r\n\r\nWhile the P55C remained compatible with Socket 7, the voltage requirements for powering the chip differ from the standard Socket 7 specifications. Most motherboards manufactured for Socket 7 before the establishment of the P55C standard are not compliant with the dual voltage rail required for proper operation of this CPU (2.8 volt core voltage, 3.3 volt input/output (I/O) voltage). Intel addressed the issue with OverDrive upgrade kits that featured an interposer with its own voltage regulation.\r\n\r\n(Taken from https://en.wikipedia.org/wiki/Pentium_(original)#MMX)"
    }
 },
 {
@@ -1153,6 +1161,16 @@
    "fields": {
       "name": "TFT IPS (LCD)",
       "notes": ""
+   }
+},
+{
+   "model": "laptops.lcd",
+   "pk": 5,
+   "fields": {
+      "res_x": 1024,
+      "res_y": 768,
+      "screen_size": 14.0,
+      "screen_type": 1
    }
 },
 {
@@ -1420,6 +1438,19 @@
    }
 },
 {
+   "model": "laptops.video",
+   "pk": 1,
+   "fields": {
+      "manufacturer": 7,
+      "model": "Virge/MX",
+      "bus": 3,
+      "ram": 2.0,
+      "scaling_hw": 2,
+      "scaling_sw": 1,
+      "notes": "The only scaling support for this hardware in DOS is dependent on the laptop manufacturer adding appropriate stretch options to the BIOS. The Virge/MX appears largely limited to integer scaling, and hence will not fill the screen on modes which are not a multiple of the native panel resolution."
+   }
+},
+{
    "model": "laptops.laptopmanufacturer",
    "pk": 1,
    "fields": {
@@ -1473,6 +1504,61 @@
    "fields": {
       "manufacturer": "Fujitsu Siemens",
       "notes": "None"
+   }
+},
+{
+   "model": "laptops.laptop",
+   "pk": 5,
+   "fields": {
+      "manufacturer": 2,
+      "model": "Tecra",
+      "submodel": "550CDT",
+      "chipset": 5,
+      "cpumin": 266,
+      "cpumax": 266,
+      "ram": 1,
+      "ramslots": 1,
+      "rammin": 32,
+      "rammax": 160,
+      "audio_out": true,
+      "line_in": true,
+      "mic_in": true,
+      "pcmcia": 2,
+      "mouse": 4
+   }
+},
+{
+   "model": "laptops.laptopcpu",
+   "pk": 5,
+   "fields": {
+      "laptop": 5,
+      "cpu": 9
+   }
+},
+{
+   "model": "laptops.laptopvideo",
+   "pk": 1,
+   "fields": {
+      "laptop": 5,
+      "video": 1
+   }
+},
+{
+   "model": "laptops.laptoplcd",
+   "pk": 4,
+   "fields": {
+      "laptop": 5,
+      "lcd": 5
+   }
+},
+{
+   "model": "laptops.laptopimage",
+   "pk": 1,
+   "fields": {
+      "laptop": 5,
+      "title": "550CDT Front",
+      "notes": "Front profile of Tecra 550 CDT",
+      "image": "uploads/images/laptop/550cdt_1.jpg"
    }
 }
 ]

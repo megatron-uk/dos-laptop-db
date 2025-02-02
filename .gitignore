@@ -178,7 +178,6 @@ dldb/laptops/migrations/*.py
 
 # Don't track Django static file root
 dldb/static
-dldb/uploads
 
 # Don't track these initial db files
 # Has usernames and password - exclude it

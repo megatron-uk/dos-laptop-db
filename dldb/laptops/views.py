@@ -33,7 +33,7 @@ def home(request):
 	video_mfr_groupby = video.values('manufacturer__manufacturer').annotate(group_count=Count('id')).order_by('group_count')
 	video_mfr_highest = None
 	if video_mfr_groupby:
-		video_mfr_highest = video_mfr_highest.last()
+		video_mfr_highest = video_mfr_groupby.last()
 	
 	#################################
 	
